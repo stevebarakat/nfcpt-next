@@ -121,6 +121,9 @@
   .nav ul li {
     border-left: none;
   }
+  .nav ul li svg {
+    /* position: absolute; */
+  }
   .hamburger,
   .close {
     display: none;

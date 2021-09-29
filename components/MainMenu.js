@@ -19,26 +19,15 @@ const MainMenu = () => {
       </a>
       <nav className={styles.nav} id="navbar">
         <ul>
-          <li><a href="#"> Home</a></li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Connect</a></li>
           <li className={styles.dropdown}>
-            {/* <a href="#" className={styles.active}>About
-              <i aria-hidden="true" className={styles.mobileHidden}>
-                <FaCaretDown />
-              </i></a> */}
-            <a href="#">About <FaCaretDown /></a>
-            <ul className={styles.dropdownMenu}>
-              <li><a href="#">Belle</a></li>
-              <li><a href="#">Bubbles</a></li>
-              <li><a href="#">Dolores</a></li>
-              <li><a href="#">Fred</a></li>
-            </ul>
-          </li>
-          <li className={styles.dropdown}>
-            {/* <a href="#" className={styles.active}>About
-              <i aria-hidden="true" className={styles.mobileHidden}>
-                <FaCaretDown />
-              </i></a> */}
-            <a href="#" onKeyDown={handleKeyDown}>About <FaCaretDown /></a>
+            <a href="#"
+              onPointerDown={() => setToggle(!toggle)}
+              onKeyDown={handleKeyDown}
+            >Services<FaCaretDown /></a>
             <ul style={!toggle ? { display: "none" } : { display: "block" }} className={styles.dropdownMenu}>
               <li><a href="#">Belle</a></li>
               <li><a href="#">Bubbles</a></li>
@@ -46,9 +35,15 @@ const MainMenu = () => {
               <li><a href="#">Fred</a></li>
             </ul>
           </li>
-          <li><a href="#">Shop</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Connect</a></li>
+          {/* <li className={styles.dropdown}>
+            <a href="#" onKeyDown={handleKeyDown}>About <FaCaretDown /></a>
+            <ul style={!toggle ? { display: "none" } : { display: "block" }} className={styles.dropdownMenu}>
+              <li><a href="#">Belle</a></li>
+              <li><a href="#">Bubbles</a></li>
+              <li><a href="#">Dolores</a></li>
+              <li><a href="#">Fred</a></li>
+            </ul>
+          </li> */}
           <li><a href="#">Contact</a></li>
         </ul>
         <a className={styles.close} href="#" aria-label="Close main menu">
