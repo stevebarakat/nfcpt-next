@@ -1,7 +1,16 @@
+import { useState } from 'react';
 import styles from '../styles/MainMenu.module.css'
 import { FaCaretDown, FaBars, FaTimes } from 'react-icons/fa';
 
 const MainMenu = () => {
+  const [toggle, setToggle] = useState(false);
+  function handleKeyDown(e) {
+    switch (e.code) {
+      case "Space":
+        setToggle(!toggle)
+    }
+  }
+  console.log(toggle)
   return (
     <>
       <a className={styles.hamburger} href="#navbar" aria-label="Open main menu">
@@ -11,9 +20,26 @@ const MainMenu = () => {
       <nav className={styles.nav} id="navbar">
         <ul>
           <li><a href="#"> Home</a></li>
-          <li className={styles.dropdown}><a href="#" className={styles.active}>About <i aria-hidden="true">v</i></a>
-            {/* <a href="#" className={styles.active}>About <FaCaretDown /></a> */}
+          <li className={styles.dropdown}>
+            {/* <a href="#" className={styles.active}>About
+              <i aria-hidden="true" className={styles.mobileHidden}>
+                <FaCaretDown />
+              </i></a> */}
+            <a href="#">About <FaCaretDown /></a>
             <ul className={styles.dropdownMenu}>
+              <li><a href="#">Belle</a></li>
+              <li><a href="#">Bubbles</a></li>
+              <li><a href="#">Dolores</a></li>
+              <li><a href="#">Fred</a></li>
+            </ul>
+          </li>
+          <li className={styles.dropdown}>
+            {/* <a href="#" className={styles.active}>About
+              <i aria-hidden="true" className={styles.mobileHidden}>
+                <FaCaretDown />
+              </i></a> */}
+            <a href="#" onKeyDown={handleKeyDown}>About <FaCaretDown /></a>
+            <ul style={!toggle ? { display: "none" } : { display: "block" }} className={styles.dropdownMenu}>
               <li><a href="#">Belle</a></li>
               <li><a href="#">Bubbles</a></li>
               <li><a href="#">Dolores</a></li>
