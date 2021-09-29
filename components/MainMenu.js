@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styles from '../styles/MainMenu.module.css'
 import { FaCaretDown, FaBars, FaTimes } from 'react-icons/fa';
 import useOnClickOutside from '../hooks/useOnClickOutside';
@@ -6,6 +6,7 @@ import useOnClickOutside from '../hooks/useOnClickOutside';
 const MainMenu = () => {
   const aboutEl = useRef();
   const servicesEl = useRef();
+  const [mobile, setMobile] = useState(false);
   const [toggleAbout, setToggleAbout] = useState(false);
   const [toggleServices, setToggleServices] = useState(false);
   useOnClickOutside(aboutEl, () => setToggleAbout(false));
@@ -23,16 +24,48 @@ const MainMenu = () => {
     }
   }
 
+  function handleResize() {
+    console.log(window.innerWidth);
+    if (window.innerWidth < 550) {
+      setMobile(true);
+    } else {
+      setMobile(false);
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize)
+  })
+
+  let navLink;
+  if (!mobile) {
+    navLink = `#`
+  } else {
+    navLink = `#navbar`
+  }
+
   function handleKeyDown(e) {
-    console.log(ref.current)
+    console.log(e.currentTarget.id)
+    console.log(aboutEl.current.id)
+    console.log(servicesEl.current.id)
     switch (e.code) {
       case "Space":
       case "Enter":
       case "NumpadEnter":
-        setToggle(!toggle);
+        if (e.currentTarget.id === aboutEl.current.id) {
+          setToggleAbout(!toggleAbout)
+        }
+        if (e.currentTarget.id === servicesEl.current.id) {
+          setToggleServices(!toggleServices);
+        }
         break;
       case "Escape":
-        setToggle(false);
+        if (e.currentTarget.id === aboutEl.current.id) {
+          setToggleAbout(false)
+        }
+        if (e.currentTarget.id === servicesEl.current.id) {
+          setToggleServices(false);
+        }
         break;
       default:
         break;
@@ -50,11 +83,8 @@ const MainMenu = () => {
           <li><a href="#">About</a></li>
           <li><a href="#">First Visit</a></li>
           <li><a href="#">Plans</a></li>
-          <li onPointerDown={handlePointerDown} id="about" className={styles.dropdown} ref={aboutEl}>
-            <a href="#navbar"
-
-              onKeyDown={handleKeyDown}
-            ><div style={{ display: "flex" }}>About<FaCaretDown /></div></a>
+          <li onKeyDown={handleKeyDown} onPointerDown={handlePointerDown} id="about" className={styles.dropdown} ref={aboutEl}>
+            <a href={navLink}><div style={{ display: "flex" }}>About<FaCaretDown /></div></a>
             <ul onKeyDown={handleKeyDown}
               style={!toggleAbout ? { display: "none" } : { display: "block" }}
               className={styles.dropdownMenu}>
@@ -64,10 +94,9 @@ const MainMenu = () => {
               <li><a href="#">Fred</a></li>
             </ul>
           </li>
-          <li onPointerDown={handlePointerDown} id="services" className={styles.dropdown} ref={servicesEl}>
-            <a href="#navbar"
-              onKeyDown={handleKeyDown}
-            ><div style={{ display: "flex" }}>Services<FaCaretDown /></div></a>
+          <li onKeyDown={handleKeyDown} onPointerDown={handlePointerDown} id="services" className={styles.dropdown} ref={servicesEl}>
+            <a href={navLink}>
+              <div style={{ display: "flex" }}>Services<FaCaretDown /></div></a>
             <ul onKeyDown={handleKeyDown}
               style={!toggleServices ? { display: "none" } : { display: "block" }}
               className={styles.dropdownMenu}>
