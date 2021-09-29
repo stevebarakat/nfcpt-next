@@ -80,30 +80,26 @@ const MainMenu = () => {
       <nav className={styles.nav} id="navbar">
         <ul onKeyDown={handleKeyDown}>
           <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">First Visit</a></li>
-          <li><a href="#">Plans</a></li>
           <li onKeyDown={handleKeyDown} onPointerDown={handlePointerDown} id="about" className={styles.dropdown} ref={aboutEl}>
             <a href={navLink}><div style={{ display: "flex" }}>About<FaCaretDown /></div></a>
             <ul onKeyDown={handleKeyDown}
               style={!toggleAbout ? { display: "none" } : { display: "block" }}
               className={styles.dropdownMenu}>
-              <li><a href="#">Belle</a></li>
-              <li><a href="#bubbles">Bubbles</a></li>
-              <li><a href="#">Dolores</a></li>
-              <li><a href="#">Fred</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">First Visit</a></li>
+              <li><a href="#">Plans</a></li>
             </ul>
           </li>
           <li onKeyDown={handleKeyDown} onPointerDown={handlePointerDown} id="services" className={styles.dropdown} ref={servicesEl}>
             <a href={navLink}>
               <div style={{ display: "flex" }}>Services<FaCaretDown /></div></a>
             <ul onKeyDown={handleKeyDown}
-              style={!toggleServices ? { display: "none" } : { display: "block" }}
+              style={!toggleServices ? { display: "none" } : { display: "block", width: "fit-content" }}
               className={styles.dropdownMenu}>
-              <li><a href="#">Belle</a></li>
-              <li><a href="#bubbles">Bubbles</a></li>
-              <li><a href="#">Dolores</a></li>
-              <li><a href="#">Fred</a></li>
+              <li><a href="#">Chiropractic Services</a></li>
+              <li><a href="#">Physical Therapy</a></li>
+              <li><a href="#">Massage Therapy</a></li>
+              <li><a href="#">Accident Rehabilitation</a></li>
             </ul>
           </li>
           <li><a href="#">Contact</a></li>
