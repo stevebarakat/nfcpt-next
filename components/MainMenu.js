@@ -33,9 +33,11 @@ const MainMenu = () => {
     }
   }
 
+
   useEffect(() => {
+    window.onload = handleResize;
     window.addEventListener("resize", handleResize)
-  })
+  }, [])
 
   let navLink;
   if (!mobile) {

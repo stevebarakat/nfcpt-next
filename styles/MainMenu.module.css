@@ -1,6 +1,6 @@
 .hamburger,
 .close {
-  color: #00bff3;
+  color: black;
 }
 .hidden{
   font-size: 0;
@@ -40,7 +40,7 @@
   border-left: 1px inset #aaa;
 }
 .nav a {
-  color: #00bff3;
+  color: white;
   text-decoration: none;
   display: block;
   padding: 0.5rem 1rem;
@@ -52,11 +52,11 @@
 }
 .nav a:focus {
   background-color: #555;
-  border-bottom: 3px solid #00bff3;
+  border-bottom: 3px solid white;
 }
 .nav a:hover {
   color: #ff583d;
-  border-bottom: 3px solid #00bff3;
+  border-bottom: 3px solid white;
 }
 .close:hover {
   background-image: none;
@@ -64,15 +64,16 @@
 }
 .active {
   /* background-color: #333; */
-  border-bottom: 3px solid #00bff3;
+  border-bottom: 3px solid white;
 }
 /* second level nav styles, commented out initially */
 .nav ul ul {
   text-align: left;
   margin: 0 auto;
+  background: #000;
 }
 .nav ul ul a {
-  color: #0081a5;
+  color: white;
   white-space: nowrap;
 }
 .nav ul ul a:hover,
@@ -87,7 +88,7 @@
   display: none;
 }
 .link {
-  color: #00bff3;
+  color: white;
   text-decoration: none;
   display: block;
   padding: 0.5rem 1rem;
@@ -98,7 +99,7 @@
     display: inline;
   }
   .link {
-    color: #00bff3;
+    color: white;
     text-decoration: none;
     display: block;
     padding: 0.5rem 1rem;
