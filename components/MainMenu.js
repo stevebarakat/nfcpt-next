@@ -5,12 +5,20 @@ import { FaCaretDown, FaBars, FaTimes } from 'react-icons/fa';
 const MainMenu = () => {
   const [toggle, setToggle] = useState(false);
   function handleKeyDown(e) {
+    console.log(e.code)
     switch (e.code) {
       case "Space":
-        setToggle(!toggle)
+      case "Enter":
+      case "NumpadEnter":
+        setToggle(!toggle);
+        break;
+      case "Escape":
+        setToggle(false);
+        break;
+      default:
+        break;
     }
   }
-  console.log(toggle)
   return (
     <>
       <a className={styles.hamburger} href="#navbar" aria-label="Open main menu">
@@ -24,13 +32,15 @@ const MainMenu = () => {
           <li><a href="#">Blog</a></li>
           <li><a href="#">Connect</a></li>
           <li className={styles.dropdown}>
-            <a href="#"
+            <a href="#navbar"
               onPointerDown={() => setToggle(!toggle)}
               onKeyDown={handleKeyDown}
             >Services<FaCaretDown /></a>
-            <ul style={!toggle ? { display: "none" } : { display: "block" }} className={styles.dropdownMenu}>
+            <ul onKeyDown={handleKeyDown}
+              style={!toggle ? { display: "none" } : { display: "block" }}
+              className={styles.dropdownMenu}>
               <li><a href="#">Belle</a></li>
-              <li><a href="#">Bubbles</a></li>
+              <li><a href="#bubbles">Bubbles</a></li>
               <li><a href="#">Dolores</a></li>
               <li><a href="#">Fred</a></li>
             </ul>
