@@ -93,11 +93,9 @@ const MainMenu = () => {
             <ul onKeyDown={handleKeyDown}
               style={!toggleAbout ? { display: "none" } : { display: "block", width: "fit-content" }}
               className={styles.dropdownMenu}>
-              <li>
-                <Link href="/about"><a>About Us</a></Link>
-              </li>
-              <li><a href="/first-visit">First Visit</a></li>
-              <li><a href="/plans">Plans</a></li>
+              <li><Link href="/about"><a>About Us</a></Link></li>
+              <li><Link href="/first-visit"><a>First Visit</a></Link></li>
+              <li><Link href="/plans"><a>Plans</a></Link></li>
             </ul>
           </li>
           <li onKeyDown={handleKeyDown} onPointerDown={handlePointerDown} id="services" className={styles.dropdown} ref={servicesEl}>
@@ -106,14 +104,15 @@ const MainMenu = () => {
             <ul onKeyDown={handleKeyDown}
               style={!toggleServices ? { display: "none" } : { display: "block", width: "fit-content" }}
               className={styles.dropdownMenu}>
-              <li><a href="/chiropractic">Chiropractic Services</a></li>
-              <li><a href="/physical-therapy">Physical Therapy</a></li>
-              <li><a href="/massage-therapy">Massage Therapy</a></li>
-              <li><a href="/accident-rehabilitation">Accident Rehabilitation</a></li>
+              <li><Link href="/chiropractic"><a>Chiropractic Services</a></Link></li>
+              <li><Link href="/physical-therapy"><a>Physical Therapy</a></Link></li>
+              <li><Link href="/massage-therapy"><a>Massage Therapy</a></Link></li>
+              <li><Link href="/accident-rehabilitation"><a>Accident Rehabilitation</a></Link></li>
             </ul>
           </li>
-          <li><a href="/contact">Contact</a></li>
+          <li><Link href="/contact"><a>Contact</a></Link></li>
         </ul>
+        <span style={{ whiteSpace: "nowrap" }}><a href="#">(904) 227-4766</a></span>
         <a className={styles.close} href="#" aria-label="Close main menu">
           <span className={styles.hidden}>Close main menu</span>
           <FaTimes />
