@@ -31,6 +31,10 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 }
+h2, h3, p {
+  margin-top: 1em;
+  max-width: 65ch;
+}
 ol, ul {
 	list-style: none;
 }
@@ -58,11 +62,11 @@ body{
 }
 .container{
   height: 100vh;
-  width: 1366px;
-  max-width: 100%;
+  max-width: 1054px;
+  width: 100%;
   height: 100vh;
   margin: 0 auto;
-  border: 5px solid white;
+  border: 5px solid yellow;
 }
 
 .section{
