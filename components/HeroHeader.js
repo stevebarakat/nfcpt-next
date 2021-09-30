@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Header'
-import styles from '../styles/header.module.css'
+import styles from './header.module.css'
 import Image from 'next/image';
 import slide1 from '../images/hero-slider-dark-1.jpg';
 

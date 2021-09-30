@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import styles from '../styles/header.module.css'
+import styles from './header.module.css'
 import { FaCaretDown, FaBars, FaTimes } from 'react-icons/fa';
 import useOnClickOutside from '../hooks/useOnClickOutside';
 import Link from 'next/link';

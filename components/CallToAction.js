@@ -1,4 +1,4 @@
-import styles from '../styles/cta.module.css'
+import styles from './cta.module.css'
 import Image from 'next/image';
 import special from '../images/new-patient-horizontal.svg';
 
