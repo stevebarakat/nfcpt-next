@@ -10,3 +10,10 @@
 .cta div:first-of-type{
   background: black;
 }
+
+.ctaForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
