@@ -2,8 +2,8 @@ import styles from './footer.module.css'
 
 const Footer = () => (
   <footer className={styles.footer}>
-    <div>Widget One</div>
-    <div>Widget Two</div>
+    <div>Footer One</div>
+    <div>Footer Two</div>
   </footer>
 );
 

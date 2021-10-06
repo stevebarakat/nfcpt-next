@@ -1,25 +1,21 @@
 .hamburger,
 .close {
   color: black;
+  z-index: 55;
 }
 .hidden{
   font-size: 0;
 }
 .nav {
-  background-color: black;
-  padding: 1rem;
+  background-color: var(--primaryColor);
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
   position: absolute;
-  /* a higher z-index put navbar above hamburger */
   z-index: 1000;
   top: 0;
   left: 0;
-  /* width: 100%; */
   height: 100%;
   overflow: hidden;
-  /* style the bar in one cell and the close button in the other */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   text-align: center;
   transform: translateX(-100%);
   transition: transform 0.2s ease;
@@ -29,19 +25,43 @@
 }
 .nav ul {
   margin: 0;
-  padding: 0;
+  height: 100%;
   list-style-type: none;
   display: flex;
   flex-flow: column wrap;
   width: 100%;
   text-align: left;
 }
-  .nav ul li a{
-    /* border-left: 1px solid #555; */
-  }
-  .nav ul li:last-of-type a{
-    /* border-right: 1px solid #555; */
-  }
+
+.nav ul li {
+}
+
+.nav ul li a{
+  width: 100%;
+  border-bottom: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 75px;
+  background: #0095E5;
+}
+.nav ul li ul {
+  display: block;
+}
+.nav ul li ul li {
+  background: #000;
+}
+.nav ul li ul li a{
+  background: var(--primaryColorDark);
+  border-bottom: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 75px;
+  width: 100%;
+  text-indent: 1rem;
+}
+
 .nav a {
   color: white;
   text-decoration: none;
@@ -51,16 +71,12 @@
   /* height: 100%; */
 }
 .nav a:focus {
-  outline: 5px solid white;
+  /* outline: 5px solid white;
   outline-offset: 3px;
   outline-color: invert;
-  outline-width: thick;
-}
-.nav a:hover {
-  color: #ff583d;
+  outline-width: thick; */
 }
 .close:hover {
-  background-image: none;
   background-color: transparent;
 }
 .active {
@@ -69,7 +85,6 @@
 /* second level nav styles, commented out initially */
 .nav ul ul {
   text-align: left;
-  background: #000;
 }
 .nav ul ul a {
   color: white;
@@ -78,9 +93,6 @@
 .nav ul ul a:hover,
 .nav ul ul a:focus {
   width: 100%;
-}
-.dropdown {
-  /* background: #000; */
 }
 .mobileHidden {
   display: none;
@@ -92,7 +104,7 @@
   padding: 0.5rem 1rem;
   width: fit-content;
 }
-@media (min-width: 550px) {
+@media (min-width: 650px) {
   .mobileHidden {
     display: inline;
   }
@@ -118,11 +130,49 @@
     flex-flow: row wrap;
     justify-content: center;
   }
-  .hamburger,
-  .close {
+  .nav ul li {
+    border-left: 1px solid white;
+  }
+  .nav ul li ul {
+    width: fit-content;
+  }
+  .nav ul li ul li {
+    border-left: none;
+  }
+  .nav ul li:last-of-type{
+    border-right: 1px solid white;
+  }
+  .nav ul li a:hover {
+    background: #0074B2;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid white;
+  }
+  .nav ul li ul li a:hover {
+    background: var(--primaryColorDark);
+    border-top: 1px solid white;
+    border-bottom: none;
+  }
+  .nav ul li ul li:last-of-type {
+    border-right: none;
+    border-bottom: 1px solid white;
+  }
+  .nav ul li ul li a{
+    border-left: none;
+    border: 1px solid white;
+    border-bottom: none;
+    justify-content: center;
+    text-indent: 0;
+  }  
+  a.hamburger,
+  a.close {
     display: none;
     font-size: 0;
     visibility: hidden;
+    background: red;
+    z-indez: 99999;
+  }
+  .menu {
+    display: flex;
   }
   .dropdown {
     position: relative;

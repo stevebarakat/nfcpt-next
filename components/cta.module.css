@@ -1,14 +1,8 @@
 .cta{
   max-width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
   margin: 0 auto;
-}
-.cta div:last-of-type{
-  background: gray;
-}
-.cta div:first-of-type{
-  background: black;
+  background: #7F7FF0;
+  border-top: 5px solid white;
 }
 
 .ctaForm {

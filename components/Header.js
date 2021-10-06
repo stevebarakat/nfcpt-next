@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import styles from './header.module.css'
-import { FaCaretDown, FaBars, FaTimes } from 'react-icons/fa';
+import { FaCaretDown, FaChevronRight, FaBars, FaTimes } from 'react-icons/fa';
+import { FiChevronsRight } from 'react-icons/fi';
 import useOnClickOutside from '../hooks/useOnClickOutside';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -36,17 +37,17 @@ const Header = () => {
     }
   }
 
+  let navLink;
   useEffect(() => {
     window.onload = handleResize;
     window.addEventListener("resize", handleResize)
+    if (!mobile) {
+      navLink = `#`
+    } else {
+      navLink = `#navbar`
+    }
   }, [])
 
-  let navLink;
-  if (!mobile) {
-    navLink = `#`
-  } else {
-    navLink = `#navbar`
-  }
 
   function handleKeyDown(e) {
     console.log(e.currentTarget.id)
@@ -90,37 +91,51 @@ const Header = () => {
             <FaTimes />
           </div>
         </a>
-        <div style={{ display: "flex" }}>
-          <Image src={logo} alt="North Florida Chiropractic Physical Therapy" />
-          <ul onKeyDown={handleKeyDown}>
-            <li>
-              <Link href="/"><a>Home</a></Link>
-            </li>
-            <li onKeyDown={handleKeyDown} onPointerDown={handlePointerDown} id="about" className={styles.dropdown} ref={aboutEl}>
-              <a href={navLink}><div style={{ display: "flex" }}>About<FaCaretDown /></div></a>
-              <ul onKeyDown={handleKeyDown}
-                style={!toggleAbout ? { display: "none" } : { display: "block", width: "fit-content" }}
-                className={styles.dropdownMenu}>
-                <li><Link href="/about"><a>About Us</a></Link></li>
-                <li><Link href="/first-visit"><a>First Visit</a></Link></li>
-                <li><Link href="/plans"><a>Plans</a></Link></li>
-              </ul>
-            </li>
-            <li onKeyDown={handleKeyDown} onPointerDown={handlePointerDown} id="services" className={styles.dropdown} ref={servicesEl}>
-              <a href={navLink}>
-                <div style={{ display: "flex" }}>Services<FaCaretDown /></div></a>
-              <ul onKeyDown={handleKeyDown}
-                style={!toggleServices ? { display: "none" } : { display: "block", width: "fit-content" }}
-                className={styles.dropdownMenu}>
-                <li><Link href="/chiropractic"><a>Chiropractic Services</a></Link></li>
-                <li><Link href="/physical-therapy"><a>Physical Therapy</a></Link></li>
-                <li><Link href="/massage-therapy"><a>Massage Therapy</a></Link></li>
-                <li><Link href="/accident-rehabilitation"><a>Accident Rehabilitation</a></Link></li>
-              </ul>
-            </li>
-            <li><Link href="/contact"><a>Contact</a></Link></li>
-          </ul>
-          <span style={{ whiteSpace: "nowrap" }}><a href="#">(904) 227-4766</a></span>
+        <div className="container">
+          <div className={styles.menu}>
+            <Image src={logo} alt="North Florida Chiropractic Physical Therapy" />
+            <ul onKeyDown={handleKeyDown}>
+              <li>
+                <Link href="/"><a>Home</a></Link>
+              </li>
+              <li
+                onKeyDown={handleKeyDown}
+                onPointerDown={handlePointerDown}
+                id="about"
+                className={styles.dropdown}
+                ref={aboutEl}
+              >
+                <a href={navLink}><div style={{ display: "flex" }}>About<FaCaretDown /></div></a>
+                <ul onKeyDown={handleKeyDown}
+                  style={!toggleAbout ? { display: "none" } : { display: "block" }}
+                  className={styles.dropdownMenu}>
+                  <li><Link href="/about"><a>About Us</a></Link></li>
+                  <li><Link href="/first-visit"><a>First Visit</a></Link></li>
+                  <li><Link href="/plans"><a>Plans</a></Link></li>
+                </ul>
+              </li>
+              <li
+                onKeyDown={handleKeyDown}
+                onPointerDown={handlePointerDown}
+                id="services"
+                className={styles.dropdown}
+                ref={servicesEl}
+              >
+                <a href={navLink}>
+                  <div style={{ display: "flex" }}>Services<FaCaretDown /></div></a>
+                <ul onKeyDown={handleKeyDown}
+                  style={!toggleServices ? { display: "none" } : { display: "block" }}
+                  className={styles.dropdownMenu}>
+                  <li><Link href="/chiropractic"><a>Chiropractic Services</a></Link></li>
+                  <li><Link href="/physical-therapy"><a>Physical Therapy</a></Link></li>
+                  <li><Link href="/massage-therapy"><a>Massage Therapy</a></Link></li>
+                  <li><Link href="/accident-rehabilitation"><a>Accident Rehabilitation</a></Link></li>
+                </ul>
+              </li>
+              <li><Link href="/contact"><a>Contact</a></Link></li>
+            </ul>
+            <span style={{ whiteSpace: "nowrap" }}><a href="#">(904) 227-4766</a></span>
+          </div>
         </div>
       </nav>
     </div>
