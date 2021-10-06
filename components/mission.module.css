@@ -1,78 +1,59 @@
-.cta {
+.mission {
   max-width: 100%;
   margin: 0 auto;
-  background: var(--primaryColor);
+  background: white;
   border-top: 4px solid white;
   font-family: "Montserrat";
-  color: white;
+  color: #454545;
+  padding: 4rem 0;
 }
 
-.ctaForm {
-  display: flex;
-  padding: 1rem 0;
-  width: 100%;
-  /* max-width: 263px; */
-}
-
-.ctaRightWrap, .ctaLeftWrap {
-}
-
-.ctaLeftWrap {
+.missionLeftWrap {
   max-width: 527px;
   width: 100%;
   justify-self: center;
   align-self: center;
   padding-right: 2rem;
 }
-.ctaRightWrap {
+.missionRightWrap {
+  max-width: 527px;
+  width: 100%;
   border-left: none;
   border-top: 4px solid white;
-  width: 100%;
-  background: var(--accentColor);
   padding: 2rem;
 }
 
-.ctaRightWrap div {
-  /* max-width: 527px; */
-}
-
-.ctaHeader {
+.missionHeader {
   font-size: 1.75rem;
   font-weight: 800;
   letter-spacing: -0.15rem;
   display: block;
+  padding-bottom: 1rem;
 }
 
-.ctaSubHeader {
-  padding-top: .5rem;
+.missionSubHeader {
+  padding-bottom: .5rem;
   display: block;
   font-size: 1rem;
   text-transform: uppercase;
   font-weight: 500;
 }
-.ctaButton {
-  background: #454545;
-  border: none;
-  color: white;
-  padding: 0 2rem;
-}
-.ctaDescription{
-  font-size: 0.75rem;
+.missionDescription{
   display: block;
-  width: 30ch;
+  line-height: 2rem;
 }
 
 @media (min-width: 700px) {
-  .ctaHeader{
+  .missionHeader{
     font-size: 2rem;
   }
-  .ctaSubHeader {
+  .missionSubHeader {
     grid-template-columns: repeat(2, 1fr );
   }
-  .ctaLeftWrap {
+  .missionLeftWrap {
     justify-self: flex-end;
   }
-  .ctaRightWrap {
+  .missionRightWrap {
     border-left: 2px solid white;
     border-top: none;
   }  

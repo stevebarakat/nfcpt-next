@@ -79,7 +79,7 @@ const Header = () => {
   return (
     <div>
 
-      <a style={{ position: "relative" }} className={styles.hamburger} href="#navbar" aria-label="Open main menu">
+      <a className={styles.hamburger} href="#navbar" aria-label="Open main menu">
         <span className={styles.hidden}>Open main menu</span>
         <FaBars />
       </a>

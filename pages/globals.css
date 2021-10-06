@@ -72,9 +72,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 .container{
-  max-width: 1054px;
+  max-width: 1122px;
   width: 100%;
   margin: 0 auto;
+  padding: 0 2rem;
 }
 h1 {
   font-size: 2rem;
@@ -88,10 +89,26 @@ h1 {
 }
 .grid2 {
   display: grid;
-  grid-template-columns: repeat(2, 1fr );
+  grid-template-columns: 100%;
+}
+.flex {
+  display: flex;
+}
+.text-input{
+  padding: 0.5rem;
+  width: 250px;
+}
+
+@media (min-width: 700px) {
+  .grid2 {
+    grid-template-columns: repeat(2, 1fr );
+  }
 }
 
 :root{
   --primaryColor: #0095E5;
   --primaryColorDark: #0074B2;
+  --accentColor: #EE6AB9;
+  --blackColor: #002133;
+  --whiteColor: #E4E7EC;
 }

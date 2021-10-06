@@ -1,7 +1,4 @@
 .footer {
-  width: 1366px;
-  max-width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  margin: 0 auto;
+  background: var(--blackColor);
+  color: var(--whiteColor);
 }

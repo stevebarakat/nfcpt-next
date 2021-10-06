@@ -3,6 +3,10 @@
   color: black;
   z-index: 55;
 }
+.hamburger {
+  position: fixed;
+  background: red;
+}
 .hidden {
   font-size: 0;
 }
@@ -72,7 +76,7 @@
   /* height: 100%; */
 }
 .nav a:focus {
-  /* outline: 5px solid white;
+  /* outline: 4px solid white;
   outline-offset: 3px;
   outline-color: invert;
   outline-width: thick; */
@@ -112,10 +116,12 @@
 .tel {
   padding: 1rem;
 }
-@media (min-width: 650px) {
+@media (min-width: 700px) {
   .logo {
-    padding: 0;
-    padding-top: 5px;
+    padding-top: 4px;
+    padding-left: 4px;
+    padding-bottom: 0;
+    padding-right: 0;
   }
   .tel {
     padding: 0;
@@ -166,8 +172,8 @@
   }
   .nav ul li a:hover {
     background: #0074b2;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid white;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid white;
   }
   .nav ul li ul li a:hover {
     background: var(--primaryColorDark);
@@ -195,7 +201,6 @@
     font-size: 0;
     visibility: hidden;
     background: red;
-    z-indez: 99999;
   }
   .menu {
     display: flex;

@@ -18,7 +18,7 @@
 
 .headline {
   color: white; 
-  font-size: 5em;
+  font-size: 3rem;
   font-weight: 900;
   font-family: Montserrat;
   /* background: hsla(0, 0%, 0%, 0.5); */
@@ -32,4 +32,11 @@
   color: white;
   font-weight: 1.5rem;
   z-index: 99;
+}
+
+
+@media (min-width: 700px) {
+  .headline {
+    font-size: 5rem;
+  }
 }

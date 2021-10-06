@@ -13,9 +13,10 @@ const CallToAction = () => (
           <span className={styles.ctaHeader}>Begin The New You</span>
           <span className={styles.ctaSubHeader}>Take the first step.</span>
           <form className={styles.ctaForm}>
-            <input type="email" placeholder="you@mail.com" required />
-            <button>Do It!</button>
+            <input className="text-input" type="email" placeholder="you@mail.com" required />
+            <button className={styles.ctaButton}>Do It!</button>
           </form>
+          <span className={styles.ctaDescription}>Sign up to receive our complimentary wellness guide and a free consultation.</span>
         </div>
       </div>
     </div>
