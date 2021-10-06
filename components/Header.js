@@ -134,7 +134,7 @@ const Header = () => {
               </li>
               <li><Link href="/contact"><a>Contact</a></Link></li>
             </ul>
-            <span style={{ whiteSpace: "nowrap" }}><a href="#">(904) 227-4766</a></span>
+            <span className={styles.tel}><a href="#">(904) 227-4766</a></span>
           </div>
         </div>
       </nav>

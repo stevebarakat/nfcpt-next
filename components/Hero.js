@@ -8,7 +8,7 @@ const Hero = () => {
     <section className="container">
       <div className={styles.hero}>
         <span className={styles.headline}>Rest Assured</span>
-        <span className={styles.description}>Guiding accident victims to recovery and relief from back pain, neck pain, whiplash, migraines and more.<br />Accident recovery is what we do.</span>
+        <span className={styles.description}>We guide accident victims to recovery and relief from back pain, neck pain, whiplash, headaches and more. <span className="bold">Accident recovery is what we do.</span></span>
         <div className={styles.heroImg}>
           <Image className={styles.heroImg} layout="fill" objectFit="cover" objectPosition="center" src={slide1} alt="Picture of the author" />
         </div>

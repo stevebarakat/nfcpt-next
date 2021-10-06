@@ -1,6 +1,6 @@
 .hero {
   min-height: 100vh;
-  max-width: 100%;
+  max-width: 65ch;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,13 +24,6 @@
   /* background: hsla(0, 0%, 0%, 0.5); */
   display: inline-block;
   z-index: 99;
-}
-
-.heroImg p {
-  color: white;
-  padding: 1em 0;
-  font-size: 1.2em;
-  line-height: 1.5em;
 }
 
 .description{

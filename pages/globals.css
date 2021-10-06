@@ -83,6 +83,9 @@ h1 {
 .section{
   /* padding: 2em 0; */
 }
+.bold{
+  font-weight: bold;
+}
 
 :root{
   --primaryColor: #0095E5;
