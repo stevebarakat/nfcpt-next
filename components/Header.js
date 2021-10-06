@@ -93,7 +93,9 @@ const Header = () => {
         </a>
         <div className="container">
           <div className={styles.menu}>
-            <Image src={logo} alt="North Florida Chiropractic Physical Therapy" />
+            <span className={styles.logo}>
+              <Image src={logo} quality="100" alt="North Florida Chiropractic Physical Therapy" />
+            </span>
             <ul onKeyDown={handleKeyDown}>
               <li>
                 <Link href="/"><a>Home</a></Link>

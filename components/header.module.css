@@ -8,8 +8,7 @@
 }
 .nav {
   background-color: var(--primaryColor);
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
+  border: 1px solid white;
   position: absolute;
   z-index: 1000;
   top: 0;
@@ -25,15 +24,16 @@
 }
 .nav ul {
   margin: 0;
-  height: 100%;
   list-style-type: none;
   display: flex;
   flex-flow: column wrap;
   width: 100%;
+  /* height: 100%; */
   text-align: left;
+  border-top: 1px solid white;
 }
 
-.nav div > div:last-of-type {
+.nav > div:last-of-type {
   border-bottom: 1px solid white;
 }
 
@@ -43,7 +43,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  height: 75px;
+  height: 55px;
   background: #0095e5;
 }
 .nav ul li ul {
@@ -105,10 +105,18 @@
   padding: 0.5rem 1rem;
   width: fit-content;
 }
+.logo {
+  padding: 1rem;
+  display: block;
+}
 .tel {
   padding: 1rem;
 }
 @media (min-width: 650px) {
+  .logo {
+    padding: 0;
+    padding-top: 5px;
+  }
   .tel {
     padding: 0;
     white-space: nowrap;
@@ -137,6 +145,7 @@
     /* padding: 1em; */
   }
   .nav ul {
+    border-top: none;
     flex-flow: row wrap;
     justify-content: center;
   }
@@ -177,7 +186,7 @@
     text-indent: 0;
   }
 
-  .nav div > div:last-of-type {
+  .nav > div:last-of-type {
     border-bottom: none;
   }
   a.hamburger,

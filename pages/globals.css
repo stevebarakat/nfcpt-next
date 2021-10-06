@@ -86,6 +86,10 @@ h1 {
 .bold{
   font-weight: bold;
 }
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr );
+}
 
 :root{
   --primaryColor: #0095E5;
