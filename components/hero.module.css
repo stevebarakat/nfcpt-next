@@ -1,8 +1,10 @@
 .hero {
+  min-height: 125vh;
   max-width: 65ch;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
+  padding-top: 15rem;
   align-items: flex-start;
 }
 .heroImg {

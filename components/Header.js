@@ -17,9 +17,6 @@ const Header = () => {
   useOnClickOutside(servicesEl, () => setToggleServices(false));
 
   function handlePointerDown(e) {
-    console.log(e.currentTarget.id)
-    console.log(aboutEl.current.id)
-    console.log(servicesEl.current.id)
     if (e.currentTarget.id === aboutEl.current.id) {
       setTimeout(() => setToggleAbout(!toggleAbout), 250);
     }
@@ -29,7 +26,6 @@ const Header = () => {
   }
 
   function handleResize() {
-    console.log(window.innerWidth);
     if (window.innerWidth < 550) {
       setMobile(true);
     } else {
@@ -50,9 +46,6 @@ const Header = () => {
 
 
   function handleKeyDown(e) {
-    console.log(e.currentTarget.id)
-    console.log(aboutEl.current.id)
-    console.log(servicesEl.current.id)
     switch (e.code) {
       case "Space":
       case "Enter":
