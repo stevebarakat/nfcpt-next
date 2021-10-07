@@ -116,7 +116,7 @@
 .tel {
   padding: 1rem;
 }
-@media (min-width: 700px) {
+@media (min-width: 850px) {
   .logo {
     padding-top: 4px;
     padding-left: 4px;
