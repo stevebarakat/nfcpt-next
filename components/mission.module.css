@@ -29,6 +29,7 @@
   letter-spacing: -0.15rem;
   display: block;
   padding-bottom: 1rem;
+  color: #787878;
 }
 
 .missionSubHeader {
@@ -36,7 +37,8 @@
   display: block;
   font-size: 1rem;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 800;
+  color: var(--primaryColor);
 }
 .missionDescription{
   display: block;
