@@ -1,16 +1,9 @@
 .hero {
-  min-height: 100vh;
   max-width: 65ch;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-}
-.hamburger,
-.close {
-  color: black;
-  background: red;
-  z-index: 3;
 }
 .heroImg {
   z-index: 1;
@@ -38,5 +31,8 @@
 @media (min-width: 700px) {
   .headline {
     font-size: 5rem;
+  }
+  .hero {
+    /* min-height: 100vh; */
   }
 }

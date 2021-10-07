@@ -14,7 +14,7 @@
   background-color: var(--primaryColor);
   border: 1px solid white;
   position: absolute;
-  z-index: 1000;
+  z-index: 5555;
   top: 0;
   left: 0;
   height: 100%;
@@ -32,7 +32,6 @@
   display: flex;
   flex-flow: column wrap;
   width: 100%;
-  /* height: 100%; */
   text-align: left;
   border-top: 1px solid white;
 }
@@ -113,6 +112,10 @@
   padding: 1rem;
   display: block;
 }
+.logoMobile {
+  position: absolute; 
+  z-index: 0;
+}
 .tel {
   padding: 1rem;
 }
@@ -122,6 +125,9 @@
     padding-left: 4px;
     padding-bottom: 0;
     padding-right: 0;
+  }
+  .logoMobile {
+    z-index: 0;
   }
   .tel {
     padding: 0;
