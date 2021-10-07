@@ -60,5 +60,6 @@
   .missionRightWrap {
     border-left: 2px solid white;
     border-top: none;
+    justify-self: flex-start;
   }  
 }
