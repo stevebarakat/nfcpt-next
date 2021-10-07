@@ -14,18 +14,18 @@ export default class Treatments extends Component {
       speed: 500,
       slidesToShow: 4,
       slidesToScroll: 1,
-      autoplay: true,
+      autoplay: false,
       autoplaySpeed: 2000,
       pauseOnHover: true
     };
     return (
-      <div style={{ background: `var(--accentColor)` }}>
+      <div style={{ background: `var(--accentColor)`, paddingBottom: `6rem` }}>
         <div className="container">
           <Slider {...settings}>
             <div>
               <div className={styles.card}>
                 <span className={styles.cardHeader}>Hip & Joint Pain</span>
-                <div className={styles.cardImg}>
+                <div>
                   <Image src={hip} alt="Picture of the author" />
                 </div>
               </div>
@@ -33,7 +33,7 @@ export default class Treatments extends Component {
             <div>
               <div className={styles.card}>
                 <span className={styles.cardHeader}>Hip & Joint Pain</span>
-                <div className={styles.cardImg}>
+                <div>
                   <Image src={hip} alt="Picture of the author" />
                 </div>
               </div>
@@ -41,7 +41,7 @@ export default class Treatments extends Component {
             <div>
               <div className={styles.card}>
                 <span className={styles.cardHeader}>Hip & Joint Pain</span>
-                <div className={styles.cardImg}>
+                <div>
                   <Image src={hip} alt="Picture of the author" />
                 </div>
               </div>
@@ -49,7 +49,7 @@ export default class Treatments extends Component {
             <div>
               <div className={styles.card}>
                 <span className={styles.cardHeader}>Hip & Joint Pain</span>
-                <div className={styles.cardImg}>
+                <div>
                   <Image src={hip} alt="Picture of the author" />
                 </div>
               </div>
@@ -57,7 +57,7 @@ export default class Treatments extends Component {
             <div>
               <div className={styles.card}>
                 <span className={styles.cardHeader}>Hip & Joint Pain</span>
-                <div className={styles.cardImg}>
+                <div>
                   <Image src={hip} alt="Picture of the author" />
                 </div>
               </div>
@@ -65,7 +65,7 @@ export default class Treatments extends Component {
             <div>
               <div className={styles.card}>
                 <span className={styles.cardHeader}>Hip & Joint Pain</span>
-                <div className={styles.cardImg}>
+                <div>
                   <Image src={hip} alt="Picture of the author" />
                 </div>
               </div>
@@ -73,7 +73,7 @@ export default class Treatments extends Component {
             <div>
               <div className={styles.card}>
                 <span className={styles.cardHeader}>Hip & Joint Pain</span>
-                <div className={styles.cardImg}>
+                <div>
                   <Image src={hip} alt="Picture of the author" />
                 </div>
               </div>
@@ -81,7 +81,7 @@ export default class Treatments extends Component {
             <div>
               <div className={styles.card}>
                 <span className={styles.cardHeader}>Hip & Joint Pain</span>
-                <div className={styles.cardImg}>
+                <div>
                   <Image src={hip} alt="Picture of the author" />
                 </div>
               </div>

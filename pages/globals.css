@@ -112,7 +112,7 @@ h1 {
 }
 
 :root{
-  --primaryColor: #0095E5;
+  --primaryColor: hsla(201, 100%, 45%, 1.0);
   --primaryColorDark: #0074B2;
   --accentColor: #EE6AB9;
   --grey45: #454545;
