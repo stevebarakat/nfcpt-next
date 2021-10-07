@@ -2,6 +2,8 @@ import { useRef } from 'react';
 import Head from 'next/head';
 import Hero from "../components/Hero";
 import CallToAction from "../components/CallToAction";
+import Treatments from "../components/Treatments";
+import SimpleSlider from "../components/SimpleSlider";
 import Mission from "../components/Mission";
 import useIntersecionObserver from "../hooks/useIntersectionObserver";
 import Layout from "../components/Layout";
@@ -24,6 +26,8 @@ export default function Home({ title }) {
         <Hero />
         <CallToAction />
         <Mission />
+        <Treatments />
+        <SimpleSlider />
       </Layout>
     </>
   )

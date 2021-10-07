@@ -1,10 +1,10 @@
 .hero {
   min-height: 125vh;
-  max-width: 65ch;
+  max-width: 60ch;
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
-  padding-top: 15rem;
+  padding-top: 300px;
   align-items: flex-start;
 }
 .heroImg {
@@ -36,5 +36,8 @@
   }
   .hero {
     /* min-height: 100vh; */
+  }
+  .mobileLogo{
+    display: none;
   }
 }
