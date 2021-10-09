@@ -5,9 +5,15 @@
   font-family: "Montserrat";
   color: #454545;
   padding: 4rem 0;
+  position: relative;
+}
+
+.mission img {
+  z-index: 0;
 }
 
 .missionLeftWrap {
+  z-index: 55;
   max-width: 527px;
   width: 100%;
   justify-self: center;
@@ -15,6 +21,7 @@
   padding: 2rem;
 }
 .missionRightWrap {
+  z-index: 55;
   max-width: 527px;
   justify-self: center;
   align-self: center;
