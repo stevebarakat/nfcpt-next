@@ -15,7 +15,12 @@
   display: flex;
   padding: 1rem 0;
   width: 100%;
-  /* max-width: 263px; */
+}
+
+.ctaForm input {
+  background: white;
+  border: none;
+  box-shadow: inset 1px 1px 2px 0 #9a9a9a;
 }
 
 .ctaRightWrap, .ctaLeftWrap {

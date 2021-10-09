@@ -5,77 +5,43 @@
   text-align: center;
   justify-content: center;
   align-items: center;
-  margin: 3rem 2rem;
-  overflow: hidden;
+  margin: 3rem auto;
   color: white;
   gap: 1rem;
+  width: fit-content;
+  height: 100%;
 }
 
 .card img {
   border-radius: 8px;
 }
 
-.cardLeftWrap {
-  max-width: 527px;
-  width: 100%;
-  justify-self: center;
-  align-self: center;
-  padding-right: 2rem;
-}
-.cardRightWrap {
-  border-left: none;
-  border-top: 4px solid white;
-  width: 100%;
-  background: var(--accentColor);
-  padding: 2rem;
-}
-
 .cardHeader {
   position: absolute;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 800;
-  letter-spacing: -0.075rem;
+  letter-spacing: -0.05rem;
   z-index: 9;
-  bottom: 0; 
+  bottom: 0;
   background: hsla(201, 100%, 45%, 0.75);
-  display: inline-block;
   width: 100%;
   height: fit-content;
   padding: 0.5rem;
   border-radius: 0 0 8px 8px;
 }
 
-.cardSubHeader {
-  padding-top: .5rem;
-  display: block;
-  font-size: 1rem;
-  text-transform: uppercase;
-  font-weight: 500;
+.h2{
+  font-size: 2rem;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: 800;
+  color: #FEFDFC;
 }
-.cardButton {
-  background: #454545;
-  border: none;
-  color: white;
-  padding: 0 2rem;
-}
-.cardDescription{
-  font-size: 0.75rem;
-  display: block;
-  width: 30ch;
+
+.treatmentsWrap{
+  background: var(--accentColor);
+  padding: 4rem 0;
 }
 
 @media (min-width: 700px) {
-  .cardHeader{
-    /* font-size: 1.2rem; */
-  }
-  .cardSubHeader {
-    grid-template-columns: repeat(2, 1fr );
-  }
-  .cardLeftWrap {
-    justify-self: flex-end;
-  }
-  .cardRightWrap {
-    border-left: 2px solid white;
-    border-top: none;
-  }  
 }

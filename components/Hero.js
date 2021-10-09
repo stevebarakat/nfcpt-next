@@ -1,16 +1,8 @@
-import React, { useState, useEffect } from 'react';
 import styles from './hero.module.css'
 import Image from 'next/image';
 import slide1 from '../images/hero-1.jpg';
 
 const Hero = () => {
-  const [height, setHeight] = useState(null);
-
-  useEffect(() => {
-    window.onload = setHeight(window.innerHeight);
-    window.onresize = setHeight(window.innerHeight);
-  }, [setHeight]);
-  console.log(height)
   return (
     <section className="container">
       <div className={styles.hero}>

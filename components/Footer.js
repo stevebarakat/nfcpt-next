@@ -6,7 +6,12 @@ const Footer = () => (
   <footer className={styles.footer}>
     <div className="container">
       <div className={styles.upperFooter}>
-        <span className={styles.h4}>Get The Settlement You Deserve.</span>
+        <div>
+          <span className={styles.headline}>Get The Settlement You Deserve.</span>
+          <span className={styles.description}>We work closely with attorneys to ensure you get the settlement you deserve.</span>
+
+        </div>
+        <button>Learn More</button>
       </div>
       <div className={styles.innerFooter}>
         <div>
