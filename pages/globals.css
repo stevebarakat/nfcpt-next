@@ -89,24 +89,34 @@ h1 {
   font-weight: bold;
 }
 figure{
-  margin: 4rem 0;
+  line-height: 2.75rem;
+  margin: 4rem 2rem;
+}
+figcaption {
+  line-height: 1rem;
+  font-size: 1.25rem;
+  font-weight: 200;
+}
+figcaption span {
+  font-weight: 500;
 }
 blockquote {
-  font-size: 2.5rem;
-  font-weight: 800;
-  line-height: 2.75rem;
-  letter-spacing: -0.075rem;
-  display: block;
   padding-bottom: 1rem;
-  color: #787878;
-  max-width: 527px;
 }
 
-blockquote p::before {
+blockquote span::before {
+  position: relative;
+  top: 16px;
+  line-height: 25%;
+  font-size: 5rem;
   content: '\201C';
 }
 
-blockquote p::after {
+blockquote span::after {
+  position: relative;
+  top: 16px;
+  line-height: 25%;
+  font-size: 5rem;
   content: '\201D';
 }
 
@@ -138,7 +148,7 @@ blockquote p::after {
   --primaryColor: hsla(201, 100%, 45%, 1.0);
   --primaryColorDark: #0074B2;
   --accentColor: #EE6AB9;
-  --grey45: #454545;
+  --grey45: #A0A0A0;
   --blackColor: #002133;
   --whiteColor: #E4E7EC;
   --whiteColor10: #C6CCD7;

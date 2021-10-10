@@ -10,7 +10,7 @@ const Testimonials = () => {
             <blockquote>
               <span className={styles.headline}>Keeping my body aligned and free of pain with regular chiropractic care is essential.</span>
             </blockquote>
-            <figcaption>—Alex Rabon, professional swimmer</figcaption>
+            <figcaption>—Alex Rayon, professional diver</figcaption>
           </figure>
         </div>
         <div className={styles.rightWrapTop}>
@@ -18,7 +18,7 @@ const Testimonials = () => {
             <blockquote>
               <span className={styles.headline}>Keeping my body aligned and free of pain with regular chiropractic care is essential.</span>
             </blockquote>
-            <figcaption>—Alex Rabon, professional swimmer</figcaption>
+            <figcaption><span>—Alex Ray</span>, professional diver</figcaption>
           </figure>
         </div>
       </div>
@@ -28,7 +28,7 @@ const Testimonials = () => {
             <blockquote>
               <span className={styles.headline}>Keeping my body aligned and free of pain with regular chiropractic care is essential.</span>
             </blockquote>
-            <figcaption>—Alex Rabon, professional swimmer</figcaption>
+            <figcaption>—Alex Ray, professional diver</figcaption>
           </figure>
         </div>
         <div className={styles.rightWrapBtm}>
@@ -36,7 +36,7 @@ const Testimonials = () => {
             <blockquote>
               <span className={styles.headline}>Keeping my body aligned and free of pain with regular chiropractic care is essential.</span>
             </blockquote>
-            <figcaption>—Alex Rabon, professional swimmer</figcaption>
+            <figcaption>—Alex Rayon, professional diver</figcaption>
           </figure>
         </div>
       </div>

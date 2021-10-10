@@ -5,15 +5,11 @@
 }
 
 .headline {
-  margin: 4rem 0;
   font-size: 2.5rem;
   font-weight: 800;
-  line-height: 2.75rem;
   letter-spacing: -0.075rem;
   display: block;
   padding-bottom: 1rem;
-  color: #787878;
-  max-width: 527px;
 }
 
 .testimonials img {
@@ -30,56 +26,51 @@
   background-size: cover;
   background-position: 50% 35%;
   padding: 2rem;
-  /* max-width: 527px; */
   width: 50%;
   justify-self: center;
 }
-.leftWrapTop figure{
+.leftWrapTop figure {
+  max-width: 527px;
+  padding: 2rem;
   visibility: hidden;
 }
 .rightWrapTop {
-  position: relative;
+  max-width: 527px;
   width: 50%;
-  justify-self: center;
-  align-self: center;
-  object-position: center;
-  /* background: url("../images/kim.jpg"); */
-  background-size: cover;
-  background-position: 50% 35%;
   padding: 2rem;
-  /* max-width: 527px; */
-  width: 50%;
-  justify-self: center;
+  color: #787878;
+}
+
+.rightWrapTop figcaption {
+  color: var(--grey45);
 }
 
 .leftWrapBtm {
-  position: relative;
   width: 50%;
-  justify-self: center;
-  align-self: center;
-  object-position: center;
-  /* background: url("../images/kim.jpg"); */
-  background-size: cover;
-  background-position: 50% 35%;
+  background: var(--accentColor);
+  color: var(--whiteColor);
+  display: flex;
+  justify-content: flex-end;
   padding: 2rem;
-  /* max-width: 527px; */
-  width: 50%;
-  justify-self: center;
 }
-.rightWrapBtm figure{
+.leftWrapBtm figure {
+  padding: 2rem;
+  max-width: 527px;
+}
+.rightWrapBtm figure {
   visibility: hidden;
+  max-width: 527px;
+  padding: 2rem;
 }
 .rightWrapBtm {
   position: relative;
-  width: 50%;
   justify-self: center;
   align-self: center;
   object-position: center;
-  background: url("../images/kim.jpg");
+  background: url("../images/trio.jpg");
   background-size: cover;
   background-position: 50% 35%;
   padding: 2rem;
-  /* max-width: 527px; */
   width: 50%;
   justify-self: center;
 }
