@@ -18,12 +18,6 @@
   padding: 4rem 0;
   grid-gap: 4rem;
 }
-/* .innerFooter{
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1rem;
-} */
 .innerFooter div{
   min-width: 20%;
 }

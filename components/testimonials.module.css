@@ -1,0 +1,43 @@
+.testimonials {
+  overflow: hidden;
+  display: flex;
+  border-top: 4px solid white;
+}
+
+.headline {
+
+}
+
+.testimonials img {
+  z-index: -1;
+}
+
+.leftWrap {
+  position: relative;
+  width: 50%;
+  justify-self: center;
+  align-self: center;
+  object-position: center;
+  background: url("../images/kim.jpg");
+  background-size: cover;
+  background-position: 50% 35%;
+  padding: 2rem;
+  width: 50%;
+  justify-self: center;
+}
+.leftWrap figure{
+  visibility: hidden;
+}
+.rightWrap {
+  position: relative;
+  width: 50%;
+  justify-self: center;
+  align-self: center;
+  object-position: center;
+  background-size: cover;
+  background-position: 50% 35%;
+  padding: 2rem;
+  max-width: 527px;
+  width: 50%;
+  justify-self: center;
+}

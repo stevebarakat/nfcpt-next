@@ -1,19 +1,12 @@
-import { useRef } from 'react';
 import Head from 'next/head';
 import Hero from "../components/Hero";
 import CallToAction from "../components/CallToAction";
 import Treatments from "../components/Treatments";
+import Testimonials from "../components/Testimonials";
 import Mission from "../components/Mission";
-import useIntersecionObserver from "../hooks/useIntersectionObserver";
 import Layout from "../components/Layout";
 
 export default function Home({ title }) {
-  const ref = useRef(null);
-  const entry = useIntersecionObserver(ref, {})
-  const isVisible = !!entry?.isIntersecting
-
-  console.log(`Render Section ${title}`, { isVisible })
-
 
   return (
     <>
@@ -26,6 +19,7 @@ export default function Home({ title }) {
         <CallToAction />
         <Mission />
         <Treatments />
+        <Testimonials />
       </Layout>
     </>
   )

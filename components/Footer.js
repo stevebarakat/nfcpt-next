@@ -1,6 +1,7 @@
 import styles from './footer.module.css'
 import { FaTwitterSquare, FaYoutubeSquare, FaFacebookSquare } from 'react-icons/fa';
 import { SiGooglemybusiness } from 'react-icons/si';
+import Button from "./Button";
 
 const Footer = () => (
   <footer className={styles.footer}>
@@ -11,7 +12,7 @@ const Footer = () => (
           <span className={styles.description}>We work closely with attorneys to ensure you get the settlement you deserve.</span>
 
         </div>
-        <button>Learn More</button>
+        <Button color="green" textColor="white">Learn More</Button>
       </div>
       <div className={styles.innerFooter}>
         <div>
@@ -30,13 +31,13 @@ const Footer = () => (
           <h4 className={styles.h4}>Connect</h4>
           <ul>
             <li>
-              <a className={styles.social} href="#google">
+              <a className={styles.social} href="https://www.google.com/search?q=North+Florida+Chiropractic+Physical+Therapy#lpstate=pid:-1">
                 <span className={styles.icon}><SiGooglemybusiness /></span>
                 <span>Google</span>
               </a>
             </li>
             <li>
-              <a className={styles.social} href="#fb">
+              <a className={styles.social} href="https://www.google.com/search?q=North+Florida+Chiropractic+Physical+Therapy#lrd=0x88e5c37f488af353:0x57bbd11d704eb814,1,,,">
                 <span className={styles.icon}><FaFacebookSquare /></span>
                 <span>Facebook</span>
               </a>

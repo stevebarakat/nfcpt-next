@@ -1,14 +1,9 @@
 .hero {
-  min-height: 124vh;
-  max-width: 60ch;
+  min-height: 126vh;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  padding-top: 300px;
   align-items: flex-start;
-}
-.heroImg {
-  z-index: 1;
+  padding-top: 42vh;
 }
 
 .headline {
@@ -16,12 +11,12 @@
   font-size: 3rem;
   font-weight: 900;
   font-family: Montserrat;
-  /* background: hsla(0, 0%, 0%, 0.5); */
   display: inline-block;
   z-index: 99;
 }
 
 .description{
+  max-width: 60ch;
   display: inline-block;
   line-height: 1.75rem;
   color: white;
@@ -33,9 +28,6 @@
 @media (min-width: 700px) {
   .headline {
     font-size: 5rem;
-  }
-  .hero {
-    padding-top: 525px;
   }
   .mobileLogo{
     display: none;

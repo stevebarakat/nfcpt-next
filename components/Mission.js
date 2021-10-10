@@ -1,11 +1,9 @@
 import styles from './mission.module.css'
-import Image from 'next/image';
-import slide1 from '../images/happy-girl.jpg'
+
 const Mission = () => {
 
   return (
     <div className={styles.mission}>
-      <Image src={slide1} layout="fill" objectFit="cover" objectPosition="center" alt="Picture of the author" />
       <div className="grid2">
         <div className={styles.missionLeftWrap}>
           <div>

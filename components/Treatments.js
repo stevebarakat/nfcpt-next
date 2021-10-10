@@ -5,7 +5,6 @@ import hip from '../images/hip.jpg';
 import carpalTunnel from '../images/carpal-tunnel.jpg';
 import headache from '../images/headache.jpg';
 import pinchedNerve from '../images/pinched-nerve.jpg';
-import sciatica from '../images/sciatica.jpg';
 import sportsInjury from '../images/sports-injury.jpg';
 import slippedDisk from '../images/slipped-disk.jpg';
 import tendonitis from '../images/tendonitis.jpg';
@@ -40,7 +39,7 @@ const Treatments = () => {
           centeredSlides={true}
           autoplay={{
             "delay": 2500,
-            "disableOnInteraction": false
+            "disableOnInteraction": true
           }}
           pagination={{
             "clickable": true

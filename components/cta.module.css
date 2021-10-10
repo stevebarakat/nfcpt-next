@@ -23,9 +23,6 @@
   box-shadow: inset 1px 1px 2px 0 #9a9a9a;
 }
 
-.ctaRightWrap, .ctaLeftWrap {
-}
-
 .ctaLeftWrap {
   max-width: 527px;
   width: 100%;
@@ -39,10 +36,6 @@
   width: 100%;
   background: var(--accentColor);
   padding: 2rem;
-}
-
-.ctaRightWrap div {
-  /* max-width: 527px; */
 }
 
 .ctaHeader {
