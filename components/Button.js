@@ -8,7 +8,6 @@ const Button = ({ color, textColor, children }) => {
       style={{
         color: textColor,
         background: color,
-        border: "none",
       }}
     >
       {children}

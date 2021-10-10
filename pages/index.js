@@ -6,7 +6,7 @@ import Testimonials from "../components/Testimonials";
 import Mission from "../components/Mission";
 import Layout from "../components/Layout";
 
-export default function Home({ title }) {
+export default function Home() {
 
   return (
     <>

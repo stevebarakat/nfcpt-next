@@ -1,0 +1,11 @@
+.button{
+  border: none;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  font-weight: 700;
+}
+
+.button a {
+
+color: var(--whiteColor10);
+}

@@ -12,7 +12,10 @@ const Footer = () => (
           <span className={styles.description}>We work closely with attorneys to ensure you get the settlement you deserve.</span>
 
         </div>
-        <Button color="green" textColor="white">Learn More</Button>
+        <div style={{ display: "flex", gap: "0.75rem" }}>
+          <Button color="var(--whiteColor)" textColor="var(--blackColor)">Learn More</Button>
+          <Button color="var(--accentColor)" textColor="white">Get Started</Button>
+        </div>
       </div>
       <div className={styles.innerFooter}>
         <div>

@@ -5,14 +5,22 @@
 }
 
 .headline {
-
+  margin: 4rem 0;
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 2.75rem;
+  letter-spacing: -0.075rem;
+  display: block;
+  padding-bottom: 1rem;
+  color: #787878;
+  max-width: 527px;
 }
 
 .testimonials img {
   z-index: -1;
 }
 
-.leftWrap {
+.leftWrapTop {
   position: relative;
   width: 50%;
   justify-self: center;
@@ -22,22 +30,56 @@
   background-size: cover;
   background-position: 50% 35%;
   padding: 2rem;
+  /* max-width: 527px; */
   width: 50%;
   justify-self: center;
 }
-.leftWrap figure{
+.leftWrapTop figure{
   visibility: hidden;
 }
-.rightWrap {
+.rightWrapTop {
   position: relative;
   width: 50%;
   justify-self: center;
   align-self: center;
   object-position: center;
+  /* background: url("../images/kim.jpg"); */
   background-size: cover;
   background-position: 50% 35%;
   padding: 2rem;
-  max-width: 527px;
+  /* max-width: 527px; */
+  width: 50%;
+  justify-self: center;
+}
+
+.leftWrapBtm {
+  position: relative;
+  width: 50%;
+  justify-self: center;
+  align-self: center;
+  object-position: center;
+  /* background: url("../images/kim.jpg"); */
+  background-size: cover;
+  background-position: 50% 35%;
+  padding: 2rem;
+  /* max-width: 527px; */
+  width: 50%;
+  justify-self: center;
+}
+.rightWrapBtm figure{
+  visibility: hidden;
+}
+.rightWrapBtm {
+  position: relative;
+  width: 50%;
+  justify-self: center;
+  align-self: center;
+  object-position: center;
+  background: url("../images/kim.jpg");
+  background-size: cover;
+  background-position: 50% 35%;
+  padding: 2rem;
+  /* max-width: 527px; */
   width: 50%;
   justify-self: center;
 }

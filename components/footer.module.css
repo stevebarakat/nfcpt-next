@@ -3,6 +3,7 @@
   color: var(--whiteColor10);
   font-size: 13px;
   font-weight: 500;
+  border-top: 4px solid white; 
 }
 
 .upperFooter {

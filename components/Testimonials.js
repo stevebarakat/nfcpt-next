@@ -3,22 +3,42 @@ import styles from './testimonials.module.css';
 
 const Testimonials = () => {
   return (
-    <div className={styles.testimonials}>
-      <div className={styles.leftWrap}>
-        <figure>
-          <blockquote>
-            <span className={styles.headline}>Keeping my body aligned and free of pain with regular chiropractic care is essential.</span>
-          </blockquote>
-          <figcaption>—Alex Rabon, professional swimmer</figcaption>
-        </figure>
+    <div>
+      <div className={styles.testimonials}>
+        <div className={styles.leftWrapTop}>
+          <figure>
+            <blockquote>
+              <span className={styles.headline}>Keeping my body aligned and free of pain with regular chiropractic care is essential.</span>
+            </blockquote>
+            <figcaption>—Alex Rabon, professional swimmer</figcaption>
+          </figure>
+        </div>
+        <div className={styles.rightWrapTop}>
+          <figure>
+            <blockquote>
+              <span className={styles.headline}>Keeping my body aligned and free of pain with regular chiropractic care is essential.</span>
+            </blockquote>
+            <figcaption>—Alex Rabon, professional swimmer</figcaption>
+          </figure>
+        </div>
       </div>
-      <div className={styles.rightWrap}>
-        <figure>
-          <blockquote>
-            <span className={styles.headline}>Keeping my body aligned and free of pain with regular chiropractic care is essential.</span>
-          </blockquote>
-          <figcaption>—Alex Rabon, professional swimmer</figcaption>
-        </figure>
+      <div className={styles.testimonials}>
+        <div className={styles.leftWrapBtm}>
+          <figure>
+            <blockquote>
+              <span className={styles.headline}>Keeping my body aligned and free of pain with regular chiropractic care is essential.</span>
+            </blockquote>
+            <figcaption>—Alex Rabon, professional swimmer</figcaption>
+          </figure>
+        </div>
+        <div className={styles.rightWrapBtm}>
+          <figure>
+            <blockquote>
+              <span className={styles.headline}>Keeping my body aligned and free of pain with regular chiropractic care is essential.</span>
+            </blockquote>
+            <figcaption>—Alex Rabon, professional swimmer</figcaption>
+          </figure>
+        </div>
       </div>
     </div>
   )
