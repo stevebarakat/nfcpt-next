@@ -1,4 +1,5 @@
 import styles from './mission.module.css'
+import { FaCheckCircle } from 'react-icons/fa';
 
 const Mission = () => {
 
@@ -7,16 +8,21 @@ const Mission = () => {
       <div className="grid2">
         <div className={styles.missionLeftWrap}>
           <div>
-            <span className={styles.missionSubHeader}>EFFECTIVE PAIN TREATMENT WITHOUT MEDICATION</span>
-            <span className={styles.missionHeader}>Safe non-evasive treatments.</span>
-            <span className={styles.missionDescription}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo dolor nam dignissimos, quam accusamus, nihil natus ipsum quibusdam officiis repellendus voluptatum. Molestiae, dolorum ullam officia hic quas perspiciatis. Sed, libero? Sign up to receive our complimentary wellness guide and a free consultation.</span>
+            <span className={styles.missionSubHeader}>Talk to us before an attorney</span>
+            <span className={styles.missionHeader}>Get the settlement you deserve.</span>
+            <span className={styles.missionDescription}>With over 20 years serving the Orange Park area, North Florida Chiropractic Physical Therapy prides itself on being the primary chiropractic center for auto accident rehabilitation. Not only do we guide you to recovery from pain, we work closely with attorneys to ensure you get the settlement you deserve.</span>
           </div>
         </div>
         <div className={styles.missionRightWrap}>
           <div>
-            <span className={styles.missionSubHeader}>Talk to us before an attorney</span>
-            <span className={styles.missionHeader}>Get the settlement you deserve.</span>
-            <span className={styles.missionDescription}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo dolor nam dignissimos, quam accusamus, nihil natus ipsum quibusdam officiis repellendus voluptatum. Molestiae, dolorum ullam officia hic quas perspiciatis. Sed, libero? Sign up to receive our complimentary wellness guide and a free consultation.</span>
+            <span className={styles.missionSubHeader}>We're not a franchise</span>
+            <ul className={styles.missionList}>
+              {/* <li>We're not a franchise</li> */}
+              <li><FaCheckCircle />Doctor owned and operated.</li>
+              <li><FaCheckCircle />Individualized personal treatment plans.</li>
+              <li><FaCheckCircle />No long term contracts.</li>
+              <li><FaCheckCircle />Free transportation to and from appointments.</li>
+            </ul>
           </div>
         </div>
       </div>

@@ -4,7 +4,7 @@
   border-top: 4px solid white;
   font-family: "Montserrat";
   color: #454545;
-  padding: 4rem 0;
+  padding: 6rem 0 4rem;
   position: relative;
 }
 
@@ -29,6 +29,7 @@
   border-left: none;
   border-top: 4px solid yellow;
   padding: 2rem;
+  height: 100%;
 }
 
 .missionHeader {
@@ -51,6 +52,20 @@
 .missionDescription{
   display: block;
   line-height: 2rem;
+}
+.missionList{
+  line-height: 3rem;
+}
+
+.missionList li {
+  display: flex;
+  align-items: center;
+}
+
+.missionList li svg {
+  color: #787878;
+  font-size: 2rem;
+  padding-right: 0.25rem;
 }
 
 @media (min-width: 700px) {
