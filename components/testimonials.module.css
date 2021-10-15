@@ -53,6 +53,12 @@
   justify-content: flex-end;
   padding: 2rem;
 }
+
+.leftWrapBtm p {
+  color: white;
+  font-weight: 500;
+}
+
 .leftWrapBtm figure {
   /* width: 50%; */
   padding: 2rem 0rem 2rem 4rem;

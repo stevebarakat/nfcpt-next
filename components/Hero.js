@@ -8,8 +8,8 @@ const Hero = () => {
       <div className={styles.hero}>
         <span className={styles.headline}>Rest Assured</span>
         <span className={styles.description}>We guide accident victims to recovery and relief from back pain, neck pain, whiplash, headaches and more. <span className="bold">Accident recovery is what we do.</span></span>
-        <Image layout="fill" objectFit="cover" objectPosition="center" src={hero} alt="Picture of the author" />
       </div>
+      <Image layout="fill" objectFit="cover" objectPosition="center" src={hero} alt="Picture of the author" />
     </section>
   )
 };

@@ -120,6 +120,10 @@ blockquote span::after {
   content: '\201D';
 }
 
+.underline{
+  text-decoration: underline;
+}
+
 .section{
   /* padding: 2em 0; */
 }
