@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import styles from './header.module.css'
 import { FaCaretDown, FaChevronRight, FaBars, FaTimes } from 'react-icons/fa';
-import { FiChevronsRight } from 'react-icons/fi';
 import useOnClickOutside from '../hooks/useOnClickOutside';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -36,13 +35,19 @@ const Header = () => {
 
   let navLink;
   useEffect(() => {
-    window.onload = handleResize;
+    window.addEventListener("load", handleResize)
     window.addEventListener("resize", handleResize)
     if (!mobile) {
       navLink = `#`
     } else {
       navLink = `#navbar`
     }
+    return (
+      () => {
+        window.removeEventListener("load", handleResize)
+        window.removeEventListener("resize", handleResize)
+      }
+    )
   }, [])
 
 
@@ -133,7 +138,7 @@ const Header = () => {
               </li>
               <li><Link href="/contact"><a>Contact</a></Link></li>
             </ul>
-            <span className={styles.tel}><a href="#">(904) 227-4766</a></span>
+            <span className={styles.tel}><a className="bold" href="tel:904-272-4329">(904) 272-4329</a></span>
           </div>
         </div>
       </nav>

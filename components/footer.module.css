@@ -3,7 +3,7 @@
   color: var(--whiteColor10);
   font-size: 13px;
   font-weight: 500;
-  border-top: 4px solid white; 
+  border-top: 4px solid white;
   padding: 2rem 0;
 }
 
@@ -21,8 +21,12 @@
   padding: 4rem 0;
   grid-gap: 4rem;
 }
-.innerFooter div{
+.innerFooter div {
   min-width: 20%;
+}
+.btnWrap {
+  display: flex;
+  gap: 0.75rem;
 }
 @media (min-width: 850px) {
   .innerFooter {
@@ -35,9 +39,11 @@
 @media (max-width: 500px) {
   .innerFooter {
     grid-template-columns: repeat(1, 1fr);
-    grid-gap: 0;
     display: grid;
     padding: 4rem 0;
+  }
+  .btnWrap {
+    padding-top: 2rem;
   }
 }
 .innerFooter ul {

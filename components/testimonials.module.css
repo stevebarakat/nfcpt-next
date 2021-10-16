@@ -5,7 +5,8 @@
   border-top: 4px solid white;
 }
 
-.headline, .quote {
+.headline,
+.quote {
   font-weight: 800;
   letter-spacing: -0.075rem;
   display: block;
@@ -14,18 +15,16 @@
 .headline {
   font-size: 3rem;
 }
-.quote{
+.quote {
   font-size: 1.5rem;
   line-height: 2.75rem;
-
 }
 .figure {
   margin: 0 auto;
 }
 
 .figcaption {
-  /* line-height: 1rem; */
-  /* font-size: 1.25rem; */
+  font-size: 1.25rem;
   font-weight: 200;
 }
 .figcaption span {
@@ -144,7 +143,11 @@
     margin: 4rem 2rem;
     visibility: visible;
   }
-  .quote{
+
+  .figcaption {
+    font-size: 1.25rem;
+  }
+  .quote {
     font-size: 3rem;
     line-height: 3rem;
   }

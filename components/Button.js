@@ -11,6 +11,7 @@ const Button = ({ color, borderColor, textColor, side, children }) => {
         border: side === "right" ? "none" : "1px solid " + borderColor,
         borderRadius: side === "right" ? "0" : "4px",
         padding: side === "right" ? "0.5rem 1rem" : "1rem",
+        fontSize: side === "right" && "1rem"
       }}
     >
       {children}
