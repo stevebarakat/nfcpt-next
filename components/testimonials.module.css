@@ -94,6 +94,9 @@
   .testimonials {
     flex-direction: row;
   }
+  .headline {
+    font-size: 3rem;
+  }
   .leftWrapTop {
     width: 50%;
     background: url("../images/kim.jpg");

@@ -70,12 +70,15 @@ const Header = () => {
     }
   }
   return (
-    <div>
+    <div className="flex">
 
       <a className={styles.hamburger} href="#navbar" aria-label="Open main menu">
         <span className={styles.hidden}>Open main menu</span>
         <FaBars />
       </a>
+      <span className={styles.mobileLogo}>
+        <Image src={logo} width="350px" quality="100" alt="North Florida Chiropractic Physical Therapy" />
+      </span>
       <nav className={styles.nav} id="navbar">
         <a className={styles.close} href="#" aria-label="Close main menu">
           <span className={styles.hidden}>Close main menu</span>

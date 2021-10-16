@@ -4,6 +4,8 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  position: relative;
+  top: 100px;
 }
 
 .headline {
@@ -24,20 +26,15 @@
   font-weight: 1.5rem;
   z-index: 99;
 }
-.logo{
-  z-index: 9999999;
-  position: relative;
-}
 
 @media (min-width: 700px) {
   .hero {
     /* min-height: 126vh; */
   }
   .headline {
-    font-size: 5rem;
+    font-size: 4rem;
   }
-  .logo{
+  .mobileLogo{
     display: none;
-    z-index: -1;
   }
 }
