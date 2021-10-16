@@ -1,4 +1,5 @@
 .hero {
+  min-height: 87vh;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -29,7 +30,7 @@
 
 @media (min-width: 700px) {
   .hero {
-    /* min-height: 126vh; */
+    min-height: 100vh;
   }
   .headline {
     font-size: 4rem;

@@ -89,14 +89,6 @@ h1 {
   font-weight: bold;
 }
 
-figcaption {
-  line-height: 1rem;
-  font-size: 1.25rem;
-  font-weight: 200;
-}
-figcaption span {
-  font-weight: 500;
-}
 blockquote {
   padding-bottom: 1rem;
 }
@@ -148,6 +140,7 @@ blockquote span::after {
 
 :root{
   --primaryColor: hsla(201, 100%, 45%, 1.0);
+  --primaryGradient: -webkit-linear-gradient(top,  #0095e6 0%,#20a0e5 51%,#0095e6 100%);
   --primaryColorDark: #0074B2;
   --accentColor: #EE6AB9;
   --lightGrey: #A0A0A0;

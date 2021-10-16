@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import hero from '../images/hero-1.jpg';
-import logo from '../images/logo.svg';
 import styles from './hero.module.css';
 
 const Hero = () => {

@@ -5,19 +5,32 @@
   border-top: 4px solid white;
 }
 
-.headline {
-  font-size: 1.5rem;
+.headline, .quote {
   font-weight: 800;
   letter-spacing: -0.075rem;
   display: block;
   padding-bottom: 1rem;
 }
-
-.figure {
+.headline {
+  font-size: 3rem;
+}
+.quote{
+  font-size: 1.5rem;
   line-height: 2.75rem;
+
+}
+.figure {
   margin: 0 auto;
 }
 
+.figcaption {
+  /* line-height: 1rem; */
+  /* font-size: 1.25rem; */
+  font-weight: 200;
+}
+.figcaption span {
+  font-weight: 400;
+}
 .testimonials img {
   z-index: -1;
 }
@@ -60,6 +73,7 @@
   display: flex;
   justify-content: flex-end;
   padding: 2rem;
+  display: none;
 }
 
 .leftWrapBtm p {
@@ -70,6 +84,7 @@
 .leftWrapBtm figure {
   padding: 2rem 0rem 2rem 4rem;
   max-width: 527px;
+  justify-self: flex-end;
 }
 
 .rightWrapBtm {
@@ -77,15 +92,16 @@
   justify-self: center;
   align-self: center;
   object-position: center;
-  background: url("../images/trio.jpg");
+  background: url("../images/trio-sm-pink.jpg");
   background-size: cover;
   background-position: 50% 35%;
-  padding: 4rem;
+  padding: 4rem 0;
   width: 100%;
   justify-self: center;
+  color: white;
+  text-align: center;
 }
 .rightWrapBtm figure {
-  visibility: hidden;
   max-width: 527px;
   padding: 2rem;
 }
@@ -113,12 +129,23 @@
   }
   .leftWrapBtm {
     width: 50%;
+    display: flex;
   }
   .rightWrapBtm {
     width: 50%;
+    background: url("../images/trio.jpg");
+    background-size: cover;
+    background-position: 50% 15%;
+  }
+  .rightWrapBtm .figure {
+    visibility: hidden;
   }
   .figure {
     margin: 4rem 2rem;
     visibility: visible;
+  }
+  .quote{
+    font-size: 3rem;
+    line-height: 3rem;
   }
 }

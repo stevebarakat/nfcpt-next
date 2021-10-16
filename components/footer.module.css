@@ -9,6 +9,7 @@
 
 .upperFooter {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   border-bottom: 2px solid var(--transparentWhite50);
   padding: 4rem 0;

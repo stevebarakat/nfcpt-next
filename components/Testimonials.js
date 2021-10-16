@@ -9,24 +9,24 @@ const Testimonials = () => {
         <div className={styles.leftWrapTop}>
           <figure className={styles.figure}>
             <blockquote>
-              <span className={styles.headline}>Keeping my body aligned and free of pain with regular chiropractic care is essential.</span>
+              <span className={styles.quote}>Keeping my body aligned and free of pain with regular chiropractic care is essential.</span>
             </blockquote>
-            <figcaption>—Alex Rayon, professional diver</figcaption>
+            <figcaption className={styles.figcaption}><span>—Alex Ray</span>, professional diver</figcaption>
           </figure>
         </div>
         <div className={styles.rightWrapTop}>
           <figure className={styles.figure}>
             <blockquote>
-              <span className={styles.headline}>Keeping my body aligned and free of pain with regular chiropractic care is essential.</span>
+              <span className={styles.quote}>Keeping my body aligned and free of pain with regular chiropractic care is essential.</span>
             </blockquote>
-            <figcaption><span>—Alex Ray</span>, professional diver</figcaption>
+            <figcaption className={styles.figcaption}><span>—Alex Ray</span>, professional diver</figcaption>
           </figure>
         </div>
       </div>
       <div className={styles.testimonials}>
         <div className={styles.leftWrapBtm}>
           <figure className={styles.figure}>
-            <span className={styles.headline} style={{ fontSize: "4rem" }}>Join the club!</span>
+            <span className={styles.headline}>Join the club!</span>
             <p>We offer package deals on regular chiropractic treatments and massage therapy to club members</p>
             <div style={{ display: "flex", gap: "0.75rem", paddingTop: "2rem" }}>
               <Button color="var(--primaryColor)" textColor="var(--whiteColor)">Learn More</Button>
@@ -40,9 +40,9 @@ const Testimonials = () => {
         </div>
         <div className={styles.rightWrapBtm}>
           <figure className={styles.figure}>
-            <span className={styles.headline} style={{ fontSize: "4rem" }}>Join the club!</span>
+            <span className={styles.headline}>Join the club!</span>
             <p>We offer package deals on regular chiropractic treatments and massage therapy to club members</p>
-            <div style={{ display: "flex", gap: "0.75rem", paddingTop: "2rem" }}>
+            <div style={{ display: "flex", gap: "0.5rem", paddingTop: "2rem" }}>
               <Button color="var(--primaryColor)" textColor="var(--whiteColor)">Learn More</Button>
               <Button
                 color="var(--accentColor)"

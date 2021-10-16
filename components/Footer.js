@@ -12,7 +12,7 @@ const Footer = () => (
           <span className={styles.description}>We work closely with attorneys to ensure you get the settlement you deserve.</span>
 
         </div>
-        <div style={{ display: "flex", gap: "0.75rem" }}>
+        <div style={{ display: "flex", gap: "0.5rem", paddingTop: "2rem" }}>
           <Button color="var(--whiteColor)" textColor="var(--blackColor)">Learn More</Button>
           <Button color="var(--accentColor)" textColor="white">Get Started</Button>
         </div>

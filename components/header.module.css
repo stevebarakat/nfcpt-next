@@ -1,13 +1,13 @@
 .hamburger,
 .close {
-  color: black;
-  z-index: 55;
+  color: white;
+  z-index: 55555;
   padding: 1rem;
   margin: 1rem;
 }
 .hamburger {
   position: fixed;
-  background: red;
+  background: var(--blackColor);
 }
 .hidden {
   font-size: 0;

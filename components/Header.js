@@ -6,6 +6,7 @@ import useOnClickOutside from '../hooks/useOnClickOutside';
 import Link from 'next/link';
 import Image from 'next/image';
 import logo from '../images/logo.svg';
+import mobileLogo from '../images/mobile-logo.svg';
 
 const Header = () => {
   const aboutEl = useRef();
@@ -77,7 +78,7 @@ const Header = () => {
         <FaBars />
       </a>
       <span className={styles.mobileLogo}>
-        <Image src={logo} width="350px" quality="100" alt="North Florida Chiropractic Physical Therapy" />
+        <Image src={mobileLogo} width="350px" quality="100" alt="North Florida Chiropractic Physical Therapy" />
       </span>
       <nav className={styles.nav} id="navbar">
         <a className={styles.close} href="#" aria-label="Close main menu">
