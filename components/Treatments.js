@@ -44,7 +44,7 @@ const Treatments = () => {
           pagination={{
             "clickable": true
           }}
-          navigation={true}
+          // navigation={true}
           breakpoints={{
             "300": {
               slidesPerView: 1,

@@ -5,6 +5,11 @@
   border-top: 4px solid white;
 }
 
+.testimonials p {
+  line-height: 2rem;
+  font-weight: 600;
+}
+
 .headline,
 .quote {
   font-weight: 800;
@@ -49,17 +54,25 @@
 }
 .leftWrapTop .figure {
   max-width: 527px;
-  padding: 2rem;
+  /* padding: 2rem; */
   color: white;
   visibility: visible;
 }
 
 .rightWrapTop {
-  display: none;
+  position: relative;
   width: 100%;
-  max-width: 527px;
+  justify-self: center;
+  align-self: center;
+  /* background: url("../images/ray-sm.jpg"); */
+  background-size: cover;
+  background-position: 50% 35%;
   padding: 2rem;
+  width: 100%;
+  justify-self: center;
+  align-self: center;
   color: #787878;
+  display: none;
 }
 .rightWrapTop figcaption {
   color: var(--lightGrey);
@@ -67,7 +80,7 @@
 
 .leftWrapBtm {
   width: 100%;
-  background: var(--accentColor);
+  background: var(--accentGradient);
   color: var(--whiteColor);
   display: flex;
   justify-content: flex-end;

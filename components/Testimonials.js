@@ -41,7 +41,7 @@ const Testimonials = () => {
         <div className={styles.rightWrapBtm}>
           <figure className={styles.figure}>
             <span className={styles.headline}>Join the club!</span>
-            <p>We offer package deals on regular chiropractic treatments and massage therapy to club members</p>
+            <p>We offer package deals on regular chiropractic treatments and massage therapy to club members.</p>
             <div style={{ display: "flex", justifyContent: "center", gap: "0.5rem", paddingTop: "2rem" }}>
               <Button color="var(--primaryColor)" textColor="var(--whiteColor)">Learn More</Button>
               <Button

@@ -9,7 +9,7 @@
   color: white;
   gap: 1rem;
   width: fit-content;
-  height: 100%;
+  /* height: 100%; */
 }
 
 .card img {
@@ -31,17 +31,22 @@
   border-radius: 0 0 8px 8px;
 }
 
-.h2{
+.h2 {
   font-size: 2rem;
   margin: 0 auto;
   text-align: center;
   font-weight: 800;
-  color: #FEFDFC;
+  color: #fefdfc;
 }
 
-.treatmentsWrap{
+.treatmentsWrap {
   background: #0095e6;
-  background: -webkit-linear-gradient(top,  #0095e6 0%,#20a0e5 51%,#0095e6 100%);
+  background: -webkit-linear-gradient(
+    top,
+    #0095e6 0%,
+    #20a0e5 51%,
+    #0095e6 100%
+  );
   padding: 4rem 0;
 }
 
