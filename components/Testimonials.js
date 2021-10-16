@@ -7,7 +7,7 @@ const Testimonials = () => {
     <div>
       <div className={styles.testimonials}>
         <div className={styles.leftWrapTop}>
-          <figure>
+          <figure className={styles.figure}>
             <blockquote>
               <span className={styles.headline}>Keeping my body aligned and free of pain with regular chiropractic care is essential.</span>
             </blockquote>
@@ -15,7 +15,7 @@ const Testimonials = () => {
           </figure>
         </div>
         <div className={styles.rightWrapTop}>
-          <figure>
+          <figure className={styles.figure}>
             <blockquote>
               <span className={styles.headline}>Keeping my body aligned and free of pain with regular chiropractic care is essential.</span>
             </blockquote>
@@ -25,7 +25,7 @@ const Testimonials = () => {
       </div>
       <div className={styles.testimonials}>
         <div className={styles.leftWrapBtm}>
-          <figure>
+          <figure className={styles.figure}>
             <span className={styles.headline} style={{ fontSize: "4rem" }}>Join the club!</span>
             <p>We offer package deals on regular chiropractic treatments and massage therapy to club members</p>
             <div style={{ display: "flex", gap: "0.75rem", paddingTop: "2rem" }}>
@@ -39,7 +39,7 @@ const Testimonials = () => {
           </figure>
         </div>
         <div className={styles.rightWrapBtm}>
-          <figure>
+          <figure className={styles.figure}>
             <span className={styles.headline} style={{ fontSize: "4rem" }}>Join the club!</span>
             <p>We offer package deals on regular chiropractic treatments and massage therapy to club members</p>
             <div style={{ display: "flex", gap: "0.75rem", paddingTop: "2rem" }}>

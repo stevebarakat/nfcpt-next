@@ -1,15 +1,21 @@
 .testimonials {
-  overflow: hidden;
   display: flex;
+  flex-direction: column;
+  overflow: hidden;
   border-top: 4px solid white;
 }
 
 .headline {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: 800;
   letter-spacing: -0.075rem;
   display: block;
   padding-bottom: 1rem;
+}
+
+.figure {
+  line-height: 2.75rem;
+  margin: 0 auto;
 }
 
 .testimonials img {
@@ -18,35 +24,37 @@
 
 .leftWrapTop {
   position: relative;
-  width: 50%;
+  width: 100%;
   justify-self: center;
   align-self: center;
-  object-position: center;
-  background: url("../images/kim.jpg");
+  background: url("../images/ray-sm.jpg");
   background-size: cover;
   background-position: 50% 35%;
   padding: 2rem;
-  width: 50%;
+  width: 100%;
   justify-self: center;
+  align-self: center;
 }
-.leftWrapTop figure {
+.leftWrapTop .figure {
   max-width: 527px;
   padding: 2rem;
-  visibility: hidden;
+  color: white;
+  visibility: visible;
 }
 
 .rightWrapTop {
+  display: none;
+  width: 100%;
   max-width: 527px;
-  width: 50%;
   padding: 2rem;
   color: #787878;
 }
 .rightWrapTop figcaption {
-  color: var(--grey45);
+  color: var(--lightGrey);
 }
 
 .leftWrapBtm {
-  width: 50%;
+  width: 100%;
   background: var(--accentColor);
   color: var(--whiteColor);
   display: flex;
@@ -60,7 +68,6 @@
 }
 
 .leftWrapBtm figure {
-  /* width: 50%; */
   padding: 2rem 0rem 2rem 4rem;
   max-width: 527px;
 }
@@ -74,11 +81,41 @@
   background-size: cover;
   background-position: 50% 35%;
   padding: 4rem;
-  width: 50%;
+  width: 100%;
   justify-self: center;
 }
 .rightWrapBtm figure {
+  visibility: hidden;
   max-width: 527px;
   padding: 2rem;
-  visibility: hidden;
+}
+
+@media (min-width: 850px) {
+  .testimonials {
+    flex-direction: row;
+  }
+  .leftWrapTop {
+    width: 50%;
+    background: url("../images/kim.jpg");
+    background-size: cover;
+    background-position: 50% 35%;
+    padding: 2rem;
+  }
+  .leftWrapTop .figure {
+    visibility: hidden;
+  }
+  .rightWrapTop {
+    width: 50%;
+    display: block;
+  }
+  .leftWrapBtm {
+    width: 50%;
+  }
+  .rightWrapBtm {
+    width: 50%;
+  }
+  .figure {
+    margin: 4rem 2rem;
+    visibility: visible;
+  }
 }

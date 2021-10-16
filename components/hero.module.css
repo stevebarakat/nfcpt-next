@@ -24,7 +24,10 @@
   font-weight: 1.5rem;
   z-index: 99;
 }
-
+.logo{
+  z-index: 9999999;
+  position: relative;
+}
 
 @media (min-width: 700px) {
   .hero {
@@ -33,7 +36,8 @@
   .headline {
     font-size: 5rem;
   }
-  .mobileLogo{
+  .logo{
     display: none;
+    z-index: -1;
   }
 }

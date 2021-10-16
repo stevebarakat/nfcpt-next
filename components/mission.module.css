@@ -1,12 +1,13 @@
 .mission {
   display: grid;
   grid-template-columns: 1fr;
+  row-gap: 2rem;
   max-width: 100%;
   background: white;
   border-top: 4px solid white;
   font-family: "Montserrat";
   color: #454545;
-  padding: 6rem 0 4rem;
+  padding: 4rem 0;
   position: relative;
 }
 
@@ -19,6 +20,7 @@
   max-width: 527px;
   width: 100%;
   padding: 2rem;
+  justify-self: center;
 }
 .missionRightWrap {
   z-index: 55;
@@ -27,7 +29,7 @@
   align-self: center;
   width: 100%;
   border-left: none;
-  border-top: 4px solid var(--primaryColor);
+  /* border-top: 4px solid var(--primaryColor); */
   padding: 2rem;
   height: 100%;
 }
@@ -44,7 +46,7 @@
 .missionSubHeader {
   padding-bottom: .5rem;
   display: block;
-  font-size: 1rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   font-weight: 800;
   color: var(--primaryColor);
@@ -58,16 +60,20 @@
 }
 
 .missionList li {
-  
+  padding-left: 1.5rem;
+  line-height: 1.5rem;
 }
 
 .missionList li:before {
   content: url("../images/check.svg");
   display: inline-block;
-  width: 1rem;
-  height: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
   position: relative;
   top: 0.35rem;
+  left: 0;
+  margin-left: -2rem;
+  margin-right: 0.5rem;
 }
 
 /* .missionList li svg {
@@ -78,10 +84,10 @@
 
 @media (min-width: 700px) {
   .mission{
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
   .missionSubHeader {
-    grid-template-columns: repeat(2, 1fr );
+    grid-template-columns: repeat(2, 1fr);
   }
   .missionLeftWrap {
     justify-self: flex-end;

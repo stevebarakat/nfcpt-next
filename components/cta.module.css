@@ -8,7 +8,6 @@
   z-index: 9;
   width: 100vw;
   height: auto;
-  /* position: absolute; */
 }
 
 .ctaForm {
@@ -21,6 +20,8 @@
   background: white;
   border: none;
   box-shadow: inset 1px 1px 2px 0 #9a9a9a;
+  padding: 0.5rem;
+  max-width: 50%;
 }
 
 .ctaLeftWrap {
@@ -28,7 +29,7 @@
   width: 100%;
   justify-self: center;
   align-self: center;
-  padding-right: 2rem;
+  padding: 2rem;
 }
 .ctaRightWrap {
   border-left: none;
@@ -36,6 +37,16 @@
   width: 100%;
   background: var(--accentColor);
   padding: 2rem;
+  width: 100%;
+}
+
+.ctaRightWrap div {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ctaRightWrap div input{
+  /* padding: 1rem; */
 }
 
 .ctaHeader {
@@ -47,29 +58,22 @@
 
 .ctaSubHeader {
   padding-top: .5rem;
-  display: block;
+  display: inline-block;
   font-size: 1rem;
   text-transform: uppercase;
   font-weight: 500;
-}
-.ctaButton {
-  background: #454545;
-  border: none;
-  color: white;
-  padding: 0 2rem;
+  text-align: center;
 }
 .ctaDescription{
   font-size: 0.75rem;
   display: block;
   width: 30ch;
+  margin: 0 auto;
 }
 
 @media (min-width: 700px) {
   .ctaHeader{
     font-size: 2rem;
-  }
-  .ctaSubHeader {
-    grid-template-columns: repeat(2, 1fr );
   }
   .ctaLeftWrap {
     justify-self: flex-end;
@@ -77,5 +81,15 @@
   .ctaRightWrap {
     border-left: 2px solid white;
     border-top: none;
+  }  
+  .ctaRightWrap div {
+    text-align: left;
+    margin: 0;
+  }
+  .ctaDescription {
+    margin: 0;
+  }
+  .ctaForm input {
+    max-width: 100%;
   }  
 }
