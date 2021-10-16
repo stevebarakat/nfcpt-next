@@ -1,16 +1,15 @@
-.hamburger,
-.close {
+.hamburger {
   color: white;
   z-index: 55555;
-  padding: 1rem;
   margin: 1rem;
-}
-.hamburger {
   position: fixed;
-  background: var(--blackColor);
+  background: var(--primaryColor);
+  width: 50px;
+  height: 50px;
 }
 .hidden {
   font-size: 0;
+  position: absolute;
 }
 .nav {
   background-color: var(--primaryColor);
@@ -113,6 +112,7 @@
 .logo {
   padding: 1rem;
   display: block;
+  padding-left: 5rem;
 }
 .mobileLogo{
   z-index: 1;
@@ -125,7 +125,14 @@
 .tel {
   padding: 1rem;
 }
+
 @media (min-width: 850px) {
+  .container {
+    max-width: 1122px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem; 
+  }
   .logo {
     padding-top: 4px;
     padding-left: 4px;

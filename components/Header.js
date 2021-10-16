@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import Hamburger from 'hamburger-react'
 import styles from './header.module.css'
 import { FaCaretDown, FaChevronRight, FaBars, FaTimes } from 'react-icons/fa';
 import useOnClickOutside from '../hooks/useOnClickOutside';
@@ -10,9 +11,11 @@ import mobileLogo from '../images/mobile-logo.svg';
 const Header = () => {
   const aboutEl = useRef();
   const servicesEl = useRef();
+  const navLink = useRef();
   const [mobile, setMobile] = useState(false);
   const [toggleAbout, setToggleAbout] = useState(false);
   const [toggleServices, setToggleServices] = useState(false);
+  const [toggleMenu, setToggleMenu] = useState(true);
   useOnClickOutside(aboutEl, () => setToggleAbout(false));
   useOnClickOutside(servicesEl, () => setToggleServices(false));
 
@@ -33,14 +36,13 @@ const Header = () => {
     }
   }
 
-  let navLink;
   useEffect(() => {
     window.addEventListener("load", handleResize)
     window.addEventListener("resize", handleResize)
     if (!mobile) {
-      navLink = `#`
+      navLink.current = `#`
     } else {
-      navLink = `#navbar`
+      navLink.current = `#navbar`
     }
     return (
       () => {
@@ -48,7 +50,7 @@ const Header = () => {
         window.removeEventListener("resize", handleResize)
       }
     )
-  }, [])
+  }, [mobile])
 
 
   function handleKeyDown(e) {
@@ -77,23 +79,22 @@ const Header = () => {
   }
   return (
     <div className="flex">
-
-      <a className={styles.hamburger} href="#navbar" aria-label="Open main menu">
+      <a onClick={() => setToggleMenu(toggleMenu => !toggleMenu)} className={styles.hamburger} href={toggleMenu === false ? "#navbar" : "#"} aria-label="Open main menu">
         <span className={styles.hidden}>Open main menu</span>
-        <FaBars />
+        <Hamburger className={styles.hamburger} size={20} onClick={() => setToggleMenu(toggleMenu => !toggleMenu)} />
       </a>
       <span className={styles.mobileLogo}>
         <Image src={mobileLogo} width="350px" quality="100" alt="North Florida Chiropractic Physical Therapy" />
       </span>
       <nav className={styles.nav} id="navbar">
-        <a className={styles.close} href="#" aria-label="Close main menu">
+        {/* <a className={styles.close} href="#" aria-label="Close main menu">
           <span className={styles.hidden}>Close main menu</span>
           <div style={{ display: "flex", gap: "0.25em", background: "white", color: "black", padding: "0.5em", float: "right" }}>
             Close
             <FaTimes />
           </div>
-        </a>
-        <div className="container">
+        </a> */}
+        <div className={styles.container}>
           <div className={styles.menu}>
             <span className={styles.logo}>
               <Image src={logo} quality="100" alt="North Florida Chiropractic Physical Therapy" />
@@ -109,7 +110,7 @@ const Header = () => {
                 className={styles.dropdown}
                 ref={aboutEl}
               >
-                <a href={navLink}><div style={{ display: "flex" }}>About<FaCaretDown /></div></a>
+                <a href={navLink.current}><div style={{ display: "flex" }}>About<FaCaretDown /></div></a>
                 <ul onKeyDown={handleKeyDown}
                   style={!toggleAbout ? { display: "none" } : { display: "block" }}
                   className={styles.dropdownMenu}>
@@ -125,7 +126,7 @@ const Header = () => {
                 className={styles.dropdown}
                 ref={servicesEl}
               >
-                <a href={navLink}>
+                <a href={navLink.current}>
                   <div style={{ display: "flex" }}>Services<FaCaretDown /></div></a>
                 <ul onKeyDown={handleKeyDown}
                   style={!toggleServices ? { display: "none" } : { display: "block" }}
