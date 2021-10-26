@@ -1,12 +1,17 @@
 .footer {
   background: var(--blackColor);
-  color: var(--whiteColor10);
   font-size: 13px;
   font-weight: 500;
   border-top: 4px solid white;
   padding: 2rem 0;
+  color: var(--whiteColor10);
 }
 
+.footer li {
+  color: var(--whiteColor10);
+  line-height: 2.25rem;
+  font-size: 1rem;
+}
 .upperFooter {
   display: flex;
   flex-wrap: wrap;

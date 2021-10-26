@@ -1,27 +1,29 @@
 .hero {
-  min-height: 87vh;
-  min-height: 100vh;
+  min-height: calc(100vh - 2.5rem);
+  min-height: 107.5vh;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   position: relative;
-  top: 100px;
+  margin-bottom: -6.5rem;
 }
 
 .headline {
-  margin-top: -26vh;
-  color: white; 
+  /* margin-top: -26vh; */
+  color: white;
   font-size: 3rem;
   font-weight: 900;
   font-family: Montserrat;
   letter-spacing: -0.15rem;
   display: inline-block;
   z-index: 99;
+  /* padding-bottom: 1rem; */
 }
 
-.description{
-  max-width: 60ch;
+.description {
+  padding-top: 1rem;
+  max-width: 40ch;
   display: inline-block;
   line-height: 1.75rem;
   color: white;
@@ -30,13 +32,13 @@
 }
 
 @media (min-width: 700px) {
-  .hero {
-    min-height: 100vh;
+  .description {
+    max-width: 60ch;
   }
   .headline {
     font-size: 4rem;
   }
-  .mobileLogo{
+  .mobileLogo {
     display: none;
   }
 }

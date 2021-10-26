@@ -17,14 +17,14 @@
 
 .missionLeftWrap {
   z-index: 55;
-  max-width: 527px;
+  max-width: 675px;
   width: 100%;
   padding: 2rem;
   justify-self: center;
 }
 .missionRightWrap {
   z-index: 55;
-  max-width: 527px;
+  max-width: 675px;
   justify-self: center;
   align-self: center;
   width: 100%;
@@ -59,8 +59,8 @@
 
 .missionList li {
   padding-left: 1.5rem;
-  padding-top: 1.5rem;
-  line-height: 1.5rem;
+  /* padding-top: 1.5rem; */
+  line-height: 2rem;
 }
 
 .missionList li:before {
@@ -81,7 +81,7 @@
   padding-right: 0.25rem;
 } */
 
-@media (min-width: 700px) {
+@media (min-width: 850px) {
   .mission {
     grid-template-columns: repeat(2, 1fr);
   }

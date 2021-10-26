@@ -32,11 +32,12 @@
 }
 
 .h2 {
-  font-size: 2rem;
+  font-size: 3.25rem;
   margin: 0 auto;
   text-align: center;
   font-weight: 800;
-  color: #fefdfc;
+  color: var(--whiteColor);
+  padding-bottom: 2rem;
 }
 
 .treatmentsWrap {
@@ -47,7 +48,7 @@
     #20a0e5 51%,
     #0095e6 100%
   );
-  padding: 4rem 0;
+  padding: 6rem 0;
 }
 
 @media (min-width: 700px) {
