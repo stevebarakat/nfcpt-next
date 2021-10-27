@@ -4,7 +4,8 @@ import coupon from "../images/new-patient-vertical.svg";
 import margaret from "../images/margaret.jpg";
 import Button from "./Button";
 
-const Sidebar = () => {
+const Sidebar = ({ testimonialContent, testimonialImage }) => {
+  console.log(testimonialContent);
   return (
     <aside>
       <div
@@ -51,15 +52,14 @@ const Sidebar = () => {
       >
         <div className={styles.testimonialImg}>
           <Image
-            quality={100}
             src={margaret}
+            quality={100}
             alt="Picture of the author"
           />
         </div>
         <blockquote>
           <span className={styles.testimonial}>
-            Keeping my body aligned and free of pain with regular
-            chiropractic care is essential.
+            {testimonialContent}
           </span>
         </blockquote>
       </div>
