@@ -20,11 +20,12 @@ export default function Page({ page }) {
       <Layout>
         <div className={styles.mastheadWrap}>
           <Image
+            unoptimized={process.env.ENVIRONMENT !== "PRODUCTION"}
             layout="fill"
             objectFit="cover"
             objectPosition="center"
             quality={100}
-            src={shoes}
+            src={page.featuredImage.node.sourceUrl}
             alt="Picture of the author"
           />
           <div className={`${styles.heading} container`}>
@@ -92,6 +93,12 @@ export async function getStaticProps({ params }) {
         pageBy(uri: $slug) {
           title
           content
+          featuredImage {
+            node {
+              caption
+              sourceUrl
+            }
+          }
           testimonials {
             testimonialcontent
             testimonialphoto {

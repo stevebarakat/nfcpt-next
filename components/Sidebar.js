@@ -52,7 +52,9 @@ const Sidebar = ({ testimonialContent, testimonialImage }) => {
       >
         <div className={styles.testimonialImg}>
           <Image
-            src={margaret}
+            src={testimonialImage}
+            width="300px"
+            height="300px"
             quality={100}
             alt="Picture of the author"
           />
