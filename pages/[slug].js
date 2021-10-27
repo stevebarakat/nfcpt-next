@@ -5,7 +5,7 @@ export default function Page({ page }) {
   return (
     <div>
       <h1>{page.title}</h1>
-      <p dangerouslySetInnerHTML={{ __html: page.content }}></p>
+      <div dangerouslySetInnerHTML={{ __html: page.content }}></div>
     </div>
   );
 }
