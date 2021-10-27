@@ -1,14 +1,14 @@
 import React from "react";
-import Image from 'next/image';
-import styles from './treatments.module.css';
-import hip from '../images/hip.jpg';
-import carpalTunnel from '../images/carpal-tunnel.jpg';
-import headache from '../images/headache.jpg';
-import pinchedNerve from '../images/pinched-nerve.jpg';
-import sportsInjury from '../images/sports-injury.jpg';
-import slippedDisk from '../images/slipped-disk.jpg';
-import tendonitis from '../images/tendonitis.jpg';
-import whiplash from '../images/whiplash.jpg';
+import Image from "next/image";
+import styles from "./treatments.module.css";
+import hip from "../images/hip.jpg";
+import carpalTunnel from "../images/carpal-tunnel.jpg";
+import headache from "../images/headache.jpg";
+import pinchedNerve from "../images/pinched-nerve.jpg";
+import sportsInjury from "../images/sports-injury.jpg";
+import slippedDisk from "../images/slipped-disk.jpg";
+import tendonitis from "../images/tendonitis.jpg";
+import whiplash from "../images/whiplash.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -17,9 +17,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 // import Swiper core and required modules
-import SwiperCore, {
-  Autoplay, Pagination, Navigation
-} from 'swiper'
+import SwiperCore, { Autoplay, Pagination, Navigation } from "swiper";
 
 // install Swiper modules
 SwiperCore.use([Autoplay, Pagination, Navigation]);
@@ -38,39 +36,41 @@ const Treatments = () => {
           loopFillGroupWithBlank={true}
           centeredSlides={true}
           autoplay={{
-            "delay": 2500,
-            "disableOnInteraction": true
+            delay: 2500,
+            disableOnInteraction: true,
           }}
           pagination={{
-            "clickable": true
+            clickable: true,
           }}
           // navigation={true}
           breakpoints={{
-            "300": {
+            300: {
               slidesPerView: 1,
-              spaceBetween: 20
+              spaceBetween: 20,
             },
-            "470": {
+            470: {
               slidesPerView: 2,
-              spaceBetween: 40
+              spaceBetween: 40,
             },
-            "540": {
+            540: {
               slidesPerView: 3,
-              spaceBetween: 20
+              spaceBetween: 20,
             },
-            "768": {
+            768: {
               slidesPerView: 4,
-              spaceBetween: 40
+              spaceBetween: 40,
             },
-            "1024": {
+            1024: {
               slidesPerView: 5,
-              spaceBetween: 50
-            }
+              spaceBetween: 50,
+            },
           }}
         >
           <SwiperSlide>
             <div className={styles.card}>
-              <span className={styles.cardHeader}>Hip & Join Pain</span>
+              <span className={styles.cardHeader}>
+                Hip & Join Pain
+              </span>
               <div>
                 <Image src={hip} alt="Hip & Join Pain" />
               </div>
@@ -86,7 +86,9 @@ const Treatments = () => {
           </SwiperSlide>
           <SwiperSlide>
             <div className={styles.card}>
-              <span className={styles.cardHeader}>Migrane Headaches</span>
+              <span className={styles.cardHeader}>
+                Migrane Headaches
+              </span>
               <div>
                 <Image src={headache} alt="Migrane Headaches" />
               </div>
@@ -102,7 +104,9 @@ const Treatments = () => {
           </SwiperSlide>
           <SwiperSlide>
             <div className={styles.card}>
-              <span className={styles.cardHeader}>Sports Injuries</span>
+              <span className={styles.cardHeader}>
+                Sports Injuries
+              </span>
               <div>
                 <Image src={sportsInjury} alt="Sports Injuries" />
               </div>
@@ -110,7 +114,9 @@ const Treatments = () => {
           </SwiperSlide>
           <SwiperSlide>
             <div className={styles.card}>
-              <span className={styles.cardHeader}>Sciatica & Herniated Disk</span>
+              <span className={styles.cardHeader}>
+                Sciatica & Herniated Disk
+              </span>
               <div>
                 <Image src={slippedDisk} alt="Herniated Disk" />
               </div>
@@ -118,7 +124,9 @@ const Treatments = () => {
           </SwiperSlide>
           <SwiperSlide>
             <div className={styles.card}>
-              <span className={styles.cardHeader}>Tendonitis & Bursitis</span>
+              <span className={styles.cardHeader}>
+                Tendonitis & Bursitis
+              </span>
               <div>
                 <Image src={tendonitis} alt="Tendonitis & Bursitis" />
               </div>

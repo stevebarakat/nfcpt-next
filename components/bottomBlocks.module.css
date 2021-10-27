@@ -42,26 +42,22 @@
   background-position: 50% 35%;
   display: flex;
   justify-content: center;
+  padding: 4rem;
 }
 .leftWrapTop div {
   max-width: 675px;
-  padding: 4rem 2rem;
   color: white;
   text-align: center;
 }
 
 .rightWrapTop {
-  position: relative;
   width: 100%;
+  position: relative;
   justify-self: center;
   align-self: center;
-  /* background: url("../images/ray-sm.jpg"); */
   background-size: cover;
   background-position: 50% 35%;
-  padding: 2rem;
-  width: 100%;
-  justify-self: center;
-  align-self: center;
+  padding: 4rem;
   color: #787878;
   display: none;
 }
@@ -75,7 +71,7 @@
   color: var(--whiteColor);
   display: flex;
   justify-content: flex-end;
-  padding: 2rem;
+  padding: 4rem;
   display: none;
 }
 
@@ -98,7 +94,7 @@
   background: url("../images/trio-sm-pink.jpg");
   background-size: cover;
   background-position: 50% 35%;
-  padding: 4rem 0;
+  padding: 4rem;
   width: 100%;
   justify-self: center;
   color: white;
@@ -128,6 +124,7 @@
   }
   .rightWrapTop {
     width: 50%;
+    max-width: 675px;
     display: block;
   }
   .leftWrapBtm {

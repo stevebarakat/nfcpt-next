@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import Hero from "../components/Hero";
 import Intro from "../components/Intro";
 import CallToAction from "../components/CallToAction";
@@ -6,8 +7,35 @@ import Treatments from "../components/Treatments";
 import BottomBlocks from "../components/BottomBlocks";
 import Mission from "../components/Mission";
 import Layout from "../components/Layout";
+import { gql } from "@apollo/client";
+import { client } from "../lib/apollo";
 
-export default function Home() {
+export async function getStaticProps() {
+  const result = await client.query({
+    query: gql`
+      query GetWPPages {
+        pages {
+          nodes {
+            title
+            uri
+            content
+            date
+            slug
+          }
+        }
+      }
+    `,
+  });
+  console.log(result);
+
+  return {
+    props: {
+      pages: result.data.pages.nodes,
+    },
+  };
+}
+
+export default function Home({ pages }) {
   return (
     <>
       <Head>
@@ -27,6 +55,7 @@ export default function Home() {
         {/* <CallToAction /> */}
         <Treatments />
         <BottomBlocks />
+        <pre>{JSON.stringify(pages, null, 2)}</pre>
       </Layout>
     </>
   );

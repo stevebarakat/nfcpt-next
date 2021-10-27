@@ -28,7 +28,11 @@
   width: 100%;
   justify-self: center;
   align-self: center;
-  padding: 2rem 1rem;
+  padding: 4rem 2rem;
+}
+.ctaLeftWrap p {
+  color: white;
+  line-height: 2rem;
 }
 .ctaRightWrap {
   border-left: none;
@@ -70,6 +74,7 @@
   display: block;
   margin: 0 auto;
   max-width: 30ch;
+  color: white;
 }
 
 .stats {
@@ -109,8 +114,6 @@
     font-size: 1.5rem;
   }
   .ctaLeftWrap {
-    padding-left: 0;
-    padding-right: 2rem;
     justify-self: flex-end;
   }
   .ctaRightWrap {

@@ -170,6 +170,9 @@ button {
     "Helvetica Neue", sans-serif;
   font-family: "Inter";
 }
+code {
+  font-family: "Menlo";
+}
 p {
   padding-bottom: 2rem;
 }
@@ -357,6 +360,4 @@ article p {
   --whiteColor: #e4e7ec;
   --whiteColor10: #c6ccd7;
   --transparentWhite50: hsla(0, 100%, 100%, 0.25);
-
-  --pageWidth: 1350px;
 }

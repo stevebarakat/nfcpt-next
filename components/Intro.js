@@ -1,18 +1,23 @@
-import styles from './intro.module.css'
-import Button from './Button'
-import Image from 'next/image'
-import special from '../images/new-patient-horizontal.svg'
+import styles from "./intro.module.css";
+import Button from "./Button";
+import Image from "next/image";
+import special from "../images/new-patient-horizontal.svg";
 
 const CallToAction = () => (
   <div className={styles.cta}>
     <div className="grid2">
       <div className={styles.ctaLeftWrap}>
-        <span className={styles.ctaHeader}>Car Accident Chiropractor</span>
-        <span className={styles.ctaSubHeader}>Take the first step</span>
+        <span className={styles.ctaHeader}>
+          Car Accident Chiropractor
+        </span>
+        <span className={styles.ctaSubHeader}>
+          Take the first step
+        </span>
         <p>
-          Whether you’re seeking pain relief or preventative care, you can
-          expect our patient-centric approach to be new and different from any
-          healthcare experience you’ve had before. Perhaps even life-changing.
+          Whether you’re seeking pain relief or preventative care, you
+          can expect our patient-centric approach to be new and
+          different from any healthcare experience you’ve had before.
+          Perhaps even life-changing.
         </p>
       </div>
       <div className={styles.ctaRightWrap}>
@@ -33,6 +38,6 @@ const CallToAction = () => (
       </div>
     </div>
   </div>
-)
+);
 
-export default CallToAction
+export default CallToAction;
