@@ -55,7 +55,17 @@ export default function Home({ pages }) {
         {/* <CallToAction /> */}
         <Treatments />
         <BottomBlocks />
-        <pre>{JSON.stringify(pages, null, 2)}</pre>
+        <ul>
+          {pages.map(({ uri, slug, title, content }) => {
+            return (
+              <li key="uri">
+                <Link href={uri}>
+                  <a>{title}</a>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
       </Layout>
     </>
   );
