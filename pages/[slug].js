@@ -1,11 +1,11 @@
 import { gql } from "@apollo/client";
-import { client } from "../../apollo";
+import { client } from "../lib/apollo";
 
-export default function Page({ post }) {
+export default function Page({ page }) {
   return (
     <div>
-      <h1>{post.title}</h1>
-      <p>{post.content}</p>
+      <h1>{page.title}</h1>
+      <p>{page.content}</p>
     </div>
   );
 }
@@ -14,18 +14,20 @@ export async function getStaticPaths() {
   const result = await client.query({
     query: gql`
       query GetWordPressPosts {
-        posts {
+        pages {
           nodes {
+            uri
             slug
           }
         }
       }
     `,
   });
+  console.log(result);
   return {
-    paths: await result.data.posts.nodes.map(({ slug }) => {
+    paths: await result.data.pages.nodes.map((uri) => {
       return {
-        params: { slug },
+        params: uri,
       };
     }),
     fallback: false,
@@ -33,21 +35,22 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const { slug } = params;
-  const result = client.query({
+  const { slug } = await params;
+  const result = await client.query({
     query: gql`
-      query GetWordPressPostsBySlug {
-        postBy(slug: "hello-world") {
+      query GetWordPressPostsBySlug($slug: String!) {
+        pageBy(uri: $slug) {
           title
           content
         }
       }
     `,
+    variables: { slug },
   });
   console.log(result);
   return {
     props: {
-      post: { title: result, content: "ubu" },
+      page: result.data.pageBy,
     },
   };
 }

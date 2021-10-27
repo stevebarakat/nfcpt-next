@@ -28,10 +28,11 @@ export async function getStaticPaths() {
       }
     `,
   });
+  console.log(result);
   return {
-    paths: await result.data.pages.nodes.map(({ slug }) => {
+    paths: await result.data.pages.nodes.map((uri) => {
       return {
-        params: { slug },
+        params: uri,
       };
     }),
     fallback: false,
@@ -39,11 +40,11 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const { uri } = params;
+  const { uri } = await params;
   const result = await client.query({
     query: gql`
       query GetWordPressPostsBySlug {
-        postBy(uri: "first-visit") {
+        pageBy(uri: "first-visit") {
           title
           content
         }
@@ -53,7 +54,7 @@ export async function getStaticProps({ params }) {
   console.log(result);
   return {
     props: {
-      page: { title: result, content: "ubu" },
+      page: result.data.pageBy,
     },
   };
 }
