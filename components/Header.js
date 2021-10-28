@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef } from "react";
+import { gql, useQuery } from "@apollo/client";
+import { client } from "../lib/apollo";
 import Hamburger from "hamburger-react";
 import styles from "./header.module.css";
 import {
@@ -13,7 +15,35 @@ import Image from "next/image";
 import logo from "../images/logo.svg";
 import mobileLogo from "../images/mobile-logo.svg";
 
-const Header = () => {
+const PRIMARY_MENU = gql`
+  query GetPrimaryMenu {
+    menus(where: { slug: "primary" }) {
+      edges {
+        node {
+          menuItems(where: {}) {
+            edges {
+              node {
+                childItems {
+                  edges {
+                    node {
+                      label
+                      path
+                    }
+                  }
+                }
+                label
+                path
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+const Header = ({ menu }) => {
+  const { loading, error, data } = useQuery(PRIMARY_MENU);
   const aboutEl = useRef();
   const servicesEl = useRef();
   const navLink = useRef();
@@ -157,7 +187,7 @@ const Header = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/plans">
+                    <Link href="/pricing-plans">
                       <a>Plans</a>
                     </Link>
                   </li>

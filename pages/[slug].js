@@ -45,15 +45,7 @@ export default function Page({ page }) {
                   dangerouslySetInnerHTML={{ __html: page.content }}
                 ></div>
               </article>
-              <Sidebar
-                testimonialContent={
-                  page.testimonials.testimonialcontent
-                }
-                testimonialImage={
-                  page?.testimonials?.testimonialphoto &&
-                  page?.testimonials?.testimonialphoto?.sourceUrl
-                }
-              />
+              <Sidebar />
             </div>
           </div>
         </main>
@@ -100,18 +92,11 @@ export async function getStaticProps({ params }) {
               sourceUrl
             }
           }
-          testimonials {
-            testimonialcontent
-            testimonialphoto {
-              sourceUrl
-            }
-          }
         }
       }
     `,
     variables: { slug },
   });
-  console.log(result);
   return {
     props: {
       page: result.data.pageBy,

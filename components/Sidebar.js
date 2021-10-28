@@ -3,9 +3,35 @@ import Image from "next/image";
 import coupon from "../images/new-patient-vertical.svg";
 import margaret from "../images/margaret.jpg";
 import Button from "./Button";
+import { gql, useQuery } from "@apollo/client";
+import { client } from "../lib/apollo";
 
-const Sidebar = ({ testimonialContent, testimonialImage }) => {
-  console.log(testimonialContent);
+const TESTIMONIALS = gql`
+  query GetTestimonials {
+    pageBy(uri: "settings-page") {
+      pageSettings {
+        testimonials {
+          testimonial {
+            testimonialContent
+            testimonialPhoto {
+              sourceUrl
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+const Sidebar = () => {
+  const { loading, error, data } = useQuery(TESTIMONIALS);
+  console.log(data);
+  const testimonialPhoto =
+    data?.pageBy?.pageSettings.testimonials[1].testimonial
+      .testimonialPhoto.sourceUrl;
+  const testimonialContent =
+    data?.pageBy?.pageSettings.testimonials[1].testimonial
+      .testimonialContent;
   return (
     <aside>
       <div
@@ -51,9 +77,9 @@ const Sidebar = ({ testimonialContent, testimonialImage }) => {
         style={{ background: "var(--primaryColor)" }}
       >
         <div className={styles.testimonialImg}>
-          {testimonialImage && (
+          {testimonialPhoto && (
             <Image
-              src={testimonialImage}
+              src={testimonialPhoto}
               width="300px"
               height="300px"
               quality={100}
