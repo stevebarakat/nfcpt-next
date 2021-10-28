@@ -29,7 +29,6 @@
   align-self: center;
   width: 100%;
   border-left: none;
-  /* border-top: 4px solid var(--primaryColor); */
   padding: 2rem;
   height: 100%;
 }
@@ -75,12 +74,6 @@
   margin-right: 0.5rem;
 }
 
-/* .missionList li svg {
-  color: #787878;
-  font-size: 2rem;
-  padding-right: 0.25rem;
-} */
-
 @media (min-width: 850px) {
   .mission {
     grid-template-columns: repeat(2, 1fr);
@@ -104,4 +97,27 @@
     justify-self: flex-start;
     align-self: center;
   }
+}
+
+.stats {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 3rem;
+  color: var(--grey);
+}
+.stat {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-family: Inter;
+  font-size: 3rem;
+  font-weight: 900;
+  width: fit-content;
+}
+
+.stat span:last-child {
+  text-align: center;
+  font-weight: 500;
+  font-size: 0.875rem;
 }

@@ -9,7 +9,7 @@ const CallToAction = () => {
   const countUpRef = useRef(null);
   const { pauseResume } = useCountUp({
     ref: countUpRef,
-    start: -1000,
+    start: 0.01,
     end: 20,
     delay: 1000,
     duration: 5,
@@ -37,6 +37,39 @@ const CallToAction = () => {
           </p>
         </div>
         <div className={styles.ctaRightWrap}>
+          <div>
+            <span className={styles.ctaHeader}>
+              Begin The New You
+            </span>
+            <span className={styles.ctaSubHeader}>
+              Take the first step
+            </span>
+            <form className={styles.ctaForm}>
+              <div className="flex">
+                <input
+                  className="text-input"
+                  type="email"
+                  placeholder="you@mail.com"
+                  required
+                />
+                <Button
+                  side="right"
+                  color="var(--darkGrey)"
+                  borderColor="var(--whiteColor)"
+                  textColor="white"
+                  style={{ padding: "0.5rem" }}
+                >
+                  Do it!
+                </Button>
+              </div>
+            </form>
+            <span className={styles.ctaDescription}>
+              Sign up to receive our complimentary wellness guide and
+              a free consultation.
+            </span>
+          </div>
+        </div>
+        {/* <div className={styles.ctaRightWrap}>
           <div className={styles.stats}>
             <div className={styles.stat}>
               <span>
@@ -53,7 +86,7 @@ const CallToAction = () => {
               <span>Settlement Claims</span>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
