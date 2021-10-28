@@ -33,7 +33,7 @@ const Sidebar = () => {
     data?.pageBy?.pageSettings.testimonials[1].testimonial
       .testimonialContent;
   return (
-    <aside>
+    <aside className={styles.sidebar}>
       <div
         className={styles.sidebarWidget}
         style={{ background: "var(--accentColor)" }}
@@ -80,8 +80,9 @@ const Sidebar = () => {
           {testimonialPhoto && (
             <Image
               src={testimonialPhoto}
-              width="300px"
-              height="300px"
+              layout="fill"
+              objectFit="cover"
+              objectPosition="center"
               quality={100}
               alt="Picture of the author"
             />
