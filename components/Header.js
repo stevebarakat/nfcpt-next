@@ -177,7 +177,7 @@ const Header = ({ menu }) => {
                   className={styles.dropdownMenu}
                 >
                   <li>
-                    <Link href="/about">
+                    <Link href="/about-us">
                       <a>About Us</a>
                     </Link>
                   </li>
@@ -216,7 +216,7 @@ const Header = ({ menu }) => {
                   className={styles.dropdownMenu}
                 >
                   <li>
-                    <Link href="/chiropractic">
+                    <Link href="/chiropractic-services">
                       <a>Chiropractic Services</a>
                     </Link>
                   </li>

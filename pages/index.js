@@ -17,8 +17,8 @@ export async function getStaticProps() {
         pageBy(uri: "homepage") {
           title
           homeSettings {
-            herodescription
-            heroheadline
+            heroDescription
+            heroHeadline
           }
         }
       }
@@ -32,7 +32,7 @@ export async function getStaticProps() {
 }
 
 export default function Home({ home }) {
-  console.log(home.title);
+  // console.log(home.title);
   return (
     <>
       <Head>
