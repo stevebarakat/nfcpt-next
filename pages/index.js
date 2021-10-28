@@ -5,7 +5,7 @@ import Intro from "../components/Intro";
 import CallToAction from "../components/CallToAction";
 import Treatments from "../components/Treatments";
 import BottomBlocks from "../components/BottomBlocks";
-// import Mission from "../components/Mission";
+import Mission from "../components/Mission";
 import Layout from "../components/Layout";
 import { gql } from "@apollo/client";
 import { client } from "../lib/apollo";
@@ -48,7 +48,7 @@ export default function Home({ home }) {
           description={home.homeSettings.herodescription}
         />
         <CallToAction />
-        {/* <Mission /> */}
+        <Mission />
         <Treatments />
         <BottomBlocks />
         <Intro />

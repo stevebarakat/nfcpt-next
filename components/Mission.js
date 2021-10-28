@@ -5,19 +5,19 @@ import styles from "./mission.module.css";
 import { FaCheckCircle } from "react-icons/fa";
 
 const Mission = () => {
-  // const countUpRef = useRef(null);
-  // const { pauseResume } = useCountUp({
-  //   ref: countUpRef,
-  //   start: 0.01,
-  //   end: 20,
-  //   delay: 1000,
-  //   duration: 5,
-  //   suffix: "Y+",
-  // });
+  const countUpRef = useRef(null);
+  const { pauseResume } = useCountUp({
+    ref: countUpRef,
+    start: 0.01,
+    end: 20,
+    delay: 1000,
+    duration: 5,
+    suffix: "Y+",
+  });
 
-  // useEffect(() => {
-  //   pauseResume();
-  // }, [pauseResume]);
+  useEffect(() => {
+    pauseResume();
+  }, [pauseResume]);
 
   return (
     <div className={styles.mission}>
@@ -53,11 +53,13 @@ const Mission = () => {
           </ul>
           <div className={styles.stats}>
             <div className={styles.stat}>
-              <span>{/* <i ref={countUpRef}></i> */}</span>
+              <span>
+                <i ref={countUpRef}></i>
+              </span>
               <span>Serving Orange Park</span>
             </div>
             <div className={styles.stat}>
-              {/* <CountUp end={100} duration={5} suffix="K" /> */}
+              <CountUp end={100} duration={5} suffix="K" />
               <span>Patients Served</span>
             </div>
             <div className={styles.stat}>
