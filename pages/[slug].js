@@ -50,7 +50,8 @@ export default function Page({ page }) {
                   page.testimonials.testimonialcontent
                 }
                 testimonialImage={
-                  page.testimonials.testimonialphoto.sourceUrl
+                  page?.testimonials?.testimonialphoto &&
+                  page?.testimonials?.testimonialphoto?.sourceUrl
                 }
               />
             </div>

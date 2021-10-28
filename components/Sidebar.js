@@ -51,13 +51,15 @@ const Sidebar = ({ testimonialContent, testimonialImage }) => {
         style={{ background: "var(--primaryColor)" }}
       >
         <div className={styles.testimonialImg}>
-          <Image
-            src={testimonialImage}
-            width="300px"
-            height="300px"
-            quality={100}
-            alt="Picture of the author"
-          />
+          {testimonialImage && (
+            <Image
+              src={testimonialImage}
+              width="300px"
+              height="300px"
+              quality={100}
+              alt="Picture of the author"
+            />
+          )}
         </div>
         <blockquote>
           <span className={styles.testimonial}>
