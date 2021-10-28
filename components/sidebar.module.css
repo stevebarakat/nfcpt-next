@@ -45,20 +45,14 @@
   border-radius: 90%;
 }
 
-@media (max-width: 1050px) {
-  .sidebar {
-    top: 0;
-  }
-}
-
 @media (min-width: 700px) and (max-width: 1050px) {
   .sidebarWidget {
     flex-direction: row;
   }
 }
 
-@media (max-width: 699px) {
-  .sidebarWidget {
-    flex-direction: column-reverse;
+@media (max-width: 1050px) {
+  .sidebar {
+    top: 0;
   }
 }

@@ -28,23 +28,19 @@
   width: 100%;
   justify-self: center;
   align-self: center;
-  padding: 2rem 1rem;
+  /* padding: 2rem 1rem; */
 }
 .ctaRightWrap {
   border-left: none;
   border-top: 4px solid white;
   width: 100%;
   background: var(--accentGradient);
-  padding: 4rem 2rem;
+  padding: 2rem 1rem;
 }
 
 .ctaRightWrap div {
   max-width: 30ch;
   margin: 0 auto;
-}
-
-.ctaRightWrap div input {
-  /* padding: 1rem; */
 }
 
 .ctaHeader {
