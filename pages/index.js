@@ -26,13 +26,13 @@ export async function getStaticProps() {
   });
   return {
     props: {
-      home: result.data.pageBy,
+      home: await result.data.pageBy,
     },
   };
 }
 
 export default function Home({ home }) {
-  // console.log(home.title);
+  console.log(home.title);
   return (
     <>
       <Head>
@@ -44,8 +44,8 @@ export default function Home({ home }) {
       </Head>
       <Layout>
         <Hero
-          headline={home.homeSettings.heroheadline}
-          description={home.homeSettings.herodescription}
+          headline={home.homeSettings.heroHeadline}
+          description={home.homeSettings.heroDescription}
         />
         <CallToAction />
         <Mission />

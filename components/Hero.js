@@ -3,6 +3,7 @@ import hero from "../images/hero-1.jpg";
 import styles from "./hero.module.css";
 
 const Hero = ({ headline, description }) => {
+  console.log(headline, description);
   return (
     <section className="container">
       <div className={styles.hero}>

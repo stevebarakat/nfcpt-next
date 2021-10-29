@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import styles from "./sidebar.module.css";
 import Image from "next/image";
 import coupon from "../images/new-patient-vertical.svg";
@@ -27,16 +28,19 @@ const TESTIMONIALS = gql`
 const Sidebar = () => {
   const { loading, error, data } = useQuery(TESTIMONIALS);
 
-  let n = 0;
-  async function alternate() {
-    // await console.log(data.pageBy.pageId % 2);
+  function randomNumber(min = 0, max = 1) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
   }
-  alternate();
+
+  const n = randomNumber(0, 1);
+
+  console.log(n);
+
   const testimonialPhoto =
-    data?.pageBy?.pageSettings.testimonials[0].testimonial
+    data?.pageBy?.pageSettings.testimonials[n].testimonial
       .testimonialPhoto.sourceUrl;
   const testimonialContent =
-    data?.pageBy?.pageSettings.testimonials[0].testimonial
+    data?.pageBy?.pageSettings.testimonials[n].testimonial
       .testimonialContent;
   return (
     <aside className={styles.sidebar}>
