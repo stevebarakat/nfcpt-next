@@ -1,0 +1,25 @@
+:root {
+  --primaryColor: hsla(201, 100%, 45%, 1);
+  --primaryGradient: -webkit-linear-gradient(
+    top,
+    #0095e6 0%,
+    #20a0e5 51%,
+    #0095e6 100%
+  );
+  --primaryColorDark: #0074b2;
+  --accentColor: #ee6ab9;
+  --accentGradient: -webkit-linear-gradient(
+    top,
+    #ee6ab9 0%,
+    #ed82c0 50%,
+    #ee6ab9 100%
+  );
+  --lightGrey: #a0a0a0;
+  --grey: #787878;
+  --darkGrey: #454545;
+  --blackColor: #002133;
+  --whiteColor: #e4e7ec;
+  --whiteColor10: #c6ccd7;
+  --transparentWhite50: hsla(0, 100%, 100%, 0.25);
+  --papayaWhip25: hsla(37, 100%, 92%, 0.25);
+}

@@ -75,10 +75,8 @@ const Header = ({ menu }) => {
     window.addEventListener("load", handleResize);
     window.addEventListener("resize", handleResize);
     if (!mobile) {
-      console.log("not");
       navLink.current = `#`;
     } else {
-      console.log("mobile");
       navLink.current = `#navbar`;
     }
     return () => {

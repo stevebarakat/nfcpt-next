@@ -1,91 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
-/* @import url("https://fonts.google.com/share?selection.family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"); */
-/* http://meyerweb.com/eric/tools/css/reset/
+@import url("https://fonts.google.com/share?selection.family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import "swiper.custom.css"
+    /* http://meyerweb.com/eric/tools/css/reset/
     v2.0 | 20110126
     License: none (public domain)
 */
-
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+    html,
+  body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+  blockquote, pre, a, abbr, acronym, address, big, cite, code, del,
+  dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup,
+  tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form,
+  label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+  article, aside, canvas, details, embed, figure, figcaption, footer,
+  header, hgroup, menu, nav, output, ruby, section, summary, time,
+  mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -110,24 +38,6 @@ section {
 body {
   line-height: 1;
 }
-p,
-span,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-a,
-blockquote {
-  /* max-width: 65ch; */
-}
-h2,
-h3,
-p {
-  margin-top: 1em;
-}
 ol,
 ul {
   list-style: none;
@@ -150,45 +60,35 @@ table {
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
   outline: none;
-}
-
-*,
-*::before,
-*::after {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 body,
 input,
 button {
   font-size: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-    "Helvetica Neue", sans-serif;
-  font-family: "Inter";
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+}
+body {
+  line-height: 1.75;
+  color: var(--grey);
 }
 code {
   font-family: "Menlo";
 }
-p {
-  padding-bottom: 2rem;
-}
-p,
-li {
-  color: var(--darkGrey);
-  font-size: 1.25rem;
-}
-ul {
-  padding-bottom: 2rem;
-}
 a {
   color: var(--accentColor);
 }
+a:hover {
+  color: var(--primaryColor);
+}
 main .container {
-  background: hsla(37, 100%, 92%, 0.25);
+  background: var(--papayaWhip25);
 }
 .container {
   width: 1350px;
@@ -196,26 +96,51 @@ main .container {
   margin: 0 auto;
   padding: 0 2rem;
 }
+
+p {
+  margin-bottom: 1rem;
+}
+
 h1,
 h2,
 h3,
-h4 {
-  font-weight: bold;
+h4,
+h5 {
+  margin: 3rem 0 1.5rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  line-height: 1.25;
 }
+
 h1 {
-  font-size: 2.25rem;
+  margin-top: 0;
+  font-size: 3rem;
+  font-weight: 900;
 }
+
 h2 {
-  font-size: 1.75rem;
+  font-size: 2.5rem;
+  font-weight: 800;
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 2rem;
+  font-weight: 700;
 }
 
 h4 {
-  padding-: 2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+h5 {
   font-size: 1.25rem;
+  font-weight: 500;
+}
+
+small,
+.text-sm {
+  font-size: 0.75rem;
 }
 
 blockquote {
@@ -236,13 +161,7 @@ blockquote span::before {
   content: "\201C";
 }
 
-blockquote p::after {
-  position: relative;
-  top: 16px;
-  line-height: 25%;
-  font-size: 5rem;
-  content: "\201D";
-}
+blockquote p::after,
 blockquote span::after {
   position: relative;
   top: 16px;
@@ -291,74 +210,15 @@ article p {
   width: 250px;
 }
 
-.swiper {
-  overflow-x: hidden;
-  overflow-y: visible;
-  padding-bottom: 2.5rem !important;
-}
-
-.swiper-pagination {
-  bottom: 16px;
-}
-
-.swiper-horizontal > .swiper-pagination-bullets,
-.swiper-pagination-bullets.swiper-pagination-horizontal {
-  bottom: 0 !important;
-  padding-top: 2rem !important;
-}
-
-.swiper-pagination-bullet {
-  width: 1.5rem !important;
-  height: 1.5rem !important;
-}
-
-.swiper-pagination-bullet-active {
-  background: var(--accentColor) !important;
-}
-.swiper-button-next,
-.swiper-button-prev {
-  color: var(--whiteColor) !important;
-}
-
 .pageHero {
   min-height: 500px;
   max-width: 100%;
   height: 500px;
   position: relative;
-  /* min-width: 100vw !important;
-  background-size: cover;
-  display: flex;
-  position: absolute; */
 }
 
 @media (min-width: 700px) {
   .grid2 {
     grid-template-columns: repeat(2, 1fr);
   }
-}
-
-:root {
-  --primaryColor: hsla(201, 100%, 45%, 1);
-  /* --primaryColor: papayawhip; */
-  --primaryGradient: -webkit-linear-gradient(
-    top,
-    #0095e6 0%,
-    #20a0e5 51%,
-    #0095e6 100%
-  );
-  --primaryColorDark: #0074b2;
-  --accentColor: #ee6ab9;
-  --accentGradient: -webkit-linear-gradient(
-    top,
-    #ee6ab9 0%,
-    #ed82c0 50%,
-    #ee6ab9 100%
-  );
-  --lightGrey: #a0a0a0;
-  --grey: #787878;
-  --darkGrey: #454545;
-  --blackColor: #002133;
-  --whiteColor: #e4e7ec;
-  --whiteColor10: #c6ccd7;
-  --transparentWhite50: hsla(0, 100%, 100%, 0.25);
 }
