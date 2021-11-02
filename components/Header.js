@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import { gql, useQuery } from "@apollo/client";
 import { client } from "../lib/apollo";
 import Hamburger from "hamburger-react";
-import styles from "./header.module.css";
 import {
   FaCaretDown,
   FaChevronRight,
@@ -12,6 +11,7 @@ import {
 import useOnClickOutside from "../hooks/useOnClickOutside";
 import Link from "next/link";
 import Image from "next/image";
+import styles from "./header.module.css";
 import logo from "../images/logo.svg";
 import mobileLogo from "../images/mobile-logo.svg";
 
@@ -42,7 +42,7 @@ const PRIMARY_MENU = gql`
   }
 `;
 
-const Header = ({ menu }) => {
+const Header = () => {
   const { loading, error, data } = useQuery(PRIMARY_MENU);
   const aboutEl = useRef();
   const servicesEl = useRef();
@@ -84,6 +84,24 @@ const Header = ({ menu }) => {
       window.removeEventListener("resize", handleResize);
     };
   }, [mobile]);
+
+  data?.menus.edges[0].node.menuItems.edges.map((menuItem) => {
+    const label = menuItem.node.label;
+    const path = menuItem.node.path;
+    console.log(label, path);
+
+    // RETURNS:
+
+    // About #
+    // About Us /about-us/
+    // First Visit /first-visit/
+    // Pricing Plans /pricing-plans/
+    // Services #
+    // Accident Rehabilitation /accident-rehabilitation/
+    // Chiropractic Services /chiropractic-services/
+    // Massage Therapy /massage-therapy/
+    // Physical Therapy /physical-therapy/
+  });
 
   function handleKeyDown(e) {
     switch (e.code) {

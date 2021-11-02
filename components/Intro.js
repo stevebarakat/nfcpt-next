@@ -5,7 +5,7 @@ import special from "../images/new-patient-horizontal.svg";
 
 const Intro = () => (
   <div className={styles.cta}>
-    <div className="grid2">
+    <div className="grid">
       <div className={styles.ctaLeftWrap}>
         <span className={styles.ctaHeader}>
           Car Accident Chiropractor

@@ -94,6 +94,7 @@
     max-width: 30ch;
   }
   .ctaForm input {
+    width: 30ch;
     max-width: 100%;
   }
 }

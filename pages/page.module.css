@@ -33,4 +33,9 @@
   .pageWrap {
     grid-template-columns: 2fr 1fr;
   }
+
+  .mastheadWrap h1 {
+    color: white;
+    font-size: 3.5rem;
+  }
 }

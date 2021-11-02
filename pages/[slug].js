@@ -18,37 +18,39 @@ export default function Page({ page }) {
         />
       </Head>
       <Layout>
-        <div className={styles.mastheadWrap}>
-          <Image
-            unoptimized={process.env.ENVIRONMENT !== "PRODUCTION"}
-            layout="fill"
-            objectFit="cover"
-            objectPosition="center"
-            quality={100}
-            src={page.featuredImage.node.sourceUrl}
-            alt="Picture of the author"
-          />
-          <div className={`${styles.heading} container`}>
-            <h1>North Florida Chiropractic Physical Therapy</h1>
-            <p>
-              Dr. Jason Orlando | Serving Orange Park for over 20
-              years
-            </p>
-          </div>
-        </div>
-        <main>
-          <div className="container">
-            <div className={styles.pageWrap}>
-              <article>
-                <h1>{page.title}</h1>
-                <div
-                  dangerouslySetInnerHTML={{ __html: page.content }}
-                ></div>
-              </article>
-              <Sidebar />
+        <div className="page">
+          <div className={styles.mastheadWrap}>
+            <Image
+              unoptimized={process.env.ENVIRONMENT !== "PRODUCTION"}
+              layout="fill"
+              objectFit="cover"
+              objectPosition="center"
+              quality={100}
+              src={page.featuredImage.node.sourceUrl}
+              alt="Picture of the author"
+            />
+            <div className={`${styles.heading} container`}>
+              <h1>North Florida Chiropractic Physical Therapy</h1>
+              <p>
+                Dr. Jason Orlando | Serving Orange Park for over 20
+                years
+              </p>
             </div>
           </div>
-        </main>
+          <main>
+            <div className="container">
+              <div className={styles.pageWrap}>
+                <article>
+                  <h1>{page.title}</h1>
+                  <div
+                    dangerouslySetInnerHTML={{ __html: page.content }}
+                  ></div>
+                </article>
+                <Sidebar />
+              </div>
+            </div>
+          </main>
+        </div>
       </Layout>
     </>
   );

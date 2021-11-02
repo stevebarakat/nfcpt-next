@@ -1,0 +1,55 @@
+.page p,
+.page ul {
+  line-height: 2;
+  font-size: 1.25rem;
+  margin-bottom: 40px;
+}
+
+.page ul {
+  line-height: 2.5;
+}
+.page ul li {
+  list-style: disc outside;
+  margin-left: 48px;
+}
+
+.page h1,
+.page h2,
+.page h3,
+.page h4,
+.page h5 {
+  margin: 3rem 0 1.5rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.page h1 {
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+.page h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.page h3 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.page h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.page h5 {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+small,
+.text-sm {
+  font-size: 0.75rem;
+}
