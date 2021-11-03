@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Head from "next/head";
 import Layout from "../components/Layout";
+import ContactForm from "../components/ContactForm";
 import Button from "../components/Button";
 import Sidebar from "../components/Sidebar";
 import Image from "next/image";
@@ -84,89 +85,7 @@ export default function Contact({ page }) {
                     <div className="top">
                       <h3>Chiropractic Adjustments</h3>
                     </div>
-                    <div className="contact-form">
-                      <form
-                        name="contact"
-                        method="post"
-                        action="/thanks/"
-                        data-netlify="true"
-                        data-netlify-honeypot="bot-field"
-                        onSubmit={handleSubmit}
-                      >
-                        {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-                        <input
-                          type="hidden"
-                          name="form-name"
-                          value="contact"
-                        />
-                        <p hidden>
-                          <label>
-                            Don’t fill this out:{" "}
-                            <input
-                              name="bot-field"
-                              onChange={handleChange}
-                            />
-                          </label>
-                        </p>
-                        <div className="form-input-wrap">
-                          <label htmlFor="first-name">
-                            First Name:
-                          </label>
-                          <input
-                            type="text"
-                            onChange={handleChange}
-                            name="first-name"
-                            id="first-name"
-                          />
-                        </div>
-                        <div className="form-input-wrap">
-                          <label htmlFor="last-name">
-                            Last Name:
-                          </label>
-                          <input
-                            type="text"
-                            onChange={handleChange}
-                            name="last-name"
-                            id="last-name"
-                          />
-                        </div>
-                        <div className="form-input-wrap">
-                          <label htmlFor="phone-number">
-                            Phone Number:
-                          </label>
-                          <input
-                            type="text"
-                            onChange={handleChange}
-                            name="phone-number"
-                            id="phone-number"
-                          />
-                        </div>
-                        <div className="form-input-wrap">
-                          <label htmlFor="email">Email:</label>
-                          <input
-                            type="text"
-                            onChange={handleChange}
-                            name="email"
-                            id="email"
-                          />
-                        </div>
-                        <div className="form-input-wrap">
-                          <label htmlFor="message">Message:</label>
-                          <textarea
-                            className="text-area"
-                            onChange={handleChange}
-                            name="message"
-                            id="message"
-                          />
-                          <Button
-                            type="submit"
-                            className="contact-button"
-                          >
-                            Send Message
-                          </Button>
-                        </div>
-                      </form>
-                    </div>
+                    <ContactForm />
                   </div>
                 </article>
                 <Sidebar />
