@@ -23,9 +23,6 @@ const Mission = () => {
     <div className={styles.mission}>
       <div className={styles.missionLeftWrap}>
         <div>
-          {/* <span className={styles.missionSubHeader}>
-            Talk to us before an attorney
-          </span> */}
           <span className={styles.missionHeader}>
             <h1>Car Accident Chiropractor</h1>
           </span>

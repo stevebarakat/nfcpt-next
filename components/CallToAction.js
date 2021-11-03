@@ -22,7 +22,7 @@ const CallToAction = () => (
           </span>
           <form className={styles.ctaForm}>
             <div className="flex">
-              <input
+              {/* <input
                 style={{
                   borderRadius: "4px 0 0 4px",
                 }}
@@ -30,22 +30,39 @@ const CallToAction = () => (
                 type="email"
                 placeholder="you@mail.com"
                 required
-              />
-              <Button
-                side="right"
+              /> */}
+              {/* <Button
                 color="var(--darkGrey)"
                 borderColor="var(--whiteColor)"
                 textColor="white"
                 style={{ padding: "0.5rem" }}
               >
                 Do it!
-              </Button>
+              </Button> */}
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  gap: "0.5rem",
+                }}
+              >
+                <Button color="white" textColor="var(--accentColor)">
+                  Learn More
+                </Button>
+                <Button
+                  color="var(--accentColor)"
+                  borderColor="var(--whiteColor)"
+                  textColor="white"
+                >
+                  Get Started
+                </Button>
+              </div>
             </div>
           </form>
-          <span className={styles.ctaDescription}>
+          {/* <span className={styles.ctaDescription}>
             Sign up to receive our complimentary wellness guide and a
             free consultation.
-          </span>
+          </span> */}
         </div>
       </div>
     </div>

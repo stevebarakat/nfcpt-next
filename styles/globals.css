@@ -92,9 +92,9 @@ article {
   padding-bottom: 4rem;
 }
 
-main .container {
+/* main .container {
   background: var(--papayaWhip25);
-}
+} */
 .container {
   width: 1350px;
   max-width: 100%;

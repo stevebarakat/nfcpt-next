@@ -11,7 +11,7 @@
 }
 
 .sidebarWidget form {
-  padding: 2rem 4rem;
+  padding: 1.5rem;
 }
 
 .sidebarWidget label {
@@ -25,7 +25,7 @@
   color: var(--whiteColor);
   padding: 0 4rem;
   font-size: 1.75rem;
-  line-height: 2rem;
+  line-height: 2;
   font-weight: 500;
   text-align: center;
   display: block;
@@ -54,5 +54,14 @@
 @media (max-width: 1050px) {
   .sidebar {
     top: 0;
+  }
+  .sidebarWidget label {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1050px) {
+  .sidebarWidget form {
+    padding: 2rem 4rem;
   }
 }

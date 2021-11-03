@@ -33,7 +33,7 @@
 
 @media (min-width: 700px) {
   .description {
-    max-width: 60ch;
+    max-width: 30ch;
     font-size: 1.25rem;
     line-height: 2.25rem;
   }
