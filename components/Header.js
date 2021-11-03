@@ -20,19 +20,18 @@ const PRIMARY_MENU = gql`
     menus(where: { slug: "primary" }) {
       edges {
         node {
-          menuItems(where: {}) {
-            edges {
-              node {
-                childItems {
-                  edges {
-                    node {
-                      label
-                      path
-                    }
+          id
+          name
+          menuItems(where: { parentId: "null" }) {
+            nodes {
+              label
+              parentId
+              childItems {
+                edges {
+                  node {
+                    id
                   }
                 }
-                label
-                path
               }
             }
           }
@@ -85,23 +84,8 @@ const Header = () => {
     };
   }, [mobile]);
 
-  data?.menus.edges[0].node.menuItems.edges.map((menuItem) => {
-    const label = menuItem.node.label;
-    const path = menuItem.node.path;
-    console.log(label, path);
+  console.log(data?.menus.edges[0].node.menuItems.nodes.[1].childItems.edges);
 
-    // RETURNS:
-
-    // About #
-    // About Us /about-us/
-    // First Visit /first-visit/
-    // Pricing Plans /pricing-plans/
-    // Services #
-    // Accident Rehabilitation /accident-rehabilitation/
-    // Chiropractic Services /chiropractic-services/
-    // Massage Therapy /massage-therapy/
-    // Physical Therapy /physical-therapy/
-  });
 
   function handleKeyDown(e) {
     switch (e.code) {

@@ -23,11 +23,11 @@ const Mission = () => {
     <div className={styles.mission}>
       <div className={styles.missionLeftWrap}>
         <div>
-          <span className={styles.missionSubHeader}>
+          {/* <span className={styles.missionSubHeader}>
             Talk to us before an attorney
-          </span>
+          </span> */}
           <span className={styles.missionHeader}>
-            Get the settlement you deserve.
+            <h1>Car Accident Chiropractor</h1>
           </span>
           <span className={styles.missionDescription}>
             With over 20 years serving the Orange Park area, North

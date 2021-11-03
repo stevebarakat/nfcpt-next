@@ -25,15 +25,17 @@
   padding-top: 1rem;
   max-width: 40ch;
   display: inline-block;
-  line-height: 1.75rem;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1rem;
   z-index: 99;
+  line-height: 1.25rem;
 }
 
 @media (min-width: 700px) {
   .description {
     max-width: 60ch;
+    font-size: 1.25rem;
+    line-height: 2.25rem;
   }
   .headline {
     font-size: 5rem;

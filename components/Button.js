@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./button.module.css";
 
 const Button = ({
   color,
@@ -9,31 +10,21 @@ const Button = ({
   width,
 }) => {
   return (
-    <>
-      <button
-        style={{
-          border:
-            side === "right" ? "none" : "1px solid " + borderColor,
-          borderRadius: side === "right" ? "0 4px 4px 0" : "4px",
-          padding: side === "right" ? "0.5rem 1rem" : "1rem",
-          fontSize: side === "right" && "1rem",
-          background: color,
-          color: textColor,
-        }}
-      >
-        {children}
-      </button>
-      <style jsx>{`
-        button {
-          border: 1px solid transparent;
-          border-radius: 0.25rem;
-          font-weight: 700;
-          font-size: 0.875rem;
-          white-space: nowrap;
-          font-size: 1rem;
-        }
-      `}</style>
-    </>
+    <button
+      className={styles.button}
+      style={{
+        color: textColor,
+        background: color,
+        border:
+          side === "right" ? "none" : "1px solid " + borderColor,
+        borderRadius: side === "right" ? "0 4px 4px 0" : "4px",
+        padding: side === "right" ? "0.5rem 1rem" : "1rem",
+        fontSize: side === "right" && "1rem",
+        width: width,
+      }}
+    >
+      {children}
+    </button>
   );
 };
 

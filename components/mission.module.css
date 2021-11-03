@@ -34,12 +34,13 @@
 }
 
 .missionHeader {
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-weight: 800;
   letter-spacing: -0.1rem;
   display: block;
-  padding-bottom: 1.25rem;
+  padding-bottom: 1rem;
   color: #787878;
+  text-align: center;
 }
 
 .missionSubHeader {
@@ -53,14 +54,13 @@
 }
 .missionDescription {
   display: block;
-  line-height: 2.5rem;
-  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-size: 1rem;
 }
 
 .missionList li {
-  padding-left: 1.5rem;
-  /* padding-top: 1.5rem; */
-  line-height: 2rem;
+  padding-left: 2rem;
+  line-height: 1.75rem;
 }
 
 .missionList li:before {
@@ -75,37 +75,15 @@
   margin-right: 0.5rem;
 }
 
-@media (min-width: 850px) {
-  .mission {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .missionHeader {
-    font-size: 2.75rem;
-  }
-  .missionSubHeader {
-    font-size: 1.5rem;
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .missionLeftWrap {
-    justify-self: flex-end;
-    align-self: flex-start;
-  }
-  .missionRightWrap {
-    height: fit-content;
-    border-left: 2px solid white;
-    border-top: none;
-    justify-self: flex-start;
-    align-self: center;
-  }
-}
-
 .stats {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 3rem;
   color: var(--grey);
+  padding-top: 4rem;
+  justify-content: center;
+  text-align: center;
 }
 .stat {
   position: relative;
@@ -121,4 +99,42 @@
   text-align: center;
   font-weight: 500;
   font-size: 0.875rem;
+}
+
+@media (min-width: 850px) {
+  .mission {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .missionHeader {
+    font-size: 2.25rem;
+    text-align: left;
+  }
+  .missionSubHeader {
+    font-size: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .missionDescription {
+    line-height: 2.5rem;
+    font-size: 1.25rem;
+  }
+  .missionList li {
+    line-height: 2.5rem;
+    font-size: 1.25rem;
+  }
+  .missionLeftWrap {
+    justify-self: flex-end;
+    align-self: flex-start;
+  }
+  .missionRightWrap {
+    height: fit-content;
+    border-left: 2px solid white;
+    border-top: none;
+    justify-self: flex-start;
+    align-self: center;
+  }
+  .stats {
+    justify-content: flex-start;
+    text-align: left;
+  }
 }

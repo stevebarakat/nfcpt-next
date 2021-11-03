@@ -23,6 +23,9 @@ const CallToAction = () => (
           <form className={styles.ctaForm}>
             <div className="flex">
               <input
+                style={{
+                  borderRadius: "4px 0 0 4px",
+                }}
                 className="text-input"
                 type="email"
                 placeholder="you@mail.com"
