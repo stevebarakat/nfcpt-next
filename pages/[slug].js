@@ -16,7 +16,7 @@ export default function Page({ page }) {
         <div className="page">
           <div className="mastheadWrap">
             <Image
-              unoptimized={process.env.ENVIRONMENT !== "PRODUCTION"}
+              priority
               layout="fill"
               objectFit="cover"
               objectPosition="center"

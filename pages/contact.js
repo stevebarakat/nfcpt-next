@@ -53,6 +53,7 @@ export default function Contact({ page }) {
         <div className="page">
           <div className="mastheadWrap">
             <Image
+              priority
               blurDataURL={plansBase64}
               placeholder="blur"
               layout="fill"
