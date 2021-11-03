@@ -88,6 +88,10 @@ strong {
 .flex {
   display: flex;
 }
+.strike {
+  text-decoration: line-through;
+  font-weight: 400;
+}
 article {
   padding-bottom: 4rem;
 }

@@ -4,8 +4,6 @@ import Head from "next/head";
 import Layout from "../components/Layout";
 import Sidebar from "../components/Sidebar";
 import Image from "next/image";
-import shoes from "../images/shoes.jpg";
-// import styles from "./page.module.css";
 
 export default function Page({ page }) {
   return (
@@ -42,7 +40,7 @@ export default function Page({ page }) {
             <div className="container">
               <div className="pageWrap">
                 <article>
-                  {/* <h1>{page.title}</h1> */}
+                  <h1>{page.title}</h1>
                   <div
                     dangerouslySetInnerHTML={{ __html: page.content }}
                   ></div>

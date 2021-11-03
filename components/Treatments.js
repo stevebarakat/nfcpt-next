@@ -72,7 +72,7 @@ const Treatments = () => {
                 Hip & Join Pain
               </span>
               <div>
-                <Image src={hip} alt="Hip & Join Pain" />
+                <Image priority src={hip} alt="Hip & Join Pain" />
               </div>
             </div>
           </SwiperSlide>
@@ -80,7 +80,11 @@ const Treatments = () => {
             <div className={styles.card}>
               <span className={styles.cardHeader}>Carpal Tunnel</span>
               <div>
-                <Image src={carpalTunnel} alt="Carpal Tunnel" />
+                <Image
+                  priority
+                  src={carpalTunnel}
+                  alt="Carpal Tunnel"
+                />
               </div>
             </div>
           </SwiperSlide>
@@ -90,7 +94,11 @@ const Treatments = () => {
                 Migrane Headaches
               </span>
               <div>
-                <Image src={headache} alt="Migrane Headaches" />
+                <Image
+                  priority
+                  src={headache}
+                  alt="Migrane Headaches"
+                />
               </div>
             </div>
           </SwiperSlide>
@@ -98,7 +106,11 @@ const Treatments = () => {
             <div className={styles.card}>
               <span className={styles.cardHeader}>Pinched Nerve</span>
               <div>
-                <Image src={pinchedNerve} alt="Pinched Nerve" />
+                <Image
+                  priority
+                  src={pinchedNerve}
+                  alt="Pinched Nerve"
+                />
               </div>
             </div>
           </SwiperSlide>
@@ -108,7 +120,11 @@ const Treatments = () => {
                 Sports Injuries
               </span>
               <div>
-                <Image src={sportsInjury} alt="Sports Injuries" />
+                <Image
+                  priority
+                  src={sportsInjury}
+                  alt="Sports Injuries"
+                />
               </div>
             </div>
           </SwiperSlide>
@@ -118,7 +134,11 @@ const Treatments = () => {
                 Sciatica & Herniated Disk
               </span>
               <div>
-                <Image src={slippedDisk} alt="Herniated Disk" />
+                <Image
+                  priority
+                  src={slippedDisk}
+                  alt="Herniated Disk"
+                />
               </div>
             </div>
           </SwiperSlide>
@@ -128,7 +148,11 @@ const Treatments = () => {
                 Tendonitis & Bursitis
               </span>
               <div>
-                <Image src={tendonitis} alt="Tendonitis & Bursitis" />
+                <Image
+                  priority
+                  src={tendonitis}
+                  alt="Tendonitis & Bursitis"
+                />
               </div>
             </div>
           </SwiperSlide>
@@ -136,7 +160,7 @@ const Treatments = () => {
             <div className={styles.card}>
               <span className={styles.cardHeader}>Whiplash</span>
               <div>
-                <Image src={whiplash} alt="Whiplash" />
+                <Image priority src={whiplash} alt="Whiplash" />
               </div>
             </div>
           </SwiperSlide>
