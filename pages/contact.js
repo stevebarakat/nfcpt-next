@@ -6,6 +6,7 @@ import Button from "../components/Button";
 import Sidebar from "../components/Sidebar";
 import Image from "next/image";
 import plans from "../images/plans.jpg";
+import { plansBase64 } from "../images/plansBase64";
 
 function encode(data) {
   return Object.keys(data)
@@ -52,7 +53,8 @@ export default function Contact({ page }) {
         <div className="page">
           <div className="mastheadWrap">
             <Image
-              unoptimized={process.env.ENVIRONMENT !== "PRODUCTION"}
+              blurDataURL={plansBase64}
+              placeholder="blur"
               layout="fill"
               objectFit="cover"
               objectPosition="center"
