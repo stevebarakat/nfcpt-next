@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.4.16",
+    "cloudinary-build-url": "^0.2.1",
     "graphql": "^15.6.1",
     "hamburger-react": "^2.4.1",
     "next": "11.1.2",

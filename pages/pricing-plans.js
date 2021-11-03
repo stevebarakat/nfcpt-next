@@ -1,10 +1,21 @@
 import Head from "next/head";
+import { buildUrl } from "cloudinary-build-url";
 import Layout from "../components/Layout";
 import Sidebar from "../components/Sidebar";
 import Image from "next/image";
 import plans from "../images/plans.jpg";
 
-export default function Page() {
+export default function Plans() {
+  const urlPixelated = buildUrl("plans", {
+    cloud: {
+      cloudName: "stevebarakat",
+    },
+    transformations: {
+      effect: {
+        name: "pixelate",
+      },
+    },
+  });
   return (
     <>
       <Head>
@@ -18,11 +29,12 @@ export default function Page() {
         <div className="page">
           <div className="mastheadWrap">
             <Image
-              unoptimized={process.env.ENVIRONMENT !== "PRODUCTION"}
               layout="fill"
               objectFit="cover"
               objectPosition="center"
               quality={100}
+              placeholder="blur"
+              blurDataURL={urlPixelated}
               src={plans}
               alt="women exercising"
             />

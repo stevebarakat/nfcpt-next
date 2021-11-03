@@ -1,11 +1,23 @@
 import { gql } from "@apollo/client";
 import { client } from "../lib/apollo";
+import { buildUrl } from "cloudinary-build-url";
 import Head from "next/head";
 import Layout from "../components/Layout";
 import Sidebar from "../components/Sidebar";
 import Image from "next/image";
 
 export default function Page({ page }) {
+  console.log(page.featuredImage.node.slug);
+  const urlPixelated = buildUrl(page.featuredImage.node.slug, {
+    cloud: {
+      cloudName: "stevebarakat",
+    },
+    transformations: {
+      effect: {
+        name: "pixelate",
+      },
+    },
+  });
   return (
     <>
       <Head>
@@ -21,8 +33,10 @@ export default function Page({ page }) {
               objectFit="cover"
               objectPosition="center"
               quality={100}
+              placeholder="blur"
+              blurDataURL={urlPixelated}
               src={page.featuredImage.node.sourceUrl}
-              alt="Picture of the author"
+              alt={page.featuredImage.node.altText}
             />
             <div className={"heading container"}>
               <span className="h1">
@@ -82,7 +96,7 @@ export async function getStaticProps({ params }) {
   const { slug } = await params;
   const result = await client.query({
     query: gql`
-      query GetWordPressPostsBySlug($slug: String!) {
+      query GetWordPressPagesBySlug($slug: String!) {
         pageBy(uri: $slug) {
           title
           content
@@ -92,9 +106,11 @@ export async function getStaticProps({ params }) {
           }
           featuredImage {
             node {
+              slug
               title
               caption
               sourceUrl
+              altText
             }
           }
         }
