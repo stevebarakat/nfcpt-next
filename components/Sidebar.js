@@ -7,26 +7,26 @@ import Button from "./Button";
 import { gql, useQuery } from "@apollo/client";
 import { client } from "../lib/apollo";
 
-const TESTIMONIALS = gql`
-  query GetTestimonials {
-    pageBy(uri: "settings-page") {
-      pageId
-      pageSettings {
-        testimonials {
-          testimonial {
-            testimonialContent
-            testimonialPhoto {
-              sourceUrl
-            }
-          }
-        }
-      }
-    }
-  }
-`;
+// const TESTIMONIALS = gql`
+//   query GetTestimonials {
+//     pageBy(uri: "settings-page") {
+//       pageId
+//       pageSettings {
+//         testimonials {
+//           testimonial {
+//             testimonialContent
+//             testimonialPhoto {
+//               sourceUrl
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;
 
 const Sidebar = () => {
-  const { loading, error, data } = useQuery(TESTIMONIALS);
+  // const { loading, error, data } = useQuery(TESTIMONIALS);
 
   function randomNumber(min = 0, max = 1) {
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -36,12 +36,12 @@ const Sidebar = () => {
 
   console.log(n);
 
-  const testimonialPhoto =
-    data?.pageBy?.pageSettings.testimonials[n].testimonial
-      .testimonialPhoto.sourceUrl;
-  const testimonialContent =
-    data?.pageBy?.pageSettings.testimonials[n].testimonial
-      .testimonialContent;
+  // const testimonialPhoto =
+  //   data?.pageBy?.pageSettings.testimonials[n].testimonial
+  //     .testimonialPhoto.sourceUrl;
+  // const testimonialContent =
+  //   data?.pageBy?.pageSettings.testimonials[n].testimonial
+  //     .testimonialContent;
   return (
     <aside className={styles.sidebar}>
       <div
@@ -87,7 +87,7 @@ const Sidebar = () => {
         style={{ background: "var(--primaryColor)" }}
       >
         <div className={styles.testimonialImg}>
-          {testimonialPhoto && (
+          {/* {testimonialPhoto && (
             <Image
               src={testimonialPhoto}
               layout="fill"
@@ -96,11 +96,11 @@ const Sidebar = () => {
               quality={100}
               alt="Picture of the author"
             />
-          )}
+          )} */}
         </div>
         <blockquote>
           <span className={styles.testimonial}>
-            {testimonialContent}
+            {/* {testimonialContent} */}I Love It!
           </span>
         </blockquote>
       </div>

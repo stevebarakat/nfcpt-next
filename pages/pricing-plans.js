@@ -4,7 +4,7 @@ import Sidebar from "../components/Sidebar";
 import Image from "next/image";
 import plans from "../images/plans.jpg";
 
-export default function Page({ page }) {
+export default function Page() {
   return (
     <>
       <Head>
