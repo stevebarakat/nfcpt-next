@@ -1,5 +1,5 @@
 export default function ContactForm() {
-  return +(
+  return (
     <form
       name="contact"
       action="/success"
