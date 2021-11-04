@@ -96,12 +96,12 @@ const Header = () => {
   // console.log(data?.menus.edges[0].node.menuItems.nodes.[2].childItems.edges.[0].node);
 
   const menu = (
-    <ul>
+    <ul onKeyDown={handleKeyDown}>
       {data?.menus.edges[0].node.menuItems.nodes.map((node) => {
         console.log("node: ", node);
         console.log("child items: ", node.childItems.edges);
         return (
-          <li key="node.url">
+          <li key={node.url}>
             {node.label}
             {node.childItems.edges.length > 0 && (
               <ul>
@@ -115,8 +115,6 @@ const Header = () => {
       })}
     </ul>
   );
-
-  console.log("menu: ", menu);
 
   function handleKeyDown(e) {
     switch (e.code) {
@@ -168,8 +166,8 @@ const Header = () => {
       <nav className={styles.nav} id="navbar">
         <div className={styles.container}>
           <div className={styles.menu}>
-            <Link href="/">
-              <span className={styles.logo}>
+            <Link href="/" passHref>
+              <a className={styles.logo}>
                 <Image
                   layout="fixed"
                   width="200"
@@ -177,7 +175,7 @@ const Header = () => {
                   quality="100"
                   alt="North Florida Chiropractic Physical Therapy"
                 />
-              </span>
+              </a>
             </Link>
             <ul onKeyDown={handleKeyDown}>
               <li>
