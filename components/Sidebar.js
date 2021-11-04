@@ -34,8 +34,6 @@ const Sidebar = () => {
 
   const n = randomNumber(0, 1);
 
-  console.log(n);
-
   const testimonialPhoto =
     data?.pageBy?.pageSettings.testimonials[n].testimonial
       .testimonialPhoto.sourceUrl;

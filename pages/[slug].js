@@ -7,7 +7,6 @@ import Sidebar from "../components/Sidebar";
 import Image from "next/image";
 
 export default function Page({ page }) {
-  console.log(page.featuredImage.node.slug);
   const urlPixelated = buildUrl(page.featuredImage.node.slug, {
     cloud: {
       cloudName: "stevebarakat",

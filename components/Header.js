@@ -29,7 +29,16 @@ const PRIMARY_MENU = gql`
               childItems {
                 edges {
                   node {
-                    id
+                    label
+                    childItems {
+                      nodes {
+                        label
+                        path
+                        url
+                      }
+                    }
+                    path
+                    url
                   }
                 }
               }
@@ -84,8 +93,30 @@ const Header = () => {
     };
   }, [mobile]);
 
-  console.log(data?.menus.edges[0].node.menuItems.nodes.[1].childItems.edges);
+  // console.log(data?.menus.edges[0].node.menuItems.nodes.[2].childItems.edges.[0].node);
 
+  const menu = (
+    <ul>
+      {data?.menus.edges[0].node.menuItems.nodes.map((node) => {
+        console.log("node: ", node);
+        console.log("child items: ", node.childItems.edges);
+        return (
+          <li key="node.url">
+            {node.label}
+            {node.childItems.edges.length > 0 && (
+              <ul>
+                {node.childItems.edges.map((item) => (
+                  <li key={item.node.url}>{item.node.label}</li>
+                ))}
+              </ul>
+            )}
+          </li>
+        );
+      })}
+    </ul>
+  );
+
+  console.log("menu: ", menu);
 
   function handleKeyDown(e) {
     switch (e.code) {
@@ -251,6 +282,7 @@ const Header = () => {
           </div>
         </div>
       </nav>
+      {menu}
     </div>
   );
 };
