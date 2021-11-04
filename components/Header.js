@@ -24,12 +24,12 @@ const PRIMARY_MENU = gql`
           name
           menuItems(where: { parentId: "null" }) {
             nodes {
-              label
-              parentId
               childItems {
                 edges {
                   node {
                     label
+                    path
+                    url
                     childItems {
                       nodes {
                         label
@@ -37,8 +37,6 @@ const PRIMARY_MENU = gql`
                         url
                       }
                     }
-                    path
-                    url
                   }
                 }
               }
@@ -93,29 +91,6 @@ const Header = () => {
     };
   }, [mobile]);
 
-  // console.log(data?.menus.edges[0].node.menuItems.nodes.[2].childItems.edges.[0].node);
-
-  const menu = (
-    <ul onKeyDown={handleKeyDown}>
-      {data?.menus.edges[0].node.menuItems.nodes.map((node) => {
-        console.log("node: ", node);
-        console.log("child items: ", node.childItems.edges);
-        return (
-          <li key={node.url}>
-            {node.label}
-            {node.childItems.edges.length > 0 && (
-              <ul>
-                {node.childItems.edges.map((item) => (
-                  <li key={item.node.url}>{item.node.label}</li>
-                ))}
-              </ul>
-            )}
-          </li>
-        );
-      })}
-    </ul>
-  );
-
   function handleKeyDown(e) {
     switch (e.code) {
       case "Space":
@@ -140,6 +115,30 @@ const Header = () => {
         break;
     }
   }
+
+  const menu = (
+    <ul onKeyDown={handleKeyDown}>
+      {data?.menus.edges[0].node.menuItems.nodes.map((item) => {
+        console.log("item: ", item);
+        console.log("child items: ", item.childItems.edges);
+        return (
+          <li key={item.url}>
+            <Link href={item.label ? item.label : ""}>
+              <a>{item.label}</a>
+            </Link>
+            {item.childItems.edges.length > 0 && (
+              <ul>
+                {item.childItems.edges.map((subItem) => (
+                  <li key={subItem.node.url}>{subItem.node.label}</li>
+                ))}
+              </ul>
+            )}
+          </li>
+        );
+      })}
+    </ul>
+  );
+
   return (
     <div className="flex">
       <span className={styles.mobileLogo}>
@@ -280,7 +279,7 @@ const Header = () => {
           </div>
         </div>
       </nav>
-      {menu}
+      {/* {menu} */}
     </div>
   );
 };

@@ -96,6 +96,11 @@ main .container {
 }
 
 @media (min-width: 1050px) {
+  .pageWrap {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+@media (min-width: 650px) {
   .page h1,
   .page h2,
   .page h3,
@@ -141,10 +146,6 @@ main .container {
 
   .page ul li {
     margin-left: 3rem;
-  }
-
-  .pageWrap {
-    grid-template-columns: 2fr 1fr;
   }
 
   .mastheadWrap .h1 {
