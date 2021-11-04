@@ -1,5 +1,5 @@
 .footer {
-  background: var(--blackColor);
+  background: var(--darkColor);
   font-size: 13px;
   font-weight: 500;
   border-top: 4px solid white;
@@ -18,7 +18,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   border-bottom: 2px solid var(--transparentWhite25);
-  padding: 4rem 0;
+  padding: 4rem 0 6em;
 }
 
 .innerFooter {
@@ -34,6 +34,40 @@
   display: flex;
   gap: 0.75rem;
 }
+
+.h4 {
+  font-size: 1.25rem;
+  font-weight: 900;
+  padding-bottom: 1rem;
+  color: white;
+}
+.headline {
+  font-size: 1.75rem;
+  font-weight: 700;
+  display: block;
+  color: white;
+  margin-bottom: 1rem;
+}
+.description {
+  font-size: 1rem;
+  display: block;
+}
+
+.innerFooter ul li a {
+  color: var(--whiteColor10);
+  text-decoration: none;
+}
+
+.icon {
+  font-size: 1.5rem;
+}
+.social {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding-bottom: 0.8rem;
+}
+
 @media (min-width: 850px) {
   .innerFooter {
     grid-gap: 0;
@@ -54,37 +88,4 @@
 }
 .innerFooter ul {
   line-height: 2rem;
-}
-
-.h4 {
-  font-size: 1.25rem;
-  font-weight: 900;
-  padding-bottom: 1rem;
-  color: white;
-}
-.headline {
-  font-size: 1.5rem;
-  font-weight: 700;
-  display: block;
-  color: white;
-  padding-bottom: 0.5rem;
-}
-.description {
-  font-size: 1rem;
-  display: block;
-}
-
-.innerFooter ul li a {
-  color: var(--whiteColor10);
-  text-decoration: none;
-}
-
-.icon {
-  font-size: 1.5rem;
-}
-.social {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-  padding-bottom: 0.8rem;
 }

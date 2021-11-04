@@ -18,27 +18,15 @@ import mobileLogo from "../images/mobile-logo.svg";
 const PRIMARY_MENU = gql`
   query GetPrimaryMenu {
     menus(where: { slug: "primary" }) {
-      edges {
-        node {
-          id
-          name
-          menuItems(where: { parentId: "null" }) {
-            nodes {
-              childItems {
-                edges {
-                  node {
-                    label
-                    path
-                    url
-                    childItems {
-                      nodes {
-                        label
-                        path
-                        url
-                      }
-                    }
-                  }
-                }
+      nodes {
+        menuItems(where: { location: PRIMARY, parentId: "null" }) {
+          nodes {
+            path
+            label
+            childItems {
+              nodes {
+                path
+                label
               }
             }
           }
@@ -115,29 +103,23 @@ const Header = () => {
         break;
     }
   }
+  // console.log(
+  //   "data: ",
+  //   data?.menus.nodes[0].menuItems.nodes[1].childItems.nodes[0].label
+  // );
 
-  const menu = (
-    <ul onKeyDown={handleKeyDown}>
-      {data?.menus.edges[0].node.menuItems.nodes.map((item) => {
-        console.log("item: ", item);
-        console.log("child items: ", item.childItems.edges);
-        return (
-          <li key={item.url}>
-            <Link href={item.label ? item.label : ""}>
-              <a>{item.label}</a>
-            </Link>
-            {item.childItems.edges.length > 0 && (
-              <ul>
-                {item.childItems.edges.map((subItem) => (
-                  <li key={subItem.node.url}>{subItem.node.label}</li>
-                ))}
-              </ul>
-            )}
-          </li>
-        );
-      })}
-    </ul>
-  );
+  const menu = data?.menus.nodes[0].menuItems.nodes.map((item, i) => (
+    <li key={i}>
+      {item.label} && {item.childItems} (
+      <ul>
+        {item.childItems.nodes.map((item, j) => {
+          console.log("item: ", item.label);
+          return <li key={j}>{item.label}</li>;
+        })}
+      </ul>
+      )
+    </li>
+  ));
 
   return (
     <div className="flex">
@@ -273,13 +255,13 @@ const Header = () => {
             </ul>
             <span className={styles.tel}>
               <a className="bold" href="tel:904-272-4329">
+                {/* {console.log(menu.[2].props.children[0])} */}
                 (904) 272-4329
               </a>
             </span>
           </div>
         </div>
       </nav>
-      {/* {menu} */}
     </div>
   );
 };

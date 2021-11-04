@@ -144,8 +144,8 @@ main .container {
   .page ul {
     line-height: 2;
     font-size: 1.25rem;
-    margin-bottom: 40px;
     margin: 0 2rem;
+    margin-bottom: 2.25rem;
   }
 
   .page ul li {

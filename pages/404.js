@@ -60,7 +60,7 @@ export default function PageMissing({ page }) {
       <style jsx>{`
         .planWrap {
           margin: 2rem 00;
-          border: 1px solid var(--grey);
+          border: 1px solid var(--grey50);
         }
         .grid3 {
           display: grid;
@@ -72,7 +72,7 @@ export default function PageMissing({ page }) {
           font-weight: 600;
           background: hsla(201, 100%, 45%, 0.25);
           justify-content: space-between;
-          border-bottom: 1px solid var(--grey);
+          border-bottom: 1px solid var(--grey50);
         }
         .grid3 div {
           /* border: 1px solid black; */
@@ -81,7 +81,7 @@ export default function PageMissing({ page }) {
           background: var(--primaryColor);
           padding: 1rem;
           text-align: center;
-          border-bottom: 1px solid var(--grey);
+          border-bottom: 1px solid var(--grey50);
         }
         .top h3 {
           margin: 0;

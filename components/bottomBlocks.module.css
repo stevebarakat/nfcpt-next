@@ -94,7 +94,7 @@
   background: url("../images/trio-sm-pink.jpg");
   background-size: cover;
   background-position: 50% 35%;
-  padding: 4rem;
+  /* padding: 4rem; */
   width: 100%;
   justify-self: center;
   color: white;
@@ -136,6 +136,7 @@
     background: url("../images/trio.jpg");
     background-size: cover;
     background-position: 50% 15%;
+    padding: 4rem;
   }
   .rightWrapBtm .figure {
     visibility: hidden;

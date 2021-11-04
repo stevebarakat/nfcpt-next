@@ -73,55 +73,49 @@ export default function Contact({ page }) {
           </div>
           <main>
             <div className="container">
-              <div className="pageWrap">
+              <div className="contactWrap">
                 <article>
                   <h1>Contact</h1>
-                  <p>
-                    Lorem ipsum dolor, sit amet consectetur
-                    adipisicing elit. Facere porro, corrupti atque
-                    neque voluptatibus, sapiente veritatis doloremque
-                    quae nobis dolor eius amet voluptatem aliquam cum
-                    repellat et exercitationem sit dolorem?
+                  <p style={{ paddingBottom: "1.25rem" }}>
+                    Our goal is to guide you to recovery and beyond.
+                    If you have a specific health concern, please
+                    contact us for assistance.
                   </p>
-                  {/* CHIROPRACTIC ADJUSTMENTS */}
-                  <div className="planWrap">
-                    <div className="top">
-                      <h3>Chiropractic Adjustments</h3>
-                    </div>
-                    <ContactForm />
-                  </div>
+                  <p>
+                    {" "}
+                    We are always looking for feedback to help improve
+                    our website and services. Use this form to send us
+                    your comments and questions.
+                  </p>
                 </article>
-                <Sidebar />
+                <div className="formWrap">
+                  <ContactForm />
+                </div>
               </div>
             </div>
           </main>
         </div>
       </Layout>
       <style jsx>{`
-        .planWrap {
-          margin: 2rem 00;
-          border: 1px solid var(--grey);
-        }
-        .grid3 {
+        .contactWrap {
           display: grid;
-          grid-template-columns: repeat(3, fit-content(50%));
-          grid-gap: 1rem;
-          text-align: center;
-          padding: 2rem;
-          font-size: 1rem;
-          font-weight: 600;
-          background: hsla(201, 100%, 45%, 0.25);
-          justify-content: space-between;
-          border-bottom: 1px solid var(--grey);
+          grid-template-columns: 100%;
+          justify-content: center;
+          margin: 0 auto;
+          max-width: 100%;
         }
-        .grid3 div {
-          /* border: 1px solid black; */
+        .formWrap {
+          margin: 2rem;
+          padding: 6rem 2rem;
+          border-top: 1px solid var(--grey50);
+          border-left: none;
         }
+
         .top {
-          background: var(--primaryColor);
+          /* background: var(--primaryColor); */
           padding: 1rem;
           text-align: center;
-          border-bottom: 1px solid var(--grey);
+          border-bottom: 1px solid var(--grey50);
         }
         .top h3 {
           margin: 0;
@@ -129,13 +123,14 @@ export default function Contact({ page }) {
           width: fit-content;
         }
         @media (min-width: 850px) {
-          .grid3 {
-            font-size: 2rem;
-            grid-gap: 3rem;
-            padding: 3rem 2rem;
+          .contactWrap {
+            grid-template-columns: 1fr 1fr;
           }
-          .planWrap {
+          .formWrap {
             margin: 2rem;
+            padding: 1rem 2rem;
+            border-left: 1px solid var(--grey50);
+            border-top: none;
           }
         }
       `}</style>

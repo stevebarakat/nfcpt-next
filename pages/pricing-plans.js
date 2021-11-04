@@ -185,7 +185,7 @@ export default function Plans() {
       <style jsx>{`
         .planWrap {
           margin: 2rem 00;
-          border: 1px solid var(--grey);
+          border: 1px solid var(--grey50);
         }
         .grid3 {
           display: grid;
@@ -197,7 +197,7 @@ export default function Plans() {
           font-weight: 600;
           background: var(--transparentBlack50);
           justify-content: space-between;
-          border-bottom: 1px solid var(--grey);
+          border-bottom: 1px solid var(--grey50);
         }
         .grid3 div {
           /* border: 1px solid black; */
@@ -206,7 +206,7 @@ export default function Plans() {
           background: var(--transparentBlack75);
           padding: 1rem;
           text-align: center;
-          border-bottom: 1px solid var(--grey);
+          border-bottom: 1px solid var(--grey50);
         }
         .top h3 {
           margin: 0;

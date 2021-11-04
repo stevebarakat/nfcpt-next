@@ -80,7 +80,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   gap: 3rem;
-  color: var(--grey);
+  color: var(--grey50);
   padding-top: 4rem;
   justify-content: center;
   text-align: center;

@@ -19,7 +19,7 @@ button {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
     "Droid Sans", "Helvetica Neue", sans-serif;
-  color: var(--grey);
+  color: var(--grey50);
 }
 code {
   font-family: "Menlo";
@@ -58,7 +58,8 @@ blockquote span::after {
   content: "\201D";
 }
 
-input {
+input,
+textarea {
   padding: 0.5rem;
   width: 100%;
   border: none;
