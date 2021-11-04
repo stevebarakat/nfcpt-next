@@ -99,6 +99,10 @@ main .container {
   .pageWrap {
     grid-template-columns: 2fr 1fr;
   }
+  .sidebarWrap {
+    position: relative;
+    top: -200px;
+  }
 }
 @media (min-width: 650px) {
   .page h1,

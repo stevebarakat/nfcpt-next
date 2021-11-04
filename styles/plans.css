@@ -1,0 +1,134 @@
+.plans {
+  padding-top: 150px;
+  background: url("../images/happy.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+.plans p,
+.plans ul {
+  line-height: 1.75;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+.plans * {
+  color: white;
+}
+.plans ul li {
+  list-style: disc outside;
+  margin-left: 1rem;
+  padding-bottom: 0.75rem;
+}
+
+.plans h1,
+.plans h2,
+.plans h3,
+.plans h4,
+.plans h5 {
+  margin: 3rem 0 1.5rem;
+  font-family: "Inter", sans-serif;
+  line-height: 1;
+}
+
+.plans h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+
+.plans h2 {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.plans h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.plans h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.plans h5 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+small,
+.text-sm {
+  font-size: 0.75rem;
+}
+
+.heading {
+  position: relative;
+}
+
+.plansWrap {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-gap: 3rem;
+  justify-content: center;
+  /* align-items: center; */
+  margin: 0 auto;
+  max-width: 100%;
+}
+main .container {
+  background: none;
+  display: block;
+  padding: 0 2rem;
+}
+
+@media (min-width: 1050px) {
+  .plansWrap {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+@media (min-width: 650px) {
+  .plans h1,
+  .plans h2,
+  .plans h3,
+  .plans h4,
+  .plans h5 {
+    margin: 3rem 2rem 1.5rem;
+    font-family: "Inter", sans-serif;
+    line-height: 1.25;
+  }
+
+  .plans h1 {
+    font-size: 3rem;
+    font-weight: 900;
+  }
+
+  .plans h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+  }
+
+  .plans h3 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .plans h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .plans h5 {
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+
+  .plans p,
+  .plans ul {
+    line-height: 2;
+    font-size: 1.25rem;
+    margin-bottom: 40px;
+    margin: 0 2rem;
+  }
+
+  .plans ul li {
+    margin-left: 3rem;
+  }
+}

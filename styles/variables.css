@@ -1,5 +1,6 @@
 :root {
   --primaryColor: hsla(201, 100%, 45%, 1);
+  --primaryColor50: hsla(201, 100%, 45%, 0.5);
   --primaryGradient: -webkit-linear-gradient(
     top,
     #0095e6 0%,
@@ -7,7 +8,8 @@
     #0095e6 100%
   );
   --primaryColorDark: #0074b2;
-  --accentColor: #ee6ab9;
+  --accentColor: hsla(324, 80%, 67%, 1);
+  --accentColor50: hsla(324, 80%, 67%, 0.5);
   --accentGradient: -webkit-linear-gradient(
     top,
     #ee6ab9 0%,
@@ -20,6 +22,9 @@
   --blackColor: #002133;
   --whiteColor: #e4e7ec;
   --whiteColor10: #c6ccd7;
-  --transparentWhite50: hsla(0, 100%, 100%, 0.25);
+  --transparentWhite25: hsla(0, 100%, 100%, 0.25);
+  --transparentBlack25: hsla(0, 0%, 0%, 0.25);
+  --transparentBlack50: hsla(0, 0%, 0%, 0.5);
+  --transparentBlack75: hsla(0, 0%, 0%, 0.75);
   --papayaWhip25: hsla(37, 100%, 92%, 0.25);
 }

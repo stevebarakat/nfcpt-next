@@ -58,7 +58,9 @@ export default function Page({ page }) {
                     dangerouslySetInnerHTML={{ __html: page.content }}
                   ></div>
                 </article>
-                <Sidebar />
+                <div className="sidebarWrap">
+                  <Sidebar />
+                </div>
               </div>
             </div>
           </main>

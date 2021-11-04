@@ -3,7 +3,7 @@ import { buildUrl } from "cloudinary-build-url";
 import Layout from "../components/Layout";
 import Sidebar from "../components/Sidebar";
 import Image from "next/image";
-import plans from "../images/plans.jpg";
+import plans from "../images/hero-2.jpg";
 
 export default function Plans() {
   const urlPixelated = buildUrl("plans", {
@@ -26,30 +26,21 @@ export default function Plans() {
         />
       </Head>
       <Layout>
-        <div className="page">
-          <div className="mastheadWrap">
-            <Image
-              layout="fill"
-              objectFit="cover"
-              objectPosition="center"
-              quality={100}
-              placeholder="blur"
-              blurDataURL={urlPixelated}
-              src={plans}
-              alt="women exercising"
-            />
-            <div className={"heading container"}>
-              <span className="h1">Happy Therapy Club</span>
-              <p className="description">
-                Regular chiropractic adjustments lead to overall
-                health and happiness.
-              </p>
-            </div>
-          </div>
+        {/* <Image
+          layout="fill"
+          objectFit="cover"
+          objectPosition="center"
+          quality={100}
+          placeholder="blur"
+          blurDataURL={urlPixelated}
+          src={plans}
+          alt="women exercising"
+        /> */}
+        <div className="plans">
           <main>
             <div className="container">
               <div className="pageWrap">
-                <article>
+                <article style={{ zIndex: 9 }}>
                   <h1>Pricing Plans</h1>
                   <p>
                     Lorem ipsum dolor, sit amet consectetur
@@ -204,7 +195,7 @@ export default function Plans() {
           padding: 2rem;
           font-size: 1rem;
           font-weight: 600;
-          background: hsla(201, 100%, 45%, 0.25);
+          background: var(--transparentBlack50);
           justify-content: space-between;
           border-bottom: 1px solid var(--grey);
         }
@@ -212,7 +203,7 @@ export default function Plans() {
           /* border: 1px solid black; */
         }
         .top {
-          background: var(--primaryColor);
+          background: var(--transparentBlack75);
           padding: 1rem;
           text-align: center;
           border-bottom: 1px solid var(--grey);
