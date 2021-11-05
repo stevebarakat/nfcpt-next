@@ -5,7 +5,6 @@ import Button from "../components/Button";
 import Sidebar from "../components/Sidebar";
 import Image from "next/image";
 import plans from "../images/plans.jpg";
-import { plansBase64 } from "../images/plansBase64";
 
 export default function PageMissing({ page }) {
   return (
@@ -22,7 +21,6 @@ export default function PageMissing({ page }) {
           <div className="mastheadWrap">
             <Image
               priority
-              blurDataURL={plansBase64}
               placeholder="blur"
               layout="fill"
               objectFit="cover"

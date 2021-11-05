@@ -30,11 +30,11 @@ export default function ClaimOfferForm() {
         <div className="inputWrap">
           <Button
             color="var(--accentColor)"
-            borderColor="white"
+            borderColor="transparent"
             textColor="white"
             width="100%"
           >
-            Claim This Offer Now
+            Get Started
           </Button>
         </div>
       </form>

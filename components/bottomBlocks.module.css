@@ -12,25 +12,20 @@
 
 .headline,
 .quote {
+  font-size: 3rem;
   font-weight: 800;
   letter-spacing: -0.075rem;
-  display: block;
+  line-height: 1.5;
   padding-bottom: 1rem;
-}
-.headline {
-  font-size: 3rem;
-}
-.quote {
-  font-size: 2.5rem;
-  line-height: 3.75rem;
+  display: block;
 }
 
 .figcaption {
   font-size: 1.25rem;
-  font-weight: 200;
+  font-weight: 400;
 }
 .figcaption span {
-  font-weight: 400;
+  font-weight: 700;
 }
 .bottomBlocks img {
   z-index: -1;
@@ -62,7 +57,7 @@
   display: none;
 }
 .rightWrapTop figcaption {
-  color: var(--grey25);
+  color: var(--grey40);
 }
 
 .leftWrapBtm {
@@ -94,13 +89,12 @@
   background: url("../images/trio-sm-pink.jpg");
   background-size: cover;
   background-position: 50% 35%;
-  /* padding: 4rem; */
   width: 100%;
   justify-self: center;
   color: white;
   text-align: center;
 }
-.rightWrapBtm figure {
+.rightWrapBtm .figure {
   max-width: 675px;
   padding: 6rem 2rem;
 }
@@ -108,9 +102,6 @@
 @media (min-width: 850px) {
   .bottomBlocks {
     flex-direction: row;
-  }
-  .headline {
-    font-size: 3rem;
   }
   .leftWrapTop {
     width: 50%;
@@ -138,9 +129,11 @@
     background-size: cover;
     background-position: 50% 15%;
     padding: 4rem;
+    align-self: center;
   }
   .rightWrapBtm .figure {
     visibility: hidden;
+    padding: 2rem;
   }
   .figure {
     visibility: visible;
@@ -149,8 +142,7 @@
   .figcaption {
     font-size: 1.25rem;
   }
+  .headline,
   .quote {
-    font-size: 3rem;
-    line-height: 3rem;
   }
 }

@@ -16,10 +16,13 @@
     #ee6ab9 100%
   );
   --darkColor: hsla(201, 100%, 10%, 1);
-  --grey25: #a0a0a0;
   --grey05: hsla(0, 0%, 95%, 1);
   --grey10: hsla(0, 0%, 90%, 1);
+  --grey15: hsla(0, 0%, 85%, 1);
+  --grey20: hsla(0, 0%, 80%, 1);
   --grey25: hsla(0, 0%, 75%, 1);
+  --grey30: hsla(0, 0%, 70%, 1);
+  --grey40: hsla(0, 0%, 60%, 1);
   --grey50: hsla(0, 0%, 50%, 1);
   --grey75: hsla(0, 0%, 25%, 1);
   --transparentWhite25: hsla(0, 100%, 100%, 0.25);

@@ -15,6 +15,15 @@ export async function getStaticProps() {
       query GetHomepage {
         pageBy(uri: "homepage") {
           title
+          featuredImage {
+            node {
+              slug
+              title
+              caption
+              sourceUrl
+              altText
+            }
+          }
           homeSettings {
             heroDescription
             heroHeadline
@@ -42,10 +51,7 @@ export default function Home({ home }) {
         <meta name="description" content={home.seo.metaDesc} />
       </Head>
       <Layout>
-        <Hero
-          headline={home.homeSettings.heroHeadline}
-          description={home.homeSettings.heroDescription}
-        />
+        <Hero home={home} />
         <CallToAction />
         <Mission />
         <Treatments />

@@ -1,23 +1,43 @@
 import Image from "next/image";
+import { buildUrl } from "cloudinary-build-url";
 import hero from "../images/hero-1.jpg";
 import styles from "./hero.module.css";
 
-const Hero = ({ headline, description }) => {
+const Hero = ({ home }) => {
+  const urlPixelated = buildUrl(home.featuredImage.node.slug, {
+    cloud: {
+      cloudName: "stevebarakat",
+    },
+    transformations: {
+      effect: {
+        name: "pixelate",
+      },
+    },
+  });
+
   return (
     <section className="container">
       <div className={styles.hero}>
-        <span className={styles.headline}>{headline}</span>
+        <span className={styles.headline}>
+          {home.featuredImage.node.title}
+        </span>
         <div
-          dangerouslySetInnerHTML={{ __html: description }}
+          dangerouslySetInnerHTML={{
+            __html: home.featuredImage.node.caption,
+          }}
           className={styles.description}
         ></div>
       </div>
       <Image
+        priority
         layout="fill"
         objectFit="cover"
         objectPosition="center"
-        src={hero}
-        alt="Picture of the author"
+        quality={100}
+        placeholder="blur"
+        blurDataURL={urlPixelated}
+        src={home.featuredImage.node.sourceUrl}
+        alt={home.featuredImage.node.altText}
       />
     </section>
   );

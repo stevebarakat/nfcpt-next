@@ -1,7 +1,7 @@
-import Head from 'next/head'
-import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
+import Head from "next/head";
+import React from "react";
+import Header from "./Header";
+import Footer from "./Footer";
 
 const Layout = ({ children }) => (
   <div>
@@ -12,6 +12,6 @@ const Layout = ({ children }) => (
     {children}
     <Footer />
   </div>
-)
+);
 
 export default Layout;

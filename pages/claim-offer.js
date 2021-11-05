@@ -1,11 +1,11 @@
 import { useState } from "react";
 import Head from "next/head";
 import Layout from "../components/Layout";
-import ContactForm from "../components/ContactForm";
+import ClaimOfferForm from "../components/ClaimOfferForm";
 import Button from "../components/Button";
 import Sidebar from "../components/Sidebar";
 import Image from "next/image";
-import plans from "../images/plans.jpg";
+import claim from "../images/claim.jpg";
 
 function encode(data) {
   return Object.keys(data)
@@ -42,7 +42,7 @@ export default function Contact({ page }) {
   return (
     <>
       <Head>
-        <title>Contact</title>
+        <title>Claim Offer</title>
         <meta
           name="description"
           content="Car Accident Chiropractor - We focus on auto accident recovery. Get the settlement you deserve. Free consultation (904) 272-4329"
@@ -56,9 +56,9 @@ export default function Contact({ page }) {
               placeholder="blur"
               layout="fill"
               objectFit="cover"
-              objectPosition="center"
+              objectPosition="top"
               quality={100}
-              src={plans}
+              src={claim}
               alt="women exercising"
             />
             <div className={"heading container"}>
@@ -73,7 +73,7 @@ export default function Contact({ page }) {
             <div className="container">
               <div className="contactWrap">
                 <article>
-                  <h1>Contact</h1>
+                  <h1>Claim Offer</h1>
                   <p>
                     Our goal is to guide you to recovery and beyond.
                     If you have a specific health concern, please
@@ -87,7 +87,7 @@ export default function Contact({ page }) {
                   </p>
                 </article>
                 <div className="formWrap">
-                  <ContactForm />
+                  <ClaimOfferForm />
                 </div>
               </div>
             </div>
