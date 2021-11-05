@@ -65,7 +65,8 @@ export default function Contact({ page }) {
             <div className={"heading container"}>
               <span className="h1">Thank You</span>
               <p className="description">
-                Thanks for reaching out. We'll get back to you asap!
+                Thanks for reaching out. We&apos;ll get back to you
+                asap!
               </p>
             </div>
           </div>
@@ -77,9 +78,9 @@ export default function Contact({ page }) {
                   <p>
                     Your form was sucessfully submitted. Someone from
                     our office will be responding to you shortly. If
-                    you don't hear back from us within the next 24
-                    hours, please check your junk mail to ensure we
-                    weren't flagged by the spam filter.
+                    you don&apos;t hear back from us within the next
+                    24 hours, please check your junk mail to ensure we
+                    weren&apos;t flagged by the spam filter.
                     <div>
                       <Link href="/">
                         <a>Return to homepage</a>
