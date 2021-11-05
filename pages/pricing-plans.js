@@ -1,3 +1,5 @@
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
 import Head from "next/head";
 import { buildUrl } from "cloudinary-build-url";
 import Layout from "../components/Layout";
@@ -6,6 +8,9 @@ import Image from "next/image";
 import plans from "../images/hero-2.jpg";
 
 export default function Plans() {
+  const el = useRef();
+  const q = gsap.utils.selector(el);
+
   const urlPixelated = buildUrl("plans", {
     cloud: {
       cloudName: "stevebarakat",
@@ -16,6 +21,16 @@ export default function Plans() {
       },
     },
   });
+
+  useEffect(() => {
+    // Target any descendant with the class of .grid3 - no matter how far down the descendant tree. Uses el.current.querySelectorAll() internally
+    gsap.fromTo(
+      q(".grid3"),
+      { opacity: 0 },
+      { opacity: 1, duration: 1, stagger: 1 }
+    );
+  }, []);
+
   return (
     <>
       <Head>
@@ -26,16 +41,6 @@ export default function Plans() {
         />
       </Head>
       <Layout>
-        {/* <Image
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
-          quality={100}
-          placeholder="blur"
-          blurDataURL={urlPixelated}
-          src={plans}
-          alt="women exercising"
-        /> */}
         <div className="plans">
           <main>
             <div className="container">
@@ -43,14 +48,16 @@ export default function Plans() {
                 <article style={{ zIndex: 9 }}>
                   <h1>Pricing Plans</h1>
                   <p>
-                    Lorem ipsum dolor, sit amet consectetur
-                    adipisicing elit. Facere porro, corrupti atque
-                    neque voluptatibus, sapiente veritatis doloremque
-                    quae nobis dolor eius amet voluptatem aliquam cum
-                    repellat et exercitationem sit dolorem?
+                    After recieving your initial consultation, Dr.
+                    Orlando will perform a full exam in order to gain
+                    insight on what recovery plan will work for you.
+                    Since the recommendation will vary from person to
+                    person, we offer multiple plans that are both
+                    affordable and convenient without the hassles of
+                    long term contracts.
                   </p>
                   {/* CHIROPRACTIC ADJUSTMENTS */}
-                  <div className="planWrap">
+                  <div className="planWrap" ref={el}>
                     <div className="top">
                       <h3>Chiropractic Adjustments</h3>
                     </div>
@@ -199,11 +206,8 @@ export default function Plans() {
           justify-content: space-between;
           border-bottom: 1px solid var(--grey50);
         }
-        .grid3 div {
-          /* border: 1px solid black; */
-        }
         .top {
-          background: var(--transparentBlack75);
+          background: var(--transparentBlack50);
           padding: 1rem;
           text-align: center;
           border-bottom: 1px solid var(--grey50);

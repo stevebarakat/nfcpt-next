@@ -18,7 +18,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   border-bottom: 2px solid var(--transparentWhite25);
-  padding: 4rem 0 6em;
+  padding: 4rem 0;
 }
 
 .innerFooter {
@@ -33,6 +33,7 @@
 .btnWrap {
   display: flex;
   gap: 0.75rem;
+  padding-top: 0;
 }
 
 .h4 {
@@ -51,6 +52,7 @@
 .description {
   font-size: 1rem;
   display: block;
+  padding-bottom: 2rem;
 }
 
 .innerFooter ul li a {
@@ -83,7 +85,7 @@
     padding: 4rem 0;
   }
   .btnWrap {
-    padding-top: 2rem;
+    padding-top: 0;
   }
 }
 .innerFooter ul {

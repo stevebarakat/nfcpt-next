@@ -1,24 +1,16 @@
 import { useEffect, useRef } from "react";
-import CountUp, { useCountUp } from "react-countup";
+import CountUp from "react-countup";
+import { useInView } from "react-intersection-observer";
 
 import styles from "./mission.module.css";
 import { FaCheckCircle } from "react-icons/fa";
 
 const Mission = () => {
-  const countUpRef = useRef(null);
-  const { pauseResume } = useCountUp({
-    ref: countUpRef,
-    start: 0.01,
-    end: 20,
-    delay: 1000,
-    duration: 5,
-    suffix: "Y+",
+  const [ref, inView] = useInView({
+    threshold: 0.3,
+    triggerOnce: true,
   });
-
-  useEffect(() => {
-    pauseResume();
-  }, [pauseResume]);
-
+  console.log("in view: ", inView);
   return (
     <div className={styles.mission}>
       <div className={styles.missionLeftWrap}>
@@ -42,7 +34,6 @@ const Mission = () => {
             We&apos;re not a franchise
           </span>
           <ul className={styles.missionList}>
-            {/* <li>We're not a franchise</li> */}
             <li>Doctor owned and operated.</li>
             <li>Individualized personal treatment plans.</li>
             <li>No long term contracts.</li>
@@ -50,13 +41,24 @@ const Mission = () => {
           </ul>
           <div className={styles.stats}>
             <div className={styles.stat}>
-              <span>
-                <i ref={countUpRef}></i>
-              </span>
+              <span>20Y+</span>
               <span>Serving Orange Park</span>
             </div>
             <div className={styles.stat}>
-              <CountUp end={100} duration={5} suffix="K" />
+              <CountUp
+                start={0}
+                end={inView ? target : 220}
+                duration={2}
+                separator="."
+                useEasing={true}
+              >
+                {({ countUpRef }) => (
+                  <span
+                    className="text-2xl md:text-4xl font-black leading-none"
+                    ref={countUpRef}
+                  />
+                )}
+              </CountUp>
               <span>Patients Served</span>
             </div>
             <div className={styles.stat}>

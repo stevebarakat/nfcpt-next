@@ -15,7 +15,7 @@
     #ed82c0 50%,
     #ee6ab9 100%
   );
-  --darkColor: hsla(201, 100%, 05%, 1);
+  --darkColor: hsla(201, 100%, 10%, 1);
   --lightGrey: #a0a0a0;
   --grey50: hsla(0, 0%, 50%, 1) /* #809099 */;
   --grey75: hsla(0, 0%, 25%, 1); /* #334E5C */
@@ -23,8 +23,8 @@
   --whiteColor: #e4e7ec;
   --whiteColor10: #c6ccd7;
   --transparentWhite25: hsla(0, 100%, 100%, 0.25);
-  --transparentBlack25: hsla(201, 0%, 10%, 0.25);
-  --transparentBlack50: hsla(201, 0%, 10%, 0.5);
-  --transparentBlack75: hsla(201, 0%, 10%, 0.75);
+  --transparentBlack25: hsla(0, 0%, 10%, 0.25);
+  --transparentBlack50: hsla(0, 0%, 10%, 0.5);
+  --transparentBlack75: hsla(0, 0%, 10%, 0.75);
   --papayaWhip25: hsla(37, 100%, 92%, 0.25);
 }

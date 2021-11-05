@@ -130,7 +130,7 @@ table {
 *,
 *::before,
 *::after {
-  outline: none;
+  /* outline: none; */
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

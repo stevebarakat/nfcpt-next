@@ -78,7 +78,7 @@
   width: fit-content;
 }
 .nav a:focus {
-  border-bottom: 4px solid white;
+  /* border-bottom: 4px solid white; */
 }
 .close:hover {
   background-color: transparent;
@@ -181,6 +181,7 @@
   }
   .nav ul li a {
     border-bottom: none;
+    transition: all 0.2s;
   }
   .nav ul li a:hover {
     border-top: 4px solid transparent;
