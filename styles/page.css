@@ -89,11 +89,6 @@ small,
   margin: 0 auto;
   max-width: 100%;
 }
-main .container {
-  background: var(--papayaWhip25);
-  display: block;
-  padding: 0 2rem;
-}
 
 @media (min-width: 1050px) {
   .pageWrap {

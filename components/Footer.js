@@ -21,10 +21,7 @@ const Footer = () => (
           </span>
         </div>
         <div className={styles.btnWrap}>
-          <Button
-            color="var(--whiteColor)"
-            textColor="var(--grey100)"
-          >
+          <Button color="var(--grey05)" textColor="var(--grey75)">
             Learn More
           </Button>
           <Button color="var(--accentColor)" textColor="white">

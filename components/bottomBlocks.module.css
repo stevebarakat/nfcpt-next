@@ -62,13 +62,13 @@
   display: none;
 }
 .rightWrapTop figcaption {
-  color: var(--lightGrey);
+  color: var(--grey25);
 }
 
 .leftWrapBtm {
   width: 100%;
   background: var(--accentGradient);
-  color: var(--whiteColor);
+  color: var(--grey05);
   display: flex;
   justify-content: flex-end;
   padding: 4rem;

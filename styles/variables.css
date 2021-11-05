@@ -16,15 +16,18 @@
     #ee6ab9 100%
   );
   --darkColor: hsla(201, 100%, 10%, 1);
-  --lightGrey: #a0a0a0;
-  --grey50: hsla(0, 0%, 50%, 1) /* #809099 */;
-  --grey75: hsla(0, 0%, 25%, 1); /* #334E5C */
-  --grey100: hsla(0, 0%, 10%, 1); /*#002133 */
-  --whiteColor: #e4e7ec;
-  --whiteColor10: #c6ccd7;
+  --grey25: #a0a0a0;
+  --grey05: hsla(0, 0%, 95%, 1);
+  --grey10: hsla(0, 0%, 90%, 1);
+  --grey25: hsla(0, 0%, 75%, 1);
+  --grey50: hsla(0, 0%, 50%, 1);
+  --grey75: hsla(0, 0%, 25%, 1);
   --transparentWhite25: hsla(0, 100%, 100%, 0.25);
   --transparentBlack25: hsla(0, 0%, 10%, 0.25);
   --transparentBlack50: hsla(0, 0%, 10%, 0.5);
   --transparentBlack75: hsla(0, 0%, 10%, 0.75);
   --papayaWhip25: hsla(37, 100%, 92%, 0.25);
+  --papayaWhip50: hsla(37, 100%, 92%, 0.5);
+  --papayaWhip75: hsla(37, 100%, 92%, 0.75);
+  --papayaWhip: hsla(37, 100%, 92%, 1);
 }

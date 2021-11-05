@@ -54,13 +54,13 @@ const BottomBlocks = () => {
             >
               <Button
                 color="var(--primaryColor)"
-                textColor="var(--whiteColor)"
+                textColor="var(--grey05)"
               >
                 Learn More
               </Button>
               <Button
                 color="var(--accentColor)"
-                borderColor="var(--whiteColor)"
+                borderColor="var(--grey05)"
                 textColor="white"
               >
                 Get Started
@@ -85,13 +85,13 @@ const BottomBlocks = () => {
             >
               <Button
                 color="var(--primaryColor)"
-                textColor="var(--whiteColor)"
+                textColor="var(--grey05)"
               >
                 Learn More
               </Button>
               <Button
                 color="var(--accentColor)"
-                borderColor="var(--whiteColor)"
+                borderColor="var(--grey05)"
                 textColor="white"
               >
                 Get Started

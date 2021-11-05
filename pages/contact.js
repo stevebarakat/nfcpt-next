@@ -76,7 +76,7 @@ export default function Contact({ page }) {
               <div className="contactWrap">
                 <article>
                   <h1>Contact</h1>
-                  <p style={{ paddingBottom: "1.25rem" }}>
+                  <p>
                     Our goal is to guide you to recovery and beyond.
                     If you have a specific health concern, please
                     contact us for assistance.
@@ -105,12 +105,11 @@ export default function Contact({ page }) {
           max-width: 100%;
         }
         .formWrap {
-          margin: 2rem;
-          padding: 6rem 2rem;
+          margin: 0;
+          padding: 6rem 0;
           border-top: 1px solid var(--grey50);
           border-left: none;
         }
-
         .top {
           /* background: var(--primaryColor); */
           padding: 1rem;
@@ -119,7 +118,7 @@ export default function Contact({ page }) {
         }
         .top h3 {
           margin: 0;
-          color: var(--whiteColor);
+          color: var(--grey05);
           width: fit-content;
         }
         @media (min-width: 850px) {
@@ -128,8 +127,8 @@ export default function Contact({ page }) {
           }
           .formWrap {
             margin: 2rem;
-            padding: 1rem 2rem;
-            border-left: 1px solid var(--grey50);
+            padding: 2rem 0rem 0rem 4rem;
+            border-left: 1px solid var(--grey25);
             border-top: none;
           }
         }

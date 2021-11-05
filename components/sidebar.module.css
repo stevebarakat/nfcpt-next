@@ -2,7 +2,7 @@
   height: fit-content;
   padding: 1rem 0 2rem;
   margin-bottom: 4rem;
-  display: flex;
+  display: none;
   flex-direction: column;
 }
 
@@ -18,7 +18,7 @@
   font-size: 1.25rem;
 }
 .testimonial {
-  color: var(--whiteColor);
+  color: var(--grey05);
   padding: 0 4rem;
   font-size: 1.75rem;
   line-height: 2;
@@ -32,13 +32,18 @@
   position: relative;
   padding: 1.5rem;
   margin: 3rem;
-  background: var(--whiteColor);
+  background: var(--grey05);
   border-radius: 90%;
-  border: 40px solid var(--whiteColor);
+  border: 40px solid var(--grey05);
   aspect-ratio: 1/1;
 }
 .testimonialImg img {
   border-radius: 90%;
+}
+@media (min-width: 700px) {
+  .sidebarWidget {
+    display: flex;
+  }
 }
 
 @media (min-width: 700px) and (max-width: 1050px) {

@@ -11,7 +11,7 @@
 
 .headline {
   /* margin-top: -26vh; */
-  color: white;
+  color: var(--grey10);
   font-size: 3rem;
   font-weight: 900;
   font-family: Montserrat;

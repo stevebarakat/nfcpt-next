@@ -54,7 +54,7 @@ const CallToAction = () => {
                   </Button>
                   <Button
                     color="var(--accentColor)"
-                    borderColor="var(--whiteColor)"
+                    borderColor="var(--grey05)"
                     textColor="white"
                   >
                     Get Started

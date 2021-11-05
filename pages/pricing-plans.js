@@ -214,7 +214,7 @@ export default function Plans() {
         }
         .top h3 {
           margin: 0;
-          color: var(--whiteColor);
+          color: var(--grey05);
           width: fit-content;
         }
         @media (min-width: 850px) {
