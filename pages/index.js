@@ -24,10 +24,6 @@ export async function getStaticProps() {
               altText
             }
           }
-          homeSettings {
-            heroDescription
-            heroHeadline
-          }
           seo {
             metaDesc
             title
