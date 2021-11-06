@@ -10,7 +10,7 @@ const Mission = () => {
     threshold: 0.3,
     triggerOnce: true,
   });
-  console.log("in view: ", inView);
+  // console.log("in view: ", inView);
   return (
     <div className={styles.mission}>
       <div className={styles.missionLeftWrap}>
