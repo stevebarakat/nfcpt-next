@@ -5,7 +5,7 @@ export default function ContactForm() {
     <>
       <form
         name="contact"
-        action="/"
+        action="/thanks"
         method="POST"
         data-netlify="true"
       >
