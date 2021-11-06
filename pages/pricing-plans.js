@@ -13,6 +13,19 @@ export default function Plans() {
   const el = useRef();
   const q = gsap.utils.selector(el.current);
 
+  useEffect(() => {
+    // Target any descendant with the class of .grid3 - no matter how far down the descendant tree. Uses el.current.querySelectorAll() internally
+    gsap.set(".planWrap", {
+      opacity: 1,
+    });
+    gsap.from(".planWrap", {
+      stagger: { amount: 0.5 },
+      scale: 0,
+      delay: 0.25,
+      duration: 1,
+    });
+  }, []);
+
   const urlPixelated = buildUrl("plans", {
     cloud: {
       cloudName: "stevebarakat",
@@ -23,26 +36,6 @@ export default function Plans() {
       },
     },
   });
-
-  useEffect(() => {
-    // Target any descendant with the class of .grid3 - no matter how far down the descendant tree. Uses el.current.querySelectorAll() internally
-    gsap.fromTo(
-      q(".planWrap"),
-      { x: "-1000px" },
-      {
-        x: 0,
-        scrollTrigger: {
-          trigger: el.current,
-          pin: true, // pin the trigger element while active
-          start: "top top", // when the top of the trigger hits the top of the viewport
-          end: "+=500", // end after scrolling 500px beyond the start
-          scrub: 1,
-        },
-        duration: 1,
-        stagger: 1,
-      }
-    );
-  }, []);
 
   return (
     <>
@@ -206,6 +199,7 @@ export default function Plans() {
         .planWrap {
           margin: 2rem 00;
           border: 1px solid var(--grey50);
+          opacity: 0;
         }
         .grid3 {
           display: grid;

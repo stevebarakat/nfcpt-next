@@ -9,14 +9,15 @@ import { gql, useQuery } from "@apollo/client";
 import { client } from "../lib/apollo";
 
 const TESTIMONIALS = gql`
-  query GetTestimonials {
-    pageBy(uri: "settings-page") {
-      pageId
+  query Testimonials {
+    testimonials {
       pageSettings {
         testimonials {
           testimonial {
+            testimonialAuthor
             testimonialContent
             testimonialPhoto {
+              altText
               sourceUrl
             }
           }
@@ -36,10 +37,10 @@ const Sidebar = () => {
   const n = randomNumber(0, 1);
 
   const testimonialPhoto =
-    data?.pageBy?.pageSettings.testimonials[n].testimonial
+    data?.testimonials?.pageSettings.testimonials[n].testimonial
       .testimonialPhoto.sourceUrl;
   const testimonialContent =
-    data?.pageBy?.pageSettings.testimonials[n].testimonial
+    data?.testimonials?.pageSettings.testimonials[n].testimonial
       .testimonialContent;
   return (
     <aside className={styles.sidebar}>
