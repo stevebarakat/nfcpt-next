@@ -42,8 +42,10 @@ const BottomBlocks = () => {
           <figure className={styles.figure}>
             <span className={styles.headline}>Join the club!</span>
             <p>
-              We offer package deals on regular chiropractic
-              treatments and massage therapy to club members
+              The best way to keep your spine healthy is by taking
+              care of it. We offer package deals on regular
+              chiropractic treatments and massage therapy to club
+              members.
             </p>
             <div
               style={{
@@ -72,8 +74,10 @@ const BottomBlocks = () => {
           <figure className={styles.figure}>
             <span className={styles.headline}>Join the club!</span>
             <p>
-              We offer package deals on regular chiropractic
-              treatments and massage therapy to club members.
+              The best way to keep your spine healthy is by taking
+              care of it. We offer package deals on regular
+              chiropractic treatments and massage therapy to club
+              members.
             </p>
             <div
               style={{
