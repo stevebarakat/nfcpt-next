@@ -27,7 +27,7 @@ const TESTIMONIALS = gql`
 `;
 
 const Sidebar = () => {
-  const { loading, error, data } = useQuery(TESTIMONIALS);
+  const { data } = useQuery(TESTIMONIALS);
 
   function randomNumber(min = 0, max = 1) {
     return Math.floor(Math.random() * (max - min + 1) + min);

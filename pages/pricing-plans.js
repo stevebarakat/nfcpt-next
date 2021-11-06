@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
+import { gsap } from "gsap/dist/gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Head from "next/head";
 import { buildUrl } from "cloudinary-build-url";
 import Layout from "../components/Layout";
@@ -8,8 +9,9 @@ import Image from "next/image";
 import plans from "../images/hero-2.jpg";
 
 export default function Plans() {
+  gsap.registerPlugin(ScrollTrigger);
   const el = useRef();
-  const q = gsap.utils.selector(el);
+  const q = gsap.utils.selector(el.current);
 
   const urlPixelated = buildUrl("plans", {
     cloud: {
@@ -25,9 +27,20 @@ export default function Plans() {
   useEffect(() => {
     // Target any descendant with the class of .grid3 - no matter how far down the descendant tree. Uses el.current.querySelectorAll() internally
     gsap.fromTo(
-      q(".grid3"),
-      { opacity: 0 },
-      { opacity: 1, duration: 1, stagger: 1 }
+      q(".planWrap"),
+      { x: "-1000px" },
+      {
+        x: 0,
+        scrollTrigger: {
+          trigger: el.current,
+          pin: true, // pin the trigger element while active
+          start: "top top", // when the top of the trigger hits the top of the viewport
+          end: "+=500", // end after scrolling 500px beyond the start
+          scrub: 1,
+        },
+        duration: 1,
+        stagger: 1,
+      }
     );
   }, []);
 
@@ -45,10 +58,10 @@ export default function Plans() {
           <main>
             <div className="container">
               <div className="pageWrap">
-                <article style={{ zIndex: 9 }}>
+                <article style={{ zIndex: 9 }} ref={el}>
                   <h1>Pricing Plans</h1>
                   <p>
-                    After recieving your initial consultation, Dr.
+                    After receiving your initial consultation, Dr.
                     Orlando will perform a full exam in order to gain
                     insight on what recovery plan will work for you.
                     Since the recommendation will vary from person to
@@ -57,7 +70,7 @@ export default function Plans() {
                     long term contracts.
                   </p>
                   {/* CHIROPRACTIC ADJUSTMENTS */}
-                  <div className="planWrap" ref={el}>
+                  <div className="planWrap">
                     <div className="top">
                       <h3>Chiropractic Adjustments</h3>
                     </div>

@@ -1,13 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { gql, useQuery } from "@apollo/client";
-import { client } from "../lib/apollo";
 import Hamburger from "hamburger-react";
-import {
-  FaCaretDown,
-  FaChevronRight,
-  FaBars,
-  FaTimes,
-} from "react-icons/fa";
+import { FaCaretDown } from "react-icons/fa";
 import useOnClickOutside from "../hooks/useOnClickOutside";
 import Link from "next/link";
 import Image from "next/image";
@@ -37,7 +31,7 @@ const PRIMARY_MENU = gql`
 `;
 
 const Header = () => {
-  const { loading, error, data } = useQuery(PRIMARY_MENU);
+  const { data } = useQuery(PRIMARY_MENU);
   const aboutEl = useRef();
   const servicesEl = useRef();
   const navLink = useRef();
@@ -104,19 +98,21 @@ const Header = () => {
     }
   }
 
-  const menu = data?.menus.nodes[0].menuItems.nodes.map((item, i) => (
-    <li key={i}>
-      {item.label} && {item.childItems} (
-      {console.log("parent: ", item.label)}
-      <ul>
-        {item.childItems.nodes.map((item, j) => {
-          console.log("child: ", item.label);
-          return <li key={j}>{item.label}</li>;
-        })}
-      </ul>
-      )
-    </li>
-  ));
+  const menu = (() =>
+    data?.menus.nodes[0].menuItems.nodes.map((item, i) => (
+      <li key={i}>
+        {item.label && item.childItems} (
+        {console.log("parent: ", item.label)}
+        {item.label}
+        <ul>
+          {item.childItems.nodes.map((item, j) => {
+            console.log("child: ", item.label);
+            return <li key={j}>{item.label}</li>;
+          })}
+        </ul>
+        )}
+      </li>
+    )))();
 
   return (
     <div className="flex">
@@ -142,6 +138,7 @@ const Header = () => {
         />
       </a>
       <nav className={styles.nav} id="navbar">
+        {console.log("menu", menu)}
         <div className={styles.container}>
           <div className={styles.menu}>
             <Link href="/" passHref>
@@ -252,7 +249,6 @@ const Header = () => {
             </ul>
             <span className={styles.tel}>
               <a className="bold" href="tel:904-272-4329">
-                {/* {console.log(menu.[2].props.children[0])} */}
                 (904) 272-4329
               </a>
             </span>
