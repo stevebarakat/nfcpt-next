@@ -103,17 +103,14 @@ const Header = () => {
         break;
     }
   }
-  // console.log(
-  //   "data: ",
-  //   data?.menus.nodes[0].menuItems.nodes[1].childItems.nodes[0].label
-  // );
 
   const menu = data?.menus.nodes[0].menuItems.nodes.map((item, i) => (
     <li key={i}>
       {item.label} && {item.childItems} (
+      {console.log("parent: ", item.label)}
       <ul>
         {item.childItems.nodes.map((item, j) => {
-          console.log("item: ", item.label);
+          console.log("child: ", item.label);
           return <li key={j}>{item.label}</li>;
         })}
       </ul>
