@@ -1,11 +1,12 @@
 import { useEffect, useRef } from "react";
+import { gsap } from "gsap/dist/gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { gql, useQuery } from "@apollo/client";
 import Head from "next/head";
 import { buildUrl } from "cloudinary-build-url";
 import Layout from "../components/Layout";
 import Sidebar from "../components/Sidebar";
 import Image from "next/image";
-import plans from "../images/hero-2.jpg";
 
 const PRICING_PLANS = gql`
   query GetPricingPlans {
@@ -30,7 +31,9 @@ const PRICING_PLANS = gql`
 
 export default function Plans() {
   const { loading, error, data } = useQuery(PRICING_PLANS);
-
+  gsap.registerPlugin(ScrollTrigger);
+  const el = useRef();
+  const q = gsap.utils.selector(el.current);
   const urlPixelated = buildUrl("plans", {
     cloud: {
       cloudName: "stevebarakat",
@@ -53,12 +56,12 @@ export default function Plans() {
         </div>
         {plan.pricingPlan.pricingLevel.map((level, j) => (
           <div key={j} className="grid3">
-            <div>{level.numberOfVisits}</div>
+            <div>{level.numberOfVisits} Visits</div>
             <div style={{ fontWeight: "800" }}>
               Save {level.discountAmount}%
             </div>
             <div>
-              <span className="strike">${level.newPrice}</span>$
+              <span className="strike">${level.newPrice}</span> $
               {level.oldPrice}
             </div>
           </div>
@@ -91,7 +94,7 @@ export default function Plans() {
                     long term contracts.
                   </p>
                   {/* CHIROPRACTIC ADJUSTMENTS */}
-                  <div className="planWrap">{pricingPlans}</div>
+                  {pricingPlans}
                 </article>
                 <Sidebar />
               </div>
@@ -99,46 +102,7 @@ export default function Plans() {
           </main>
         </div>
       </Layout>
-      <style jsx>{`
-        .planWrap {
-          margin: 2rem 00;
-          border: 1px solid var(--grey50);
-          /* opacity: 0; */
-        }
-        .grid3 {
-          display: grid;
-          grid-template-columns: repeat(3, fit-content(50%));
-          grid-gap: 1rem;
-          text-align: center;
-          padding: 2rem;
-          font-size: 1rem;
-          font-weight: 600;
-          background: var(--transparentBlack50);
-          justify-content: space-between;
-          border-bottom: 1px solid var(--grey50);
-        }
-        .top {
-          background: var(--transparentBlack50);
-          padding: 1rem;
-          text-align: center;
-          border-bottom: 1px solid var(--grey50);
-        }
-        .top h3 {
-          margin: 0;
-          color: var(--grey05);
-          width: fit-content;
-        }
-        @media (min-width: 850px) {
-          .grid3 {
-            font-size: 2rem;
-            grid-gap: 3rem;
-            padding: 3rem 2rem;
-          }
-          .planWrap {
-            margin: 2rem;
-          }
-        }
-      `}</style>
+      <style jsx>{``}</style>
     </>
   );
 }

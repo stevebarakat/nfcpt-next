@@ -9,9 +9,9 @@ import { gql, useQuery } from "@apollo/client";
 import { client } from "../lib/apollo";
 
 const TESTIMONIALS = gql`
-  query Testimonials {
-    testimonials {
-      pageSettings {
+  query GetTestimonials {
+    nfcptSettings {
+      nfcptSettings {
         testimonials {
           testimonial {
             testimonialAuthor
@@ -28,7 +28,7 @@ const TESTIMONIALS = gql`
 `;
 
 const Sidebar = () => {
-  const { data } = useQuery(TESTIMONIALS);
+  const { loading, error, data } = useQuery(TESTIMONIALS);
 
   function randomNumber(min = 0, max = 1) {
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -36,12 +36,23 @@ const Sidebar = () => {
 
   const n = randomNumber(0, 1);
 
-  const testimonialPhoto =
-    data?.testimonials?.pageSettings.testimonials[n].testimonial
+  console.log("data: ", data);
+
+  const testimonialPhotoAltText =
+    data?.nfcptSettings.nfcptSettings.testimonials[n].testimonial
+      .testimonialPhoto.altText;
+  const testimonialPhotoUrl =
+    data?.nfcptSettings.nfcptSettings.testimonials[n].testimonial
       .testimonialPhoto.sourceUrl;
   const testimonialContent =
-    data?.testimonials?.pageSettings.testimonials[n].testimonial
+    data?.nfcptSettings.nfcptSettings.testimonials[n].testimonial
       .testimonialContent;
+  const testimonialAuthor =
+    data?.nfcptSettings.nfcptSettings.testimonials[n].testimonial
+      .testimonialAuthor;
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
+
   return (
     <aside className={styles.sidebar}>
       <div
@@ -60,14 +71,14 @@ const Sidebar = () => {
         style={{ background: "var(--primaryColor)" }}
       >
         <div className={styles.testimonialImg}>
-          {testimonialPhoto && (
+          {testimonialPhotoUrl && (
             <Image
-              src={testimonialPhoto}
+              src={testimonialPhotoUrl}
               layout="fill"
               objectFit="cover"
               objectPosition="center"
               quality={100}
-              alt="Picture of the author"
+              alt={testimonialPhotoAltText}
             />
           )}
         </div>
@@ -76,6 +87,15 @@ const Sidebar = () => {
             {testimonialContent}
           </span>
         </blockquote>
+        <figcaption
+          style={{
+            color: "var(--grey10)",
+            textAlign: "center",
+            paddingBottom: "3rem",
+          }}
+        >
+          —{testimonialAuthor}
+        </figcaption>
       </div>
     </aside>
   );
