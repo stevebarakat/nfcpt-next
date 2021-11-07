@@ -100,47 +100,21 @@ const Header = () => {
     }
   }
 
-  const menu = (
-    <ul onKeyDown={handleKeyDown}>
-      {data?.menus.nodes[0].menuItems.nodes.map((item, i) => (
-        <li
-          key={i}
-          ref={menuRef}
-          id={item.path}
-          className={styles.dropdown}
-          onKeyDown={handleKeyDown}
-          onPointerDown={handlePointerDown}
-        >
-          <div style={{ display: "flex" }}>
-            <Link href={item.path}>
-              <a>
-                {item.label}
-                {item.childItems.nodes.length > 0 && <FaCaretDown />}
-              </a>
-            </Link>
-          </div>
-
-          <ul
-            onKeyDown={handleKeyDown}
-            style={
-              !toggleAbout
-                ? { display: "none" }
-                : { display: "block" }
-            }
-            className={styles.dropdownMenu}
-          >
-            {item.childItems.nodes.map((item, j) => (
-              <li key={j}>
-                <Link href={item.path}>
-                  <a>{item.label}</a>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </li>
-      ))}
-    </ul>
-  );
+  const menu = (() =>
+    data?.menus.nodes[0].menuItems.nodes.map((item, i) => (
+      <li key={i}>
+        {item.label && item.childItems} (
+        {console.log("parent: ", item.label)}
+        {item.label}
+        <ul>
+          {item.childItems.nodes.map((item, j) => {
+            console.log("child: ", item.label);
+            return <li key={j}>{item.label}</li>;
+          })}
+        </ul>
+        )}
+      </li>
+    )))();
 
   return (
     <div className="flex">
@@ -166,6 +140,7 @@ const Header = () => {
         />
       </a>
       <nav className={styles.nav} id="navbar">
+        {console.log("menu", menu)}
         <div className={styles.container}>
           <div className={styles.menu}>
             <Link href="/" passHref>
@@ -179,8 +154,8 @@ const Header = () => {
                 />
               </a>
             </Link>
-            {menu}
-            {/* <ul onKeyDown={handleKeyDown}>
+            {/* {menu} */}
+            <ul onKeyDown={handleKeyDown}>
               <li>
                 <Link href="/">
                   <a>Home</a>
@@ -274,7 +249,7 @@ const Header = () => {
                   <a>Contact</a>
                 </Link>
               </li>
-            </ul> */}
+            </ul>
             <span className={styles.tel}>
               <a className="bold" href="tel:904-272-4329">
                 (904) 272-4329
