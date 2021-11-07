@@ -47,14 +47,24 @@ export default function Plans() {
 
   const pricingPlans =
     data.nfcptSettings.nfcptSettings.pricingPlans.map((plan, i) => (
-      <div key={i}>
-        <h1>{plan.pricingPlan.title}</h1>
-        {plan.pricingPlan.pricingLevel.map(
-          (level) => level.discountAmount
-        )}
+      <div key={i} className="planWrap">
+        <div className="top">
+          <h3>{plan.pricingPlan.title}</h3>
+        </div>
+        {plan.pricingPlan.pricingLevel.map((level, j) => (
+          <div key={j} className="grid3">
+            <div>{level.numberOfVisits}</div>
+            <div style={{ fontWeight: "800" }}>
+              Save {level.discountAmount}%
+            </div>
+            <div>
+              <span className="strike">${level.newPrice}</span>$
+              {level.oldPrice}
+            </div>
+          </div>
+        ))}
       </div>
     ));
-  console.log(pricingPlans);
   return (
     <>
       <Head>
