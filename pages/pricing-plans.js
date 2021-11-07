@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { gql, useQuery } from "@apollo/client";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Head from "next/head";
@@ -8,7 +9,30 @@ import Sidebar from "../components/Sidebar";
 import Image from "next/image";
 import plans from "../images/hero-2.jpg";
 
+const PRICING_PLANS = gql`
+  query GetPricingPlans {
+    nfcptSettings {
+      nfcptSettings {
+        pricingPlans {
+          pricingPlan {
+            title
+            pricingLevel {
+              discountAmount
+              duration
+              newPrice
+              numberOfVisits
+              oldPrice
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
 export default function Plans() {
+  const { loading, error, data } = useQuery(PRICING_PLANS);
+
   gsap.registerPlugin(ScrollTrigger);
   const el = useRef();
   const q = gsap.utils.selector(el.current);
@@ -37,6 +61,15 @@ export default function Plans() {
     },
   });
 
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
+
+  data.nfcptSettings.nfcptSettings.pricingPlans.map((plan) => {
+    console.log(plan.pricingPlan.title);
+    plan.pricingPlan.pricingLevel.map((level) => {
+      console.log(level.discountAmount);
+    });
+  });
   return (
     <>
       <Head>

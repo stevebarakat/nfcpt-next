@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import { gql, useQuery } from "@apollo/client";
 import Hamburger from "hamburger-react";
 import { FaCaretDown } from "react-icons/fa";
 import useOnClickOutside from "../hooks/useOnClickOutside";
@@ -8,27 +7,6 @@ import Image from "next/image";
 import styles from "./header.module.css";
 import logo from "../images/logo.svg";
 import mobileLogo from "../images/mobile-logo.svg";
-
-const PRIMARY_MENU = gql`
-  query GetPrimaryMenu {
-    menus(where: { slug: "primary" }) {
-      nodes {
-        menuItems(where: { location: PRIMARY, parentId: "null" }) {
-          nodes {
-            path
-            label
-            childItems {
-              nodes {
-                path
-                label
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`;
 
 const Header = () => {
   const menuRef = useRef();
@@ -53,10 +31,6 @@ const Header = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, [mobile]);
-
-  const { loading, error, data } = useQuery(PRIMARY_MENU);
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :(</p>;
 
   function handlePointerDown(e) {
     if (e.currentTarget.id === menuRef?.current.id) {
@@ -100,22 +74,6 @@ const Header = () => {
     }
   }
 
-  const menu = (() =>
-    data?.menus.nodes[0].menuItems.nodes.map((item, i) => (
-      <li key={i}>
-        {item.label && item.childItems} (
-        {console.log("parent: ", item.label)}
-        {item.label}
-        <ul>
-          {item.childItems.nodes.map((item, j) => {
-            console.log("child: ", item.label);
-            return <li key={j}>{item.label}</li>;
-          })}
-        </ul>
-        )}
-      </li>
-    )))();
-
   return (
     <div className="flex">
       <span className={styles.mobileLogo}>
@@ -140,7 +98,6 @@ const Header = () => {
         />
       </a>
       <nav className={styles.nav} id="navbar">
-        {console.log("menu", menu)}
         <div className={styles.container}>
           <div className={styles.menu}>
             <Link href="/" passHref>
@@ -154,7 +111,6 @@ const Header = () => {
                 />
               </a>
             </Link>
-            {/* {menu} */}
             <ul onKeyDown={handleKeyDown}>
               <li>
                 <Link href="/">
