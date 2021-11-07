@@ -1,7 +1,9 @@
+import { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import Layout from "../components/Layout";
 import ClaimOfferForm from "../components/ClaimOfferForm";
+import Button from "../components/Button";
 import Sidebar from "../components/Sidebar";
 import Image from "next/image";
 import thanks from "../images/thank-you.jpg";
@@ -16,6 +18,28 @@ function encode(data) {
 }
 
 export default function Contact({ page }) {
+  const [state, setState] = useState("");
+  const handleChange = (e) => {
+    setState({ ...state, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    fetch("/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: encode({
+        "form-name": form.getAttribute("name"),
+        ...state,
+      }),
+    })
+      .then(() => alert(form.getAttribute("action")))
+      .catch((error) => alert(error));
+  };
+
   return (
     <>
       <Head>
@@ -52,7 +76,7 @@ export default function Contact({ page }) {
                 <article>
                   <h1>Thank You</h1>
                   <p>
-                    Your form was successfully submitted. Someone from
+                    Your form was sucessfully submitted. Someone from
                     our office will be responding to you shortly. If
                     you don&apos;t hear back from us within the next
                     24 hours, please check your junk mail to ensure we
