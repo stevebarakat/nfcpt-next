@@ -1,7 +1,5 @@
 import { useEffect, useRef } from "react";
 import { gql, useQuery } from "@apollo/client";
-import { gsap } from "gsap/dist/gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Head from "next/head";
 import { buildUrl } from "cloudinary-build-url";
 import Layout from "../components/Layout";
@@ -33,23 +31,6 @@ const PRICING_PLANS = gql`
 export default function Plans() {
   const { loading, error, data } = useQuery(PRICING_PLANS);
 
-  gsap.registerPlugin(ScrollTrigger);
-  const el = useRef();
-  const q = gsap.utils.selector(el.current);
-
-  useEffect(() => {
-    // Target any descendant with the class of .grid3 - no matter how far down the descendant tree. Uses el.current.querySelectorAll() internally
-    gsap.set(".planWrap", {
-      opacity: 1,
-    });
-    gsap.from(".planWrap", {
-      stagger: { amount: 0.5 },
-      scale: 0,
-      delay: 0.25,
-      duration: 1,
-    });
-  }, []);
-
   const urlPixelated = buildUrl("plans", {
     cloud: {
       cloudName: "stevebarakat",
@@ -64,12 +45,16 @@ export default function Plans() {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
-  data.nfcptSettings.nfcptSettings.pricingPlans.map((plan) => {
-    console.log(plan.pricingPlan.title);
-    plan.pricingPlan.pricingLevel.map((level) => {
-      console.log(level.discountAmount);
-    });
-  });
+  const pricingPlans =
+    data.nfcptSettings.nfcptSettings.pricingPlans.map((plan, i) => (
+      <div key={i}>
+        <h1>{plan.pricingPlan.title}</h1>
+        {plan.pricingPlan.pricingLevel.map(
+          (level) => level.discountAmount
+        )}
+      </div>
+    ));
+  console.log(pricingPlans);
   return (
     <>
       <Head>
@@ -84,7 +69,7 @@ export default function Plans() {
           <main>
             <div className="container">
               <div className="pageWrap">
-                <article style={{ zIndex: 9 }} ref={el}>
+                <article style={{ zIndex: 9 }}>
                   <h1>Pricing Plans</h1>
                   <p>
                     After receiving your initial consultation, Dr.
@@ -96,131 +81,7 @@ export default function Plans() {
                     long term contracts.
                   </p>
                   {/* CHIROPRACTIC ADJUSTMENTS */}
-                  <div className="planWrap">
-                    <div className="top">
-                      <h3>Chiropractic Adjustments</h3>
-                    </div>
-                    <div className="grid3">
-                      <div>5 Visits</div>
-                      <div style={{ fontWeight: "800" }}>
-                        Save 15%
-                      </div>
-                      <div>
-                        <span className="strike">$200</span> $149
-                      </div>
-                    </div>
-                    <div className="grid3">
-                      <div>5 Visits</div>
-                      <div style={{ fontWeight: "800" }}>
-                        Save 15%
-                      </div>
-                      <div>
-                        <span className="strike">$200</span> $149
-                      </div>
-                    </div>
-                    <div className="grid3">
-                      <div>5 Visits</div>
-                      <div style={{ fontWeight: "800" }}>
-                        Save 15%
-                      </div>
-                      <div>
-                        <span className="strike">$200</span> $149
-                      </div>
-                    </div>
-                    <div className="grid3">
-                      <div>5 Visits</div>
-                      <div style={{ fontWeight: "800" }}>
-                        Save 15%
-                      </div>
-                      <div>
-                        <span className="strike">$200</span> $149
-                      </div>
-                    </div>
-                  </div>
-                  {/* MASSAGE THERAPY HALF HOUR */}
-                  <div className="planWrap">
-                    <div className="top">
-                      <h3>Massage Therapy - Half Hour</h3>
-                    </div>
-                    <div className="grid3">
-                      <div>5 Visits</div>
-                      <div style={{ fontWeight: "800" }}>
-                        Save 15%
-                      </div>
-                      <div>
-                        <span className="strike">$200</span> $149
-                      </div>
-                    </div>
-                    <div className="grid3">
-                      <div>5 Visits</div>
-                      <div style={{ fontWeight: "800" }}>
-                        Save 15%
-                      </div>
-                      <div>
-                        <span className="strike">$200</span> $149
-                      </div>
-                    </div>
-                    <div className="grid3">
-                      <div>5 Visits</div>
-                      <div style={{ fontWeight: "800" }}>
-                        Save 15%
-                      </div>
-                      <div>
-                        <span className="strike">$200</span> $149
-                      </div>
-                    </div>
-                    <div className="grid3">
-                      <div>5 Visits</div>
-                      <div style={{ fontWeight: "800" }}>
-                        Save 15%
-                      </div>
-                      <div>
-                        <span className="strike">$200</span> $149
-                      </div>
-                    </div>
-                  </div>
-                  {/* MASSAGE THERAPY ONE HOUR */}
-                  <div className="planWrap">
-                    <div className="top">
-                      <h3>Massage Therapy - One Hour</h3>
-                    </div>
-                    <div className="grid3">
-                      <div>5 Visits</div>
-                      <div style={{ fontWeight: "800" }}>
-                        Save 15%
-                      </div>
-                      <div>
-                        <span className="strike">$200</span> $149
-                      </div>
-                    </div>
-                    <div className="grid3">
-                      <div>5 Visits</div>
-                      <div style={{ fontWeight: "800" }}>
-                        Save 15%
-                      </div>
-                      <div>
-                        <span className="strike">$200</span> $149
-                      </div>
-                    </div>
-                    <div className="grid3">
-                      <div>5 Visits</div>
-                      <div style={{ fontWeight: "800" }}>
-                        Save 15%
-                      </div>
-                      <div>
-                        <span className="strike">$200</span> $149
-                      </div>
-                    </div>
-                    <div className="grid3">
-                      <div>5 Visits</div>
-                      <div style={{ fontWeight: "800" }}>
-                        Save 15%
-                      </div>
-                      <div>
-                        <span className="strike">$200</span> $149
-                      </div>
-                    </div>
-                  </div>
+                  <div className="planWrap">{pricingPlans}</div>
                 </article>
                 <Sidebar />
               </div>
@@ -232,7 +93,7 @@ export default function Plans() {
         .planWrap {
           margin: 2rem 00;
           border: 1px solid var(--grey50);
-          opacity: 0;
+          /* opacity: 0; */
         }
         .grid3 {
           display: grid;
