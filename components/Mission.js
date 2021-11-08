@@ -1,16 +1,27 @@
-import { useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import CountUp from "react-countup";
-import { useInView } from "react-intersection-observer";
-
 import styles from "./mission.module.css";
 import { FaCheckCircle } from "react-icons/fa";
+import { gsap } from "gsap/dist/gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const Mission = () => {
-  const [ref, inView] = useInView({
-    threshold: 0.3,
-    triggerOnce: true,
-  });
-  console.log("in view: ", inView);
+  gsap.registerPlugin(ScrollTrigger);
+  const [triggered, setTriggered] = useState(0);
+
+  function myEnterFunc() {
+    setTriggered(-99);
+  }
+
+  useEffect(() => {
+    ScrollTrigger.create({
+      trigger: "#stats",
+      start: "top bottom",
+      onEnter: myEnterFunc,
+      once: true,
+    });
+  }, []);
+
   return (
     <div className={styles.mission}>
       <div className={styles.missionLeftWrap}>
@@ -39,30 +50,36 @@ const Mission = () => {
             <li>No long term contracts.</li>
             <li>Free transportation to and from appointments.</li>
           </ul>
-          <div className={styles.stats}>
+          <div id="stats" className={styles.stats}>
             <div className={styles.stat}>
-              <span>20Y+</span>
-              <span>Serving Orange Park</span>
+              <CountUp
+                start={triggered}
+                end={25}
+                duration={3.5}
+                useEasing={true}
+                suffix="Y+"
+              />
+              <span>Serving North Florida</span>
             </div>
             <div className={styles.stat}>
               <CountUp
-                start={0}
-                end={inView ? target : 220}
-                duration={2}
-                separator="."
+                start={triggered}
+                end={20}
+                duration={3.75}
                 useEasing={true}
-              >
-                {({ countUpRef }) => (
-                  <span
-                    className="text-2xl md:text-4xl font-black leading-none"
-                    ref={countUpRef}
-                  />
-                )}
-              </CountUp>
+                suffix="K"
+              />
               <span>Patients Served</span>
             </div>
             <div className={styles.stat}>
-              <span>$3M</span>
+              <CountUp
+                start={triggered}
+                end={15}
+                duration={4}
+                useEasing={true}
+                prefix="$"
+                suffix="M"
+              />
               <span>Settlement Claims</span>
             </div>
           </div>

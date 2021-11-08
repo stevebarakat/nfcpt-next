@@ -135,6 +135,6 @@
   }
   .stats {
     justify-content: flex-start;
-    text-align: left;
+    padding-top: 2rem;
   }
 }

@@ -1,6 +1,13 @@
 import { useState, useEffect, useRef } from "react";
+import { gql, useQuery } from "@apollo/client";
+import { client } from "../lib/apollo";
 import Hamburger from "hamburger-react";
-import { FaCaretDown } from "react-icons/fa";
+import {
+  FaCaretDown,
+  FaChevronRight,
+  FaBars,
+  FaTimes,
+} from "react-icons/fa";
 import useOnClickOutside from "../hooks/useOnClickOutside";
 import Link from "next/link";
 import Image from "next/image";
@@ -8,15 +15,67 @@ import styles from "./header.module.css";
 import logo from "../images/logo.svg";
 import mobileLogo from "../images/mobile-logo.svg";
 
+const PRIMARY_MENU = gql`
+  query GetPrimaryMenu {
+    menus(where: { slug: "primary" }) {
+      edges {
+        node {
+          id
+          name
+          menuItems(where: { parentId: "null" }) {
+            nodes {
+              childItems {
+                edges {
+                  node {
+                    label
+                    path
+                    url
+                    childItems {
+                      nodes {
+                        label
+                        path
+                        url
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
 const Header = () => {
-  const menuRef = useRef();
+  const { loading, error, data } = useQuery(PRIMARY_MENU);
+  const aboutEl = useRef();
   const servicesEl = useRef();
   const navLink = useRef();
   const [mobile, setMobile] = useState(false);
   const [toggleAbout, setToggleAbout] = useState(false);
   const [toggleServices, setToggleServices] = useState(false);
   const [toggleMenu, setToggleMenu] = useState(true);
-  useOnClickOutside(menuRef, () => setToggleAbout(false));
+  useOnClickOutside(aboutEl, () => setToggleAbout(false));
+  useOnClickOutside(servicesEl, () => setToggleServices(false));
+
+  function handlePointerDown(e) {
+    if (e.currentTarget.id === aboutEl.current.id) {
+      setTimeout(() => setToggleAbout(!toggleAbout), 250);
+    }
+    if (e.currentTarget.id === servicesEl.current.id) {
+      setTimeout(() => setToggleServices(!toggleServices), 250);
+    }
+  }
+
+  function handleResize() {
+    if (window.innerWidth < 850) {
+      setMobile(true);
+    } else {
+      setMobile(false);
+    }
+  }
 
   useEffect(() => {
     window.addEventListener("load", handleResize);
@@ -32,29 +91,12 @@ const Header = () => {
     };
   }, [mobile]);
 
-  function handlePointerDown(e) {
-    if (e.currentTarget.id === menuRef?.current.id) {
-      setTimeout(() => setToggleAbout(!toggleAbout), 250);
-    }
-    if (e.currentTarget.id === servicesEl?.current.id) {
-      setTimeout(() => setToggleServices(!toggleServices), 250);
-    }
-  }
-
-  function handleResize() {
-    if (window.innerWidth < 850) {
-      setMobile(true);
-    } else {
-      setMobile(false);
-    }
-  }
-
   function handleKeyDown(e) {
     switch (e.code) {
       case "Space":
       case "Enter":
       case "NumpadEnter":
-        if (e.currentTarget.id === menuRef.current.id) {
+        if (e.currentTarget.id === aboutEl.current.id) {
           setToggleAbout(!toggleAbout);
         }
         if (e.currentTarget.id === servicesEl.current.id) {
@@ -62,7 +104,7 @@ const Header = () => {
         }
         break;
       case "Escape":
-        if (e.currentTarget.id === menuRef.current.id) {
+        if (e.currentTarget.id === aboutEl.current.id) {
           setToggleAbout(false);
         }
         if (e.currentTarget.id === servicesEl.current.id) {
@@ -73,6 +115,29 @@ const Header = () => {
         break;
     }
   }
+
+  const menu = (
+    <ul onKeyDown={handleKeyDown}>
+      {data?.menus.edges[0].node.menuItems.nodes.map((item) => {
+        console.log("item: ", item);
+        console.log("child items: ", item.childItems.edges);
+        return (
+          <li key={item.url}>
+            <Link href={item.label ? item.label : ""}>
+              <a>{item.label}</a>
+            </Link>
+            {item.childItems.edges.length > 0 && (
+              <ul>
+                {item.childItems.edges.map((subItem) => (
+                  <li key={subItem.node.url}>{subItem.node.label}</li>
+                ))}
+              </ul>
+            )}
+          </li>
+        );
+      })}
+    </ul>
+  );
 
   return (
     <div className="flex">
@@ -122,7 +187,7 @@ const Header = () => {
                 onPointerDown={handlePointerDown}
                 id="about"
                 className={styles.dropdown}
-                ref={menuRef}
+                ref={aboutEl}
               >
                 <a href={navLink.current}>
                   <div style={{ display: "flex" }}>
@@ -214,6 +279,7 @@ const Header = () => {
           </div>
         </div>
       </nav>
+      {/* {menu} */}
     </div>
   );
 };
