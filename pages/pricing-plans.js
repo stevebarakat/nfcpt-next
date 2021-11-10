@@ -72,7 +72,6 @@ export default function Plans() {
             objectPosition="top"
             quality={100}
             placeholder="blur"
-            blurDataURL={urlPixelated}
             src={happy}
             alt="happy girl"
           />

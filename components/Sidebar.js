@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import styles from "./sidebar.module.css";
+import { buildUrl } from "cloudinary-build-url";
 import Image from "next/image";
 import coupon from "../images/new-patient-vertical.svg";
 import margaret from "../images/margaret.jpg";
@@ -19,6 +20,7 @@ const TESTIMONIALS = gql`
             testimonialPhoto {
               altText
               sourceUrl
+              slug
             }
           }
         }
@@ -36,14 +38,15 @@ const Sidebar = () => {
 
   const n = randomNumber(0, 1);
 
-  console.log("data: ", data);
-
   const testimonialPhotoAltText =
     data?.nfcptSettings.nfcptSettings.testimonials[n].testimonial
       .testimonialPhoto.altText;
   const testimonialPhotoUrl =
     data?.nfcptSettings.nfcptSettings.testimonials[n].testimonial
       .testimonialPhoto.sourceUrl;
+  const testimonialPhotoSlug =
+    data?.nfcptSettings.nfcptSettings.testimonials[n].testimonial
+      .testimonialPhoto.slug;
   const testimonialContent =
     data?.nfcptSettings.nfcptSettings.testimonials[n].testimonial
       .testimonialContent;
@@ -53,17 +56,24 @@ const Sidebar = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
+  const urlPixelated = buildUrl(testimonialPhotoSlug, {
+    cloud: {
+      cloudName: "stevebarakat",
+    },
+    transformations: {
+      effect: {
+        name: "pixelate",
+      },
+    },
+  });
+
   return (
     <aside className={styles.sidebar}>
       <div
         className={styles.sidebarWidget}
         style={{ background: "var(--accentColor)" }}
       >
-        <Image
-          quality={100}
-          src={coupon}
-          alt="Picture of the author"
-        />
+        <Image quality={100} src={coupon} alt="New Patient Special" />
         <ClaimOfferForm />
       </div>
       <div
@@ -74,6 +84,8 @@ const Sidebar = () => {
           {testimonialPhotoUrl && (
             <Image
               src={testimonialPhotoUrl}
+              placeholder="blur"
+              blurDataURL={urlPixelated}
               layout="fill"
               objectFit="cover"
               objectPosition="center"
