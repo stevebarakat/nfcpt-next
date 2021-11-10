@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { ApolloProvider } from "@apollo/client";
 import { client } from "../lib/apollo";
-import { Head } from "next/head";
+import Head from "next/head";
 import "../styles/reset.css";
 import "../styles/swiper.custom.css";
 import "../styles/variables.css";
