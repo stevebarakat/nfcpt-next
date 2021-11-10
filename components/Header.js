@@ -18,27 +18,15 @@ import mobileLogo from "../images/mobile-logo.svg";
 const PRIMARY_MENU = gql`
   query GetPrimaryMenu {
     menus(where: { slug: "primary" }) {
-      edges {
-        node {
-          id
-          name
-          menuItems(where: { parentId: "null" }) {
-            nodes {
-              childItems {
-                edges {
-                  node {
-                    label
-                    path
-                    url
-                    childItems {
-                      nodes {
-                        label
-                        path
-                        url
-                      }
-                    }
-                  }
-                }
+      nodes {
+        menuItems(where: { location: PRIMARY, parentId: "null" }) {
+          nodes {
+            path
+            label
+            childItems {
+              nodes {
+                path
+                label
               }
             }
           }
@@ -52,7 +40,6 @@ const Header = () => {
   const { loading, error, data } = useQuery(PRIMARY_MENU);
   const aboutEl = useRef();
   const servicesEl = useRef();
-  const navLink = useRef();
   const [mobile, setMobile] = useState(false);
   const [toggleAbout, setToggleAbout] = useState(false);
   const [toggleServices, setToggleServices] = useState(false);
@@ -68,28 +55,6 @@ const Header = () => {
       setTimeout(() => setToggleServices(!toggleServices), 250);
     }
   }
-
-  function handleResize() {
-    if (window.innerWidth < 850) {
-      setMobile(true);
-    } else {
-      setMobile(false);
-    }
-  }
-
-  useEffect(() => {
-    window.addEventListener("load", handleResize);
-    window.addEventListener("resize", handleResize);
-    if (!mobile) {
-      navLink.current = `#`;
-    } else {
-      navLink.current = `#navbar`;
-    }
-    return () => {
-      window.removeEventListener("load", handleResize);
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [mobile]);
 
   function handleKeyDown(e) {
     switch (e.code) {
@@ -115,29 +80,6 @@ const Header = () => {
         break;
     }
   }
-
-  const menu = (
-    <ul onKeyDown={handleKeyDown}>
-      {data?.menus.edges[0].node.menuItems.nodes.map((item) => {
-        console.log("item: ", item);
-        console.log("child items: ", item.childItems.edges);
-        return (
-          <li key={item.url}>
-            <Link href={item.label ? item.label : ""}>
-              <a>{item.label}</a>
-            </Link>
-            {item.childItems.edges.length > 0 && (
-              <ul>
-                {item.childItems.edges.map((subItem) => (
-                  <li key={subItem.node.url}>{subItem.node.label}</li>
-                ))}
-              </ul>
-            )}
-          </li>
-        );
-      })}
-    </ul>
-  );
 
   return (
     <div className="flex">
@@ -189,12 +131,12 @@ const Header = () => {
                 className={styles.dropdown}
                 ref={aboutEl}
               >
-                <a href={navLink.current}>
+                <button>
                   <div style={{ display: "flex" }}>
                     About
                     <FaCaretDown />
                   </div>
-                </a>
+                </button>
                 <ul
                   onKeyDown={handleKeyDown}
                   style={
@@ -228,12 +170,12 @@ const Header = () => {
                 className={styles.dropdown}
                 ref={servicesEl}
               >
-                <a href={navLink.current}>
+                <button>
                   <div style={{ display: "flex" }}>
                     Services
                     <FaCaretDown />
                   </div>
-                </a>
+                </button>
                 <ul
                   onKeyDown={handleKeyDown}
                   style={
