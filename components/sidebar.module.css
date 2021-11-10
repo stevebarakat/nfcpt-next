@@ -4,6 +4,8 @@
   margin-bottom: 4rem;
   display: none;
   flex-direction: column;
+  z-index: 9;
+  position: relative;
 }
 
 .sidebarWidget form {

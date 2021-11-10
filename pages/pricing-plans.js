@@ -7,6 +7,7 @@ import { buildUrl } from "cloudinary-build-url";
 import Layout from "../components/Layout";
 import Sidebar from "../components/Sidebar";
 import Image from "next/image";
+import happy from "../images/happy.jpg";
 
 const PRICING_PLANS = gql`
   query GetPricingPlans {
@@ -79,6 +80,17 @@ export default function Plans() {
       </Head>
       <Layout>
         <div className="plans">
+          <Image
+            priority
+            layout="fill"
+            objectFit="cover"
+            objectPosition="top"
+            quality={100}
+            placeholder="blur"
+            blurDataURL={urlPixelated}
+            src={happy}
+            alt="happy girl"
+          />
           <main>
             <div className="container">
               <div className="pageWrap">
