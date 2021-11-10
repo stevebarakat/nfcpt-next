@@ -1,11 +1,11 @@
 import Button from "./Button";
 
-export default function ClaimOfferForm() {
+export default function GetStartedForm() {
   return (
     <>
       <form
         name="claim-offer"
-        action="/get-started-thanks"
+        action="/"
         method="POST"
         data-netlify="true"
       >

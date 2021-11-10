@@ -76,7 +76,7 @@ export default function Contact({ page }) {
                 <article>
                   <h1>Thank You</h1>
                   <p>
-                    Your form was sucessfully submitted. Someone from
+                    Your form was successfully submitted. Someone from
                     our office will be responding to you shortly. If
                     you don&apos;t hear back from us within the next
                     24 hours, please check your junk mail to ensure we

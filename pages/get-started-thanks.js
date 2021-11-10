@@ -1,11 +1,12 @@
 import { useState } from "react";
 import Head from "next/head";
+import Link from "next/link";
 import Layout from "../components/Layout";
 import ClaimOfferForm from "../components/ClaimOfferForm";
 import Button from "../components/Button";
 import Sidebar from "../components/Sidebar";
 import Image from "next/image";
-import claim from "../images/claim.jpg";
+import thanks from "../images/thank-you.jpg";
 
 function encode(data) {
   return Object.keys(data)
@@ -16,7 +17,7 @@ function encode(data) {
     .join("&");
 }
 
-export default function Contact({ page }) {
+export default function GetStartedThanks({ page }) {
   const [state, setState] = useState("");
   const handleChange = (e) => {
     setState({ ...state, [e.target.name]: e.target.value });
@@ -42,7 +43,7 @@ export default function Contact({ page }) {
   return (
     <>
       <Head>
-        <title>Claim Offer</title>
+        <title>Thank You</title>
         <meta
           name="description"
           content="Car Accident Chiropractor - We focus on auto accident recovery. Get the settlement you deserve. Free consultation (904) 272-4329"
@@ -56,16 +57,16 @@ export default function Contact({ page }) {
               placeholder="blur"
               layout="fill"
               objectFit="cover"
-              objectPosition="top"
+              objectPosition="center"
               quality={100}
-              src={claim}
-              alt="women exercising"
+              src={thanks}
+              alt="women doing yoga"
             />
             <div className={"heading container"}>
-              <span className="h1">Happy Therapy Club</span>
+              <span className="h1">Thank You</span>
               <p className="description">
-                Regular chiropractic adjustments lead to overall
-                health and happiness.
+                Thanks for reaching out. We&apos;ll get back to you
+                asap!
               </p>
             </div>
           </div>
@@ -73,22 +74,20 @@ export default function Contact({ page }) {
             <div className="container">
               <div className="contactWrap">
                 <article>
-                  <h1>Claim Offer</h1>
+                  <h1>Thank You</h1>
                   <p>
-                    Our goal is to guide you to recovery and beyond.
-                    If you have a specific health concern, please
-                    contact us for assistance.
-                  </p>
-                  <p>
-                    {" "}
-                    We are always looking for feedback to help improve
-                    our website and services. Use this form to send us
-                    your comments and questions.
+                    Your form was successfully submitted. Someone from
+                    our office will be responding to you shortly. If
+                    you don&apos;t hear back from us within the next
+                    24 hours, please check your junk mail to ensure we
+                    weren&apos;t flagged by the spam filter.
+                    <div>
+                      <Link href="/">
+                        <a>Return to homepage</a>
+                      </Link>
+                    </div>
                   </p>
                 </article>
-                <div className="formWrap">
-                  <ClaimOfferForm />
-                </div>
               </div>
             </div>
           </main>
