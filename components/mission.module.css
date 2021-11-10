@@ -11,6 +11,10 @@
   position: relative;
 }
 
+.mission h1 {
+  font-family: "Montserrat";
+}
+
 .mission img {
   z-index: 0;
 }
