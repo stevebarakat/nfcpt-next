@@ -20,6 +20,9 @@
   border-bottom: 2px solid var(--transparentWhite25);
   padding: 2rem 0 4rem;
 }
+.upperFooter a {
+  text-decoration: none;
+}
 
 .innerFooter {
   display: grid;

@@ -16,11 +16,8 @@
   width: 100%;
 }
 
-.ctaForm input {
-  background: white;
-  border: none;
-  box-shadow: inset 1px 1px 2px 0 #9a9a9a;
-  padding: 0.5rem;
+.ctaForm a {
+  text-decoration: none;
 }
 
 .ctaLeftWrap {

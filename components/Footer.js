@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./footer.module.css";
 import {
   FaTwitterSquare,
@@ -21,12 +22,38 @@ const Footer = () => (
           </span>
         </div>
         <div className={styles.btnWrap}>
-          <Button color="var(--grey05)" textColor="var(--grey75)">
-            Learn More
-          </Button>
-          <Button color="var(--accentColor)" textColor="white">
-            Get Started
-          </Button>
+          <div className="flex">
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                gap: "0.5rem",
+              }}
+            >
+              <Link passHref href="/about-us">
+                <a>
+                  <Button
+                    color="white"
+                    textColor="var(--grey75)"
+                    borderColor="var(--grey05)"
+                  >
+                    Learn More
+                  </Button>
+                </a>
+              </Link>
+              <Link passHref href="/get-started">
+                <a>
+                  <Button
+                    color="var(--accentColor)"
+                    borderColor="var(--accentColor)"
+                    textColor="white"
+                  >
+                    Get Started
+                  </Button>
+                </a>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
       <div className={styles.innerFooter}>

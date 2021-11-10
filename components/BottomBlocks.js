@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./bottomBlocks.module.css";
+import Link from "next/link";
 import Button from "./Button";
 
 const BottomBlocks = () => {
@@ -54,19 +55,16 @@ const BottomBlocks = () => {
                 paddingTop: "2rem",
               }}
             >
-              <Button
-                color="var(--primaryColor)"
-                textColor="var(--grey05)"
-              >
-                Learn More
-              </Button>
-              <Button
-                color="var(--accentColor)"
-                borderColor="var(--grey05)"
-                textColor="white"
-              >
-                Get Started
-              </Button>
+              <Link passHref href="/pricing-plans">
+                <a style={{ textDecoration: "none" }}>
+                  <Button
+                    color="white"
+                    textColor="var(--accentColor)"
+                  >
+                    View Pricing Plans
+                  </Button>
+                </a>
+              </Link>
             </div>
           </figure>
         </div>
@@ -87,19 +85,26 @@ const BottomBlocks = () => {
                 paddingTop: "2rem",
               }}
             >
-              <Button
-                color="var(--primaryColor)"
-                textColor="var(--grey05)"
-              >
-                Learn More
-              </Button>
-              <Button
-                color="var(--accentColor)"
-                borderColor="var(--grey05)"
-                textColor="white"
-              >
-                Get Started
-              </Button>
+              <div className="flex">
+                <div
+                  style={{
+                    display: "flex",
+                    gap: "0.5rem",
+                    paddingTop: "2rem",
+                  }}
+                >
+                  <Link passHref href="/pricing-plans">
+                    <a style={{ textDecoration: "none" }}>
+                      <Button
+                        color="white"
+                        textColor="var(--accentColor)"
+                      >
+                        View Pricing Plans
+                      </Button>
+                    </a>
+                  </Link>
+                </div>
+              </div>
             </div>
           </figure>
         </div>

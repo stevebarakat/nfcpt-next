@@ -3,28 +3,51 @@ import { gsap } from "gsap";
 import styles from "./cta.module.css";
 import Button from "./Button";
 import Image from "next/image";
+import Link from "next/link";
 import special from "../images/new-patient-horizontal.svg";
 
 const CallToAction = () => {
-  // const el = useRef();
-  // const q = gsap.utils.selector(el);
+  const ref = useRef(null);
+  useEffect(() => {
+    const element = ref.current;
+    gsap.fromTo(
+      element.querySelector("#left"),
+      {
+        opacity: 0,
+        x: -2000,
+      },
+      {
+        opacity: 1,
+        x: 0,
+      }
+    );
+  }, []);
 
-  // useEffect(() => {
-  //   // Target any descendant with the class of .box - no matter how far down the descendant tree. Uses el.current.querySelectorAll() internally
-  //   gsap.fromTo(
-  //     q(".grid > div"),
-  //     { x: "-5000px" },
-  //     { x: 0, duration: 1, stagger: 1 }
-  //   );
-  // }, []);
+  useEffect(() => {
+    const element = ref.current;
+    gsap.fromTo(
+      element.querySelector("#right"),
+      {
+        opacity: 0,
+        x: 2000,
+      },
+      {
+        opacity: 1,
+        x: 0,
+        scrollTrigger: {
+          trigger: element.querySelector(".grid"),
+          start: "top top",
+          end: "bottom center",
+          scrub: true,
+        },
+      }
+    );
+  }, []);
 
   return (
-    <div className={styles.cta}>
-      <div
-        // ref={el}
-        className="grid"
-      >
-        <div className={styles.ctaLeftWrap}>
+    <div ref={ref} className={styles.cta}>
+      <div className="grid">
+        <div id="left" className={styles.ctaLeftWrap}>
           <Image
             layout="responsive"
             objectPosition="center"
@@ -32,7 +55,7 @@ const CallToAction = () => {
             alt="New Patient Special"
           />
         </div>
-        <div className={styles.ctaRightWrap}>
+        <div id="right" className={styles.ctaRightWrap}>
           <div>
             <span className={styles.ctaHeader}>
               Begin The New You
@@ -40,7 +63,7 @@ const CallToAction = () => {
             <span className={styles.ctaSubHeader}>
               Take the first step
             </span>
-            <form className={styles.ctaForm}>
+            <div className={styles.ctaForm}>
               <div className="flex">
                 <div
                   style={{
@@ -49,26 +72,30 @@ const CallToAction = () => {
                     gap: "0.5rem",
                   }}
                 >
-                  <Button
-                    color="white"
-                    textColor="var(--accentColor)"
-                  >
-                    Learn More
-                  </Button>
-                  <Button
-                    color="var(--accentColor)"
-                    borderColor="var(--grey05)"
-                    textColor="white"
-                  >
-                    Get Started
-                  </Button>
+                  <Link passHref href="/about-us">
+                    <a>
+                      <Button
+                        color="white"
+                        textColor="var(--accentColor)"
+                      >
+                        Learn More
+                      </Button>
+                    </a>
+                  </Link>
+                  <Link passHref href="/get-started">
+                    <a>
+                      <Button
+                        color="var(--accentColor)"
+                        borderColor="var(--grey05)"
+                        textColor="white"
+                      >
+                        Get Started
+                      </Button>
+                    </a>
+                  </Link>
                 </div>
               </div>
-            </form>
-            {/* <span className={styles.ctaDescription}>
-            Sign up to receive our complimentary wellness guide and a
-            free consultation.
-          </span> */}
+            </div>
           </div>
         </div>
       </div>

@@ -4,15 +4,19 @@ export default function GetStartedForm() {
   return (
     <>
       <form
-        name="claim-offer"
-        action="/"
+        name="contact"
+        action="/get-started-thanks"
         method="POST"
         data-netlify="true"
       >
-        <input type="hidden" name="form-name" value="claim-offer" />
+        <input type="hidden" name="form-name" value="contact" />
         <div className="inputWrap">
           <label htmlFor="name">Name:</label> <br />
           <input type="text" name="name" id="name" required />
+        </div>
+        <div className="inputWrap">
+          <label htmlFor="email">Email:</label> <br />
+          <input type="email" name="email" id="email" required />
         </div>
         <div className="inputWrap">
           <label htmlFor="phoneNumber">Phone Number:</label> <br />
@@ -24,23 +28,35 @@ export default function GetStartedForm() {
           />
         </div>
         <div className="inputWrap">
-          <label htmlFor="email">Email:</label> <br />
-          <input type="email" name="email" id="email" required />
+          <label htmlFor="message">Message:</label> <br />
+          <textarea
+            name="message"
+            id="message"
+            rows="5"
+            required
+          ></textarea>
         </div>
-        <div className="inputWrap">
+        <div style={{ float: "right" }}>
           <Button
-            color="var(--accentColor)"
-            borderColor="white"
-            textColor="white"
-            width="100%"
+            type="submit"
+            color="var(--darkColor)"
+            textColor="var(--grey05)"
           >
-            Get Started
+            Send
           </Button>
         </div>
       </form>
       <style jsx>{`
         .inputWrap {
-          padding-bottom: 1rem;
+          padding-bottom: 2rem;
+        }
+        .inputWrap label {
+          display: inline-block;
+          padding-bottom: 16px;
+        }
+        .inputWrap input,
+        .inputWrap textarea {
+          background: var(--papayaWhip25);
         }
         @media (min-width: 850px) {
         }
