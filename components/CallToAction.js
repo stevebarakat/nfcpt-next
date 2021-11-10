@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
 import styles from "./cta.module.css";
 import Button from "./Button";
 import Image from "next/image";
@@ -7,45 +6,8 @@ import Link from "next/link";
 import special from "../images/new-patient-horizontal.svg";
 
 const CallToAction = () => {
-  const ref = useRef(null);
-  useEffect(() => {
-    const element = ref.current;
-    gsap.fromTo(
-      element.querySelector("#left"),
-      {
-        opacity: 0,
-        x: -2000,
-      },
-      {
-        opacity: 1,
-        x: 0,
-      }
-    );
-  }, []);
-
-  useEffect(() => {
-    const element = ref.current;
-    gsap.fromTo(
-      element.querySelector("#right"),
-      {
-        opacity: 0,
-        x: 2000,
-      },
-      {
-        opacity: 1,
-        x: 0,
-        scrollTrigger: {
-          trigger: element.querySelector(".grid"),
-          start: "top top",
-          end: "bottom center",
-          scrub: true,
-        },
-      }
-    );
-  }, []);
-
   return (
-    <div ref={ref} className={styles.cta}>
+    <div className={styles.cta}>
       <div className="grid">
         <div id="left" className={styles.ctaLeftWrap}>
           <Image

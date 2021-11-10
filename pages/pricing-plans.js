@@ -1,6 +1,4 @@
 import { useEffect, useRef } from "react";
-import { gsap } from "gsap/dist/gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { gql, useQuery } from "@apollo/client";
 import Head from "next/head";
 import { buildUrl } from "cloudinary-build-url";
@@ -32,19 +30,6 @@ const PRICING_PLANS = gql`
 
 export default function Plans() {
   const { loading, error, data } = useQuery(PRICING_PLANS);
-  gsap.registerPlugin(ScrollTrigger);
-  const el = useRef();
-  const q = gsap.utils.selector(el.current);
-  const urlPixelated = buildUrl("plans", {
-    cloud: {
-      cloudName: "stevebarakat",
-    },
-    transformations: {
-      effect: {
-        name: "pixelate",
-      },
-    },
-  });
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
@@ -114,7 +99,6 @@ export default function Plans() {
           </main>
         </div>
       </Layout>
-      <style jsx>{``}</style>
     </>
   );
 }
