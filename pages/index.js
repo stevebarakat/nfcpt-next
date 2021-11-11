@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Link from "next/link";
 import Hero from "../components/Hero";
 import CallToAction from "../components/CallToAction";
 import Treatments from "../components/Treatments";

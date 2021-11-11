@@ -95,7 +95,7 @@
   justify-self: center;
   align-self: center;
   object-position: center;
-  background: url("../images/trio-sm-pink.jpg");
+  background: url("../images/trio-sm-pink.webp");
   background-size: cover;
   background-position: 50% 35%;
   width: 100%;
@@ -114,7 +114,7 @@
   }
   .leftWrapTop {
     width: 50%;
-    background: url("../images/kim.jpg");
+    background: url("../images/kim.webp");
     background-size: cover;
     background-position: 50% 35%;
     padding: 2rem;

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { buildUrl } from "cloudinary-build-url";
-import hero from "../images/hero-1.jpg";
+import hero from "../images/hero-1.webp";
 import styles from "./hero.module.css";
 
 const Hero = ({ home }) => {
