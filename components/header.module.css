@@ -50,8 +50,11 @@
 }
 
 .nav ul li a {
-  width: 100%;
   border-bottom: 1px solid white;
+}
+.nav ul li a,
+.nav ul li button {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -110,6 +113,8 @@
   display: block;
   padding: 0.5rem 1rem;
   width: fit-content;
+  background: transparent;
+  border: none;
 }
 .logo {
   display: block;

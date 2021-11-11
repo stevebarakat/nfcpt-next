@@ -131,7 +131,7 @@ const Header = () => {
                 className={styles.dropdown}
                 ref={aboutEl}
               >
-                <button>
+                <button className={styles.link}>
                   <div style={{ display: "flex" }}>
                     About
                     <FaCaretDown />
@@ -170,7 +170,7 @@ const Header = () => {
                 className={styles.dropdown}
                 ref={servicesEl}
               >
-                <button>
+                <button className={styles.link}>
                   <div style={{ display: "flex" }}>
                     Services
                     <FaCaretDown />
@@ -221,7 +221,6 @@ const Header = () => {
           </div>
         </div>
       </nav>
-      {/* {menu} */}
     </div>
   );
 };
