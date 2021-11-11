@@ -54,6 +54,7 @@ const Header = () => {
     if (e.currentTarget.id === servicesEl.current.id) {
       setTimeout(() => setToggleServices(!toggleServices), 250);
     }
+    setToggleMenu((toggleMenu) => !toggleMenu);
   }
 
   function handleKeyDown(e) {
