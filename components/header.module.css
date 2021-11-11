@@ -49,11 +49,9 @@
   border-bottom: 1px solid white;
 }
 
-.nav ul li a {
-  border-bottom: 1px solid white;
-}
 .nav ul li a,
 .nav ul li button {
+  border-bottom: 1px solid white;
   width: 100%;
   display: flex;
   align-items: center;
@@ -189,6 +187,7 @@
   }
   .nav ul li a {
     border-bottom: none;
+    border-bottom: 1px solid white;
     transition: all 0.2s;
   }
   .nav ul li a:hover {
