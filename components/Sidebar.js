@@ -94,20 +94,22 @@ const Sidebar = () => {
             />
           )}
         </div>
-        <blockquote>
-          <span className={styles.testimonial}>
-            {testimonialContent}
-          </span>
-        </blockquote>
-        <figcaption
-          style={{
-            color: "var(--grey10)",
-            textAlign: "center",
-            paddingBottom: "3rem",
-          }}
-        >
-          —{testimonialAuthor}
-        </figcaption>
+        <div>
+          <blockquote>
+            <span className={styles.testimonial}>
+              {testimonialContent}
+            </span>
+          </blockquote>
+          <figcaption
+            style={{
+              color: "var(--grey10)",
+              textAlign: "center",
+              paddingBottom: "3rem",
+            }}
+          >
+            —{testimonialAuthor}
+          </figcaption>
+        </div>
       </div>
     </aside>
   );

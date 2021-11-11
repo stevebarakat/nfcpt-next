@@ -1,6 +1,5 @@
 .hero {
-  min-height: calc(100vh - 2.5rem);
-  min-height: 107.5vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -42,5 +41,9 @@
   }
   .mobileLogo {
     display: none;
+  }
+  .hero {
+    min-height: calc(100vh - 2.5rem);
+    margin-bottom: 2rem;
   }
 }

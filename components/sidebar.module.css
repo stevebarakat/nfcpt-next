@@ -51,6 +51,11 @@
 @media (min-width: 700px) and (max-width: 1050px) {
   .sidebarWidget {
     flex-direction: row;
+    padding: 2rem 4rem;
+  }
+
+  .sidebarWidget form {
+    width: 50%;
   }
 }
 
